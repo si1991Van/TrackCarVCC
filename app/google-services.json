@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "638369929251",
+    "firebase_url": "https://trackcarvcc.firebaseio.com",
+    "project_id": "trackcarvcc",
+    "storage_bucket": "trackcarvcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638369929251:android:e012367c4df3bef568b996",
+        "android_client_info": {
+          "package_name": "com.vcc.trackcar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638369929251-96l6iar03ibvefjvov60qlglm2m0lb9g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vcc.trackcar",
+            "certificate_hash": "a7014545af3cd481775adc996988bff3618cd9e0"
+          }
+        },
+        {
+          "client_id": "638369929251-rd3nb6b919l89lu2nqvkivca3nt9ef86.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vcc.trackcar",
+            "certificate_hash": "0e6c570e8b743b4189374f11b67b275e485dcabe"
+          }
+        },
+        {
+          "client_id": "638369929251-6v78p68bcv9m3ae03c510o0l7pg6eelf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE721wUfXU7hiuJhyvPZ7MRUuO_CgMHNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638369929251-6v78p68bcv9m3ae03c510o0l7pg6eelf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

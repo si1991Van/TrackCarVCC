@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_5"
+    android:background="@drawable/searchbox_border">
+
+    <LinearLayout
+        android:id="@+id/layout_item_car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_bien_so"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            tools:text="VT-003" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_driver_name"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/dp_5"-->
+        <!--            android:fontFamily="sans-serif-light"-->
+        <!--            android:textColor="@android:color/darker_gray"-->
+        <!--            android:textSize="12sp"-->
+        <!--            tools:text="Ngô Đức Bắc" />-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

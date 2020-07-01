@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_filter"
+        android:icon="@drawable/ic_filter_list_write_24dp"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="ifRoom|collapseActionView">
+        <menu>
+            <item
+                android:id="@+id/menu_da_duoc_duyet"
+                android:icon="@drawable/ic_radio_button_green_16dp"
+                android:title="@string/da_duoc_duyet" />
+
+            <item
+                android:id="@+id/menu_tu_choi"
+                android:icon="@drawable/ic_radio_button_red_24dp"
+                android:title="@string/tu_choi" />
+
+            <item
+                android:id="@+id/menu_yeu_cau_sua"
+                android:icon="@drawable/ic_radio_button_yellow_24dp"
+                android:title="@string/yeu_cau_sua" />
+
+            <item
+                android:id="@+id/menu_dang_cho_duyet"
+                android:icon="@drawable/ic_radio_button_grey_24dp"
+                android:title="@string/dang_cho_duyet" />
+        </menu>
+    </item>
+</menu>

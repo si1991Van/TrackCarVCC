@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tinh_thanh_pho"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/border_text_view"
+                android:gravity="center_vertical">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_province"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_textview"
+                    android:completionThreshold="0"
+                    android:fontFamily="@font/muli"
+                    android:hint="Chọn Tỉnh/Thành phố "
+                    android:padding="@dimen/dimen_4"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_next_1_coppy_2" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quan_huyen"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/border_text_view"
+                android:gravity="center_vertical">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_district"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_textview"
+                    android:completionThreshold="0"
+                    android:fontFamily="@font/muli"
+                    android:hint="Chọn Quận/Huyện"
+                    android:padding="@dimen/dimen_4"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_next_1_coppy_2" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/xa_phuong"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/border_text_view"
+                android:gravity="center_vertical">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_ward"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_textview"
+                    android:completionThreshold="0"
+                    android:fontFamily="@font/muli"
+                    android:hint="Chọn Xã/Phường"
+                    android:padding="@dimen/dimen_4"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_next_1_coppy_2" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/so_nha_thon_xom"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@drawable/border_text_view"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/edtAdress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_textview"
+                    android:fontFamily="@font/muli"
+                    android:hint="Nhập số nhà, thôn/xóm"
+                    android:padding="@dimen/dimen_4"
+                    android:textColor="#7b7b7b"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_xan_nhan_address"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_btn_action"
+        android:fontFamily="@font/muli_semibold"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/xac_nhan"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

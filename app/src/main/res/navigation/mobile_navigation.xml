@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.vcc.trackcar.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_radar_driver"
+        android:name="com.vcc.trackcar.ui.radar_driver.RadarDriverFragment"
+        android:label="@string/radar_driver"
+        tools:layout="@layout/radar_driver_fragment" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.vcc.trackcar.ui.add_book_car.AddBookCarFragment"
+        android:label="@string/menu_lap_phieu_dat_xe"
+        tools:layout="@layout/fragment_add_book_car" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.vcc.trackcar.ui.list_book_added.ListBookAddedFragment"
+        android:label="@string/menu_danh_sach_phieu_da_lap"
+        tools:layout="@layout/fragment_list_book_added" />
+
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="com.vcc.trackcar.ui.view_and_sign_approval.ViewAndSignApprovalFragment"
+        android:label="@string/menu_duyet_phieu_tpbp"
+        tools:layout="@layout/fragment_view_and_sign_approval" />
+
+    <fragment
+        android:id="@+id/nav_xep_xe"
+        android:name="com.vcc.trackcar.ui.xep_xe_doi_truong_xe.XepXeFragment"
+        android:label="@string/menu_xep_xe_qldx"
+        tools:layout="@layout/fragment_xep_xe" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.vcc.trackcar.ui.giao_viec.GiaoViecFragment"
+        android:label="@string/menu_giao_viec_lai_xe"
+        tools:layout="@layout/fragment_giao_viec" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.vcc.trackcar.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+
+    <fragment
+        android:id="@+id/nav_select_people"
+        android:name="com.vcc.trackcar.ui.select_people.SelectPeopleFragment"
+        android:label="@string/chon_nguoi"
+        tools:layout="@layout/select_people_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_select_address"
+        android:name="com.vcc.trackcar.ui.select_address.SelectAddressFragment"
+        android:label="@string/chon_dia_chi"
+        tools:layout="@layout/select_address_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_detail_book_car"
+        android:name="com.vcc.trackcar.ui.detail_book_car.DetailBookCarFragment"
+        android:label="@string/detail_book_car"
+        tools:layout="@layout/detail_book_car_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_detail_xep_xe"
+        android:name="com.vcc.trackcar.ui.xep_xe_doi_truong_xe.detail_xep_xe.DetailXepXeFragment"
+        android:label="@string/detail_book_car"
+        tools:layout="@layout/detail_xep_xe_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_select_car"
+        android:name="com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_driver_car.ListDriverCarFragment"
+        android:label="@string/chon_nguoi_lai"
+        tools:layout="@layout/list_driver_car_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_select_car_xe"
+        android:name="com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_car.ListCarFragment"
+        android:label="@string/chon_xe_2"
+        tools:layout="@layout/list_car_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_view_and_approval"
+        android:name="com.vcc.trackcar.ui.view_and_sign_approval_manager_car.ViewAndApprovalManagerCarFragment"
+        android:label="@string/menu_view_and_approval"
+        tools:layout="@layout/view_and_approval_manager_car_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_update_book_car"
+        android:name="com.vcc.trackcar.ui.list_book_added.update_book_car.UpdateBookCarFragment"
+        android:label="@string/update_book_car"
+        tools:layout="@layout/update_book_car_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_detail_giao_viec"
+        android:name="com.vcc.trackcar.ui.giao_viec.detail_giao_viec.DetailGiaoViecFragment"
+        android:label="@string/detail_giao_viec"
+        tools:layout="@layout/detail_giao_viec_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_xep_xe_ban_tct"
+        android:name="com.vcc.trackcar.ui.xep_xe_ban_tct.XepXeBanTCTFragment"
+        android:label="@string/menu_xep_xe_ban_tct"
+        tools:layout="@layout/xep_xe_ban_tct_fragment" />
+
+    <fragment
+        android:id="@+id/nav_view_and_approval_tphc_tct"
+        android:name="com.vcc.trackcar.ui.xem_ky_duyet_tp_hanhchinh_tct.XemKyDuyetTPHCTCTFragment"
+        android:label="@string/menu_view_and_approval_tphc_tct"
+        tools:layout="@layout/xem_ky_duyet_tphctct_fragment" />
+    <fragment
+        android:id="@+id/nav_open_command"
+        android:name="com.vcc.trackcar.ui.detail_book_car.open_command.OpenCommandFragment"
+        android:label="@string/title_open_command"
+        tools:layout="@layout/fragment_open_command" />
+</navigation>

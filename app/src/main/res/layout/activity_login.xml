@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layout_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".ui.login.LoginActivity">
+
+    <com.vcc.trackcar.ui.base.BaseStatusBar
+        android:id="@+id/base_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_login" />
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="300dp">-->
+    <!--        &lt;!&ndash;android:background="@drawable/gradient_header_login">&ndash;&gt;-->
+
+    <!--        <com.scwang.wave.MultiWaveHeader-->
+    <!--            android:id="@+id/wave_header"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            app:mwhCloseColor="#00bda0"-->
+    <!--            app:mwhColorAlpha="0.45"-->
+    <!--            app:mwhGradientAngle="45"-->
+    <!--            app:mwhProgress="1"-->
+    <!--            app:mwhStartColor="#007ddd"-->
+    <!--            app:mwhVelocity="3"-->
+    <!--            app:mwhWaveHeight="50dp"-->
+    <!--            app:mwhWaves="MultiWave" />-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="150sp"-->
+    <!--            android:layout_height="150sp"-->
+    <!--            android:layout_alignParentTop="true"-->
+    <!--            android:layout_centerHorizontal="true"-->
+    <!--            android:layout_centerVertical="true"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:src="@drawable/logo_viettel" />-->
+
+    <!--    </RelativeLayout>-->
+
+    <ImageView
+        android:id="@+id/logo_viettel"
+        android:layout_width="122dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:src="@drawable/logo_viettel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_viettel"
+        android:layout_centerInParent="true"
+        android:fontFamily="serif"
+        android:padding="@dimen/dimen_4"
+        android:text="@string/let_say_you"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/content_login"
+        android:layout_width="match_parent"
+        android:layout_height="312dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/shape_login"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/shape_account"
+            android:drawableLeft="@drawable/icons_user"
+            android:drawablePadding="16dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:hint="@string/ten_dang_nhap"
+            android:inputType="text"
+            android:paddingLeft="12dp"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="24dp">
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_account"
+                android:drawableLeft="@drawable/icons_password"
+                android:drawablePadding="16dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:hint="@string/mat_khau"
+                android:inputType="textPassword"
+                android:paddingLeft="12dp"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/img_visibility_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_visibility_on" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="24dp"
+            android:background="@drawable/bg_btn_login"
+            android:text="@string/dang_nhap"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nameVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:text="@string/name_company"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

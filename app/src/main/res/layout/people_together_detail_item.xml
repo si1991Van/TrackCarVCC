@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_5"
+    android:background="@drawable/border_text_view_2"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_5">
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="monospace"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        tool:text="1. Ngô Đức Bắc" />
+
+    <TextView
+        android:id="@+id/text_status"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/text_name"
+        android:fontFamily="monospace"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        tool:text="(Đang chờ duyệt)" />
+
+</RelativeLayout>

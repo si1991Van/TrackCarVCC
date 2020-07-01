@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff2d9a59</color>
+    <color name="colorPrimaryDark">#ff007d7e</color>
+    <color name="colorAccent">#ffd58431</color>
+
+    <!--bacnd4-->
+    <color name="bg_login_while_trans_50">#B3ffffff</color>
+    <color name="mine_shaft">#212121</color>
+
+    <color name="magic_mint">#B9F6CA</color>
+    <color name="alto">#E0E0E0</color>
+    <color name="sunshade">#FFA726</color>
+
+</resources>

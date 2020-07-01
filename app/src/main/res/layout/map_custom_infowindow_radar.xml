@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="340dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/searchbox_border"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_5">
+
+    <TextView
+        android:id="@+id/tv_driver_code"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/muli_semibold"
+        android:singleLine="true"
+        android:textColor="#2a2a2a"
+        android:textSize="16sp"
+        tools:text="16/LĐX/03/2020" />
+
+    <RelativeLayout
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli"
+            android:text="@string/name_driver"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_nguoi_lai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:gravity="end"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="NguyenMinhHoi" />
+
+        <TextView
+            android:id="@+id/phone_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_nguoi_lai"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp"
+            tools:text="036985214" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/alto" />
+
+    <RelativeLayout
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli"
+            android:text="@string/trang_thai"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_command_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:gravity="end"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="Sẵn sàng" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/alto" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_chon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_btn_action"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/chon"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+</LinearLayout>

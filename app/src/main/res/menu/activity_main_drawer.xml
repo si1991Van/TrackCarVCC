@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_theo_doi_lo_trinh"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_lap_lenh_dat_xe"
+            android:title="@string/menu_lap_phieu_dat_xe" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_danh_sach_lenh_da_lap"
+            android:title="@string/menu_danh_sach_phieu_da_lap" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_xem_ky_duyet_tpbp"
+            android:title="@string/menu_duyet_phieu_tpbp" />
+
+        <item
+            android:id="@+id/nav_xep_xe"
+            android:icon="@drawable/ic_xep_xe_qldx"
+            android:title="@string/menu_xep_xe_qldx" />
+
+        <item
+            android:id="@+id/nav_view_and_approval"
+            android:icon="@drawable/ic_xem_ky_duyet_tt_dvx"
+            android:title="@string/menu_view_and_approval" />
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/menu_giao_viec"
+            android:title="@string/menu_giao_viec_lai_xe" />
+
+        <item
+            android:id="@+id/nav_xep_xe_ban_tct"
+            android:icon="@drawable/ic_xep_xe_ban_tct"
+            android:title="@string/menu_xep_xe_ban_tct" />
+
+        <item
+            android:id="@+id/nav_view_and_approval_tphc_tct"
+            android:icon="@drawable/ic_xem_ky_duyet_tphc_tct"
+            android:title="@string/menu_view_and_approval_tphc_tct" />
+    </group>
+
+    <item
+        android:id="@+id/bac_test"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/menu_logout" />
+
+</menu>

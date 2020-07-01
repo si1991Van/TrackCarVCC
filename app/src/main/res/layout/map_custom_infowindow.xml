@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="340dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/searchbox_border"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_5">
+
+    <TextView
+        android:id="@+id/tv_ma_lenh"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/muli_semibold"
+        android:singleLine="true"
+        android:textColor="#2a2a2a"
+        android:textSize="16sp"
+        tools:text="16/LĐX/03/2020" />
+
+    <RelativeLayout
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli"
+            android:text="@string/nguoi_lai_2"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_nguoi_lai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:gravity="end"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="NguyenMinhHoi" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_nguoi_lai"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:textColor="#969696"
+            android:textSize="14sp"
+            tools:text="036985214" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/alto" />
+
+    <RelativeLayout
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli"
+            android:text="@string/nguoi_tao_2"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_nguoi_tao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:gravity="end"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="Nguyen Minh Hoi" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/alto" />
+
+    <RelativeLayout
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli"
+            android:text="@string/content_cv"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:gravity="end"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="abc" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/alto" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli"
+            android:text="@string/thoi_gian_da_di_2"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_thoi_gian_di"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:gravity="end"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="20/03/2020 23:34" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/alto"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli"
+            android:text="@string/con_lai"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_thoi_gian_du_kien_con"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/muli_semibold"
+            android:gravity="end"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="..." />
+    </RelativeLayout>
+
+</LinearLayout>

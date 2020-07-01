@@ -1,0 +1,927 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+MERGED from [com.github.devdhar04:MaterialSpinner:v0.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9e4c009496cbc24492d3dce7c23157fd/MaterialSpinner-v0.1.2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.hantrungkien:BottomSheetBehavior:1.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d76e216f96ad4bf05d05f56ce681e6d7/BottomSheetBehavior-1.0.3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.afollestad.material-dialogs:input:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/053c8634d7902ca224e4d35dc8322aad/input-3.2.1/AndroidManifest.xml:2:1-13:12
+MERGED from [com.afollestad.material-dialogs:core:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/24c9a346275d80457827ad1d0480cc50/core-3.2.1/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.GrenderG:Toasty:1.4.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bf4a3084a5b7a391942c1eff03907144/jetified-Toasty-1.4.2/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4f61504adb4c957302d8e3529d5406f5/navigation-ui-ktx-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-ui:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9cd6b03939a03c6ff365c0ffc245e9d7/jetified-navigation-ui-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.HITGIF:TextFieldBoxes:1.4.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e124d8f30fefe3e4e06dd546f58794b0/jetified-TextFieldBoxes-1.4.5/AndroidManifest.xml:2:1-9:12
+MERGED from [com.shreyaspatil:MaterialDialog:2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/79831475df7275ff189ffe01f8d9db4d/MaterialDialog-2.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.material:material:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4369037d8067509f196e5aa5839a922e/material-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.onemandan:MaterialTextView:0.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f9d4b87a0710716b09967ff5c8db8290/jetified-MaterialTextView-0.0.5/AndroidManifest.xml:2:1-11:12
+MERGED from [com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2fae027441ddcb99def6d34af703ffa1/jetified-MultiWaveHeader-1.0.0-alpha-1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.florent37:singledateandtimepicker:2.1.4] /Users/vansi/.gradle/caches/transforms-2/files-2.1/892bf38054a0b9cf0bd00216c282f68e/jetified-singledateandtimepicker-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [gun0912.ted:tedpermission-rx2:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3ea76466464a742aeb07862fbdead069/tedpermission-rx2-2.2.2/AndroidManifest.xml:2:1-12:12
+MERGED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:2:1-17:12
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/96ebe0ca083ed2c687cbe63bf57c0c36/lottie-3.3.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/fb9ac5e21774966f594ebd279cc34bdd/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7f55ad8b3e8b35910e9f5f48e141a986/core-ktx-1.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.aarsy.googlemapsanimations:googlemapsanimations:1.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9506c5c6977616d0af20d9bd1848c22f/googlemapsanimations-1.0.5/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:17:1-38:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/eafb5c33a00f7dc8242164868b7fa815/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/71bdad9cb3dff536d97faf72c89f9b64/lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:17:1-44:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/87018c30865d21a49974dc867ab5ba39/rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9db4562db3a6e260d0803a5f9fb25a04/navigation-fragment-ktx-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d51e6d691421ca80ba46d6e12203f9d2/navigation-fragment-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/debfd25d3715f1c68bcbb17f2e96bf77/lifecycle-extensions-2.2.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f47bee423c24d9dd94aa126955716226/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [jp.wasabeef:recyclerview-animators:3.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/503d2231e9667310cf94e7aa28b934fd/recyclerview-animators-3.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] /Users/vansi/.gradle/caches/transforms-2/files-2.1/583bdc37e65d8ab0ab5a0e1a188a81b0/library-1.5.6/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:17:1-132:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/c37a67a5f549d5ac9c9129c9f659771a/play-services-location-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.kaopiz:kprogresshud:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/09203b6ba8f794936fa80d64173f5234/kprogresshud-1.2.0/AndroidManifest.xml:2:1-15:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a62303a0aa30fa5176ab6a54a863c888/navigation-runtime-ktx-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f9d070aef706452a7618da29d34b960b/navigation-common-ktx-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e8bf575b74287e591f74c5381f464cb9/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5afd93537d0e4871c9a73ac7e13e3aa2/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/6ff66cc9df003206bd757314c549711d/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3df9e5b30ad5cb11dd88c8883214c18d/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d2e08dff5e970e16097a34363c813628/firebase-iid-interop-17.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:15:1-34:12
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:2:1-23:12
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/643454e2a3be091cae15c6a2c9f107fd/firebase-installations-interop-16.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2735c92598e0fd5ff1b41e162551df63/play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d6ff17d43ba1b1160d72f065dc5a27d6/firebase-measurement-connector-18.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bc87e490863ccbe865b90d347fef14cb/play-services-places-placereport-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aecd3db04378a0f373d5ebdb4d2cdb46/play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e05e6b1ed95b7f13af18613ea831acd5/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.media:media:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a9a3182f2bbf606af60110c8e41b12c1/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3fec0761f509cc7abdbe5761b44a7321/navigation-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a2fd5859b9b37210e1d159a955e46d24/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2a7394d6a85232801c14a7e1aa03904b/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/80e697ef87181a314729d38ed424fe8b/fragment-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/59bea6fa6876888e0d41c6c20e799558/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ad4861690904a20c51542b4e7575c66b/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8c05c95ce19da9b20f8fc7c7622dc8ac/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5fe6590cd377bd4c07e7aa8ad79ec941/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/c556f3b1abdce6dac21abceb52c42770/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5639ca2234247015e6130e3f98a131ec/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/95d03666d18d989740dbf256e5f528b6/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/793363f5a80a7dbd67c1a0ce95f98e02/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/98d401a3b53b537a08543007f2892d13/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2b2a44cd2410ef358765a925cbda02ac/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3485581af5e45ae2d18841a7aadde8ad/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4ee9a3f4673153f57673fb30e5f49b92/navigation-common-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/fa60a7c17939f56ee92b705c895d8abe/activity-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a51ba6d9c77acb3f5fe11e4c304e2b17/core-1.2.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/41791fce2048efc4cad76ac033444caf/lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e612aafcdda0fb8c75b15094bd7d4315/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ecb57ca21228626027e3a8366217b298/jetified-firebase-components-16.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/98ad3fabb7f188bd794fbe52c18688e2/firebase-encoders-json-16.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:17:1-32:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/547362e7dd2ca4dd9179f83f6e0e5c3f/lifecycle-service-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2debf63f25ec9e6f3db369c170a0147d/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/81d1ac0badd1c68ea7123c50c6cb4ea8/lifecycle-livedata-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.2.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7df4f4f85fe22465a2c05574e7dae3bb/room-runtime-2.2.3/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/0a7d923f046f35a5d29f451763d131af/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/21b858206856d1b44ec564335301d99c/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5049b3ad937b7b5a21f7695f0da45599/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9a110a2c3e9078e96675dcc87c554cd6/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bdbc52b2c3359711af7d0bdfaedd789d/sqlite-framework-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/40742dbbc065da7596355450faceee24/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/91e4613e458420ed7004fd7ed404fd12/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a52cf215e7e878ea923246139ab6589e/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/0740335e7d80a3951eb11dc7a540a73f/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/515d659478a99c24d9057c3251431a45/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/18c24ba5775f6cf2005fbc2b3eaafaaa/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/90beedc274499cd40f9fff715bfe8d35/transport-api-2.2.0/AndroidManifest.xml:15:1-22:12
+MERGED from [com.pnikosis:materialish-progress:1.7] /Users/vansi/.gradle/caches/transforms-2/files-2.1/61358d6f96a78fc8277edd6bda80cdde/materialish-progress-1.7/AndroidManifest.xml:2:1-13:12
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+	package
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:5:5-31
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:4:5-51
+	xmlns:dist
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:3:5-61
+	android:versionCode
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:1-123:12
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:12:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:26:5-79
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:12:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:13:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:14:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:15:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:26:5-67
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:15:22-64
+uses-permission#android.permission.CALL_PHONE
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:16:5-69
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:16:22-66
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:17:5-77
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:28:5-77
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:28:5-77
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:17:22-74
+permission#com.vcc.trackcar.permission.MAPS_RECEIVE
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:19:5-21:47
+	android:protectionLevel
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:21:9-44
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:20:9-64
+uses-feature#0x00020000
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:23:5-25:35
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:24:9-41
+	android:required
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:25:9-32
+dist:module
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:26:5-40
+	dist:instant
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:26:18-37
+application
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:28:5-121:19
+MERGED from [com.afollestad.material-dialogs:input:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/053c8634d7902ca224e4d35dc8322aad/input-3.2.1/AndroidManifest.xml:11:5-47
+MERGED from [com.afollestad.material-dialogs:input:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/053c8634d7902ca224e4d35dc8322aad/input-3.2.1/AndroidManifest.xml:11:5-47
+MERGED from [com.afollestad.material-dialogs:core:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/24c9a346275d80457827ad1d0480cc50/core-3.2.1/AndroidManifest.xml:11:5-47
+MERGED from [com.afollestad.material-dialogs:core:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/24c9a346275d80457827ad1d0480cc50/core-3.2.1/AndroidManifest.xml:11:5-47
+MERGED from [com.google.android.material:material:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4369037d8067509f196e5aa5839a922e/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4369037d8067509f196e5aa5839a922e/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [gun0912.ted:tedpermission-rx2:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3ea76466464a742aeb07862fbdead069/tedpermission-rx2-2.2.2/AndroidManifest.xml:9:5-10:19
+MERGED from [gun0912.ted:tedpermission-rx2:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3ea76466464a742aeb07862fbdead069/tedpermission-rx2-2.2.2/AndroidManifest.xml:9:5-10:19
+MERGED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:9:5-15:19
+MERGED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:9:5-15:19
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/96ebe0ca083ed2c687cbe63bf57c0c36/lottie-3.3.0/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/96ebe0ca083ed2c687cbe63bf57c0c36/lottie-3.3.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.aarsy.googlemapsanimations:googlemapsanimations:1.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9506c5c6977616d0af20d9bd1848c22f/googlemapsanimations-1.0.5/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.aarsy.googlemapsanimations:googlemapsanimations:1.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9506c5c6977616d0af20d9bd1848c22f/googlemapsanimations-1.0.5/AndroidManifest.xml:11:5-15:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:22:5-42:19
+MERGED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:22:5-42:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/debfd25d3715f1c68bcbb17f2e96bf77/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/debfd25d3715f1c68bcbb17f2e96bf77/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f47bee423c24d9dd94aa126955716226/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f47bee423c24d9dd94aa126955716226/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] /Users/vansi/.gradle/caches/transforms-2/files-2.1/583bdc37e65d8ab0ab5a0e1a188a81b0/library-1.5.6/AndroidManifest.xml:11:5-20
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] /Users/vansi/.gradle/caches/transforms-2/files-2.1/583bdc37e65d8ab0ab5a0e1a188a81b0/library-1.5.6/AndroidManifest.xml:11:5-20
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:30:5-130:19
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:30:5-130:19
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/c37a67a5f549d5ac9c9129c9f659771a/play-services-location-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/c37a67a5f549d5ac9c9129c9f659771a/play-services-location-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.kaopiz:kprogresshud:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/09203b6ba8f794936fa80d64173f5234/kprogresshud-1.2.0/AndroidManifest.xml:11:5-13:38
+MERGED from [com.kaopiz:kprogresshud:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/09203b6ba8f794936fa80d64173f5234/kprogresshud-1.2.0/AndroidManifest.xml:11:5-13:38
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d2e08dff5e970e16097a34363c813628/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d2e08dff5e970e16097a34363c813628/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:13:5-21:19
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:13:5-21:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:25:5-37:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:25:5-37:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2735c92598e0fd5ff1b41e162551df63/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2735c92598e0fd5ff1b41e162551df63/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d6ff17d43ba1b1160d72f065dc5a27d6/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d6ff17d43ba1b1160d72f065dc5a27d6/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bc87e490863ccbe865b90d347fef14cb/play-services-places-placereport-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bc87e490863ccbe865b90d347fef14cb/play-services-places-placereport-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aecd3db04378a0f373d5ebdb4d2cdb46/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aecd3db04378a0f373d5ebdb4d2cdb46/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e05e6b1ed95b7f13af18613ea831acd5/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e05e6b1ed95b7f13af18613ea831acd5/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a51ba6d9c77acb3f5fe11e4c304e2b17/core-1.2.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a51ba6d9c77acb3f5fe11e4c304e2b17/core-1.2.0/AndroidManifest.xml:24:5-89
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
+MERGED from [androidx.room:room-runtime:2.2.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7df4f4f85fe22465a2c05574e7dae3bb/room-runtime-2.2.3/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.room:room-runtime:2.2.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7df4f4f85fe22465a2c05574e7dae3bb/room-runtime-2.2.3/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/91e4613e458420ed7004fd7ed404fd12/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/91e4613e458420ed7004fd7ed404fd12/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [com.pnikosis:materialish-progress:1.7] /Users/vansi/.gradle/caches/transforms-2/files-2.1/61358d6f96a78fc8277edd6bda80cdde/materialish-progress-1.7/AndroidManifest.xml:11:5-20
+MERGED from [com.pnikosis:materialish-progress:1.7] /Users/vansi/.gradle/caches/transforms-2/files-2.1/61358d6f96a78fc8277edd6bda80cdde/materialish-progress-1.7/AndroidManifest.xml:11:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a51ba6d9c77acb3f5fe11e4c304e2b17/core-1.2.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:35:9-35
+	android:label
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:33:9-41
+	android:hardwareAccelerated
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:31:9-44
+	android:windowSoftInputMode
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:38:9-71
+	android:largeHeap
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:34:9-33
+	android:icon
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:32:9-53
+	android:allowBackup
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:30:9-36
+		REJECTED from [com.github.aarsy.googlemapsanimations:googlemapsanimations:1.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9506c5c6977616d0af20d9bd1848c22f/googlemapsanimations-1.0.5/AndroidManifest.xml:12:9-35
+		REJECTED from [com.kaopiz:kprogresshud:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/09203b6ba8f794936fa80d64173f5234/kprogresshud-1.2.0/AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:36:9-40
+	tools:replace
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:39:9-44
+	android:usesCleartextTraffic
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:37:9-44
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:29:9-36
+meta-data#com.google.android.geo.API_KEY
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:49:9-51:55
+	android:value
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:51:13-52
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:50:13-58
+meta-data#com.google.android.gms.version
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:53:9-55:69
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e05e6b1ed95b7f13af18613ea831acd5/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e05e6b1ed95b7f13af18613ea831acd5/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:55:13-66
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:54:13-58
+activity#com.vcc.trackcar.ui.splash.SplashScreenActivity
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:67:9-78:20
+	android:screenOrientation
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:70:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:72:13-52
+	android:configChanges
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:69:13-74
+	android:theme
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:71:13-62
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:68:13-59
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:73:13-77:29
+action#android.intent.action.MAIN
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:74:17-69
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:74:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:76:17-77
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:76:27-74
+activity#com.vcc.trackcar.ui.login.LoginActivity
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:80:9-85:63
+	android:screenOrientation
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:83:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:85:13-60
+	android:configChanges
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:82:13-74
+	android:theme
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:84:13-62
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:81:13-51
+activity#com.vcc.trackcar.MainActivity
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:87:9-93:55
+	android:screenOrientation
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:91:13-49
+	android:label
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:90:13-45
+	android:windowSoftInputMode
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:93:13-52
+	android:configChanges
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:89:13-74
+	android:theme
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:92:13-62
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:88:13-41
+service#com.vcc.trackcar.LocationUpdatesService
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:95:9-98:39
+	android:enabled
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:97:13-35
+	android:exported
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:98:13-36
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:96:13-51
+service#com.vcc.trackcar.ui.service.MyFirebaseMessagingService
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:100:9-106:19
+	android:exported
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:102:13-37
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:101:13-66
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:103:13-105:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:104:17-78
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:104:25-75
+meta-data#com.google.firebase.messaging.default_notification_icon
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:108:9-110:64
+	android:resource
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:110:13-61
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:109:13-83
+meta-data#com.google.firebase.messaging.default_notification_color
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:113:9-115:53
+	android:resource
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:115:13-50
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:114:13-84
+meta-data#com.google.firebase.messaging.default_notification_channel_id
+ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:117:9-119:71
+	android:value
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:119:13-68
+	android:name
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml:118:13-89
+uses-sdk
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+MERGED from [com.github.devdhar04:MaterialSpinner:v0.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9e4c009496cbc24492d3dce7c23157fd/MaterialSpinner-v0.1.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.devdhar04:MaterialSpinner:v0.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9e4c009496cbc24492d3dce7c23157fd/MaterialSpinner-v0.1.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.hantrungkien:BottomSheetBehavior:1.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d76e216f96ad4bf05d05f56ce681e6d7/BottomSheetBehavior-1.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.hantrungkien:BottomSheetBehavior:1.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d76e216f96ad4bf05d05f56ce681e6d7/BottomSheetBehavior-1.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.afollestad.material-dialogs:input:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/053c8634d7902ca224e4d35dc8322aad/input-3.2.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.afollestad.material-dialogs:input:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/053c8634d7902ca224e4d35dc8322aad/input-3.2.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.afollestad.material-dialogs:core:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/24c9a346275d80457827ad1d0480cc50/core-3.2.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.afollestad.material-dialogs:core:3.2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/24c9a346275d80457827ad1d0480cc50/core-3.2.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.GrenderG:Toasty:1.4.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bf4a3084a5b7a391942c1eff03907144/jetified-Toasty-1.4.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.GrenderG:Toasty:1.4.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bf4a3084a5b7a391942c1eff03907144/jetified-Toasty-1.4.2/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4f61504adb4c957302d8e3529d5406f5/navigation-ui-ktx-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4f61504adb4c957302d8e3529d5406f5/navigation-ui-ktx-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9cd6b03939a03c6ff365c0ffc245e9d7/jetified-navigation-ui-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9cd6b03939a03c6ff365c0ffc245e9d7/jetified-navigation-ui-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.HITGIF:TextFieldBoxes:1.4.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e124d8f30fefe3e4e06dd546f58794b0/jetified-TextFieldBoxes-1.4.5/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.HITGIF:TextFieldBoxes:1.4.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e124d8f30fefe3e4e06dd546f58794b0/jetified-TextFieldBoxes-1.4.5/AndroidManifest.xml:5:5-7:41
+MERGED from [com.shreyaspatil:MaterialDialog:2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/79831475df7275ff189ffe01f8d9db4d/MaterialDialog-2.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.shreyaspatil:MaterialDialog:2.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/79831475df7275ff189ffe01f8d9db4d/MaterialDialog-2.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4369037d8067509f196e5aa5839a922e/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4369037d8067509f196e5aa5839a922e/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.onemandan:MaterialTextView:0.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f9d4b87a0710716b09967ff5c8db8290/jetified-MaterialTextView-0.0.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.onemandan:MaterialTextView:0.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f9d4b87a0710716b09967ff5c8db8290/jetified-MaterialTextView-0.0.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2fae027441ddcb99def6d34af703ffa1/jetified-MultiWaveHeader-1.0.0-alpha-1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2fae027441ddcb99def6d34af703ffa1/jetified-MultiWaveHeader-1.0.0-alpha-1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.florent37:singledateandtimepicker:2.1.4] /Users/vansi/.gradle/caches/transforms-2/files-2.1/892bf38054a0b9cf0bd00216c282f68e/jetified-singledateandtimepicker-2.1.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.florent37:singledateandtimepicker:2.1.4] /Users/vansi/.gradle/caches/transforms-2/files-2.1/892bf38054a0b9cf0bd00216c282f68e/jetified-singledateandtimepicker-2.1.4/AndroidManifest.xml:7:5-9:41
+MERGED from [gun0912.ted:tedpermission-rx2:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3ea76466464a742aeb07862fbdead069/tedpermission-rx2-2.2.2/AndroidManifest.xml:5:5-7:41
+MERGED from [gun0912.ted:tedpermission-rx2:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3ea76466464a742aeb07862fbdead069/tedpermission-rx2-2.2.2/AndroidManifest.xml:5:5-7:41
+MERGED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:5:5-7:41
+MERGED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/96ebe0ca083ed2c687cbe63bf57c0c36/lottie-3.3.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/96ebe0ca083ed2c687cbe63bf57c0c36/lottie-3.3.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/fb9ac5e21774966f594ebd279cc34bdd/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/fb9ac5e21774966f594ebd279cc34bdd/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7f55ad8b3e8b35910e9f5f48e141a986/core-ktx-1.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7f55ad8b3e8b35910e9f5f48e141a986/core-ktx-1.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.aarsy.googlemapsanimations:googlemapsanimations:1.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9506c5c6977616d0af20d9bd1848c22f/googlemapsanimations-1.0.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.aarsy.googlemapsanimations:googlemapsanimations:1.0.5] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9506c5c6977616d0af20d9bd1848c22f/googlemapsanimations-1.0.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/eafb5c33a00f7dc8242164868b7fa815/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/eafb5c33a00f7dc8242164868b7fa815/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/71bdad9cb3dff536d97faf72c89f9b64/lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/71bdad9cb3dff536d97faf72c89f9b64/lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/87018c30865d21a49974dc867ab5ba39/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/87018c30865d21a49974dc867ab5ba39/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9db4562db3a6e260d0803a5f9fb25a04/navigation-fragment-ktx-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9db4562db3a6e260d0803a5f9fb25a04/navigation-fragment-ktx-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d51e6d691421ca80ba46d6e12203f9d2/navigation-fragment-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d51e6d691421ca80ba46d6e12203f9d2/navigation-fragment-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/debfd25d3715f1c68bcbb17f2e96bf77/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/debfd25d3715f1c68bcbb17f2e96bf77/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f47bee423c24d9dd94aa126955716226/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f47bee423c24d9dd94aa126955716226/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [jp.wasabeef:recyclerview-animators:3.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/503d2231e9667310cf94e7aa28b934fd/recyclerview-animators-3.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [jp.wasabeef:recyclerview-animators:3.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/503d2231e9667310cf94e7aa28b934fd/recyclerview-animators-3.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] /Users/vansi/.gradle/caches/transforms-2/files-2.1/583bdc37e65d8ab0ab5a0e1a188a81b0/library-1.5.6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.f0ris.sweetalert:library:1.5.6] /Users/vansi/.gradle/caches/transforms-2/files-2.1/583bdc37e65d8ab0ab5a0e1a188a81b0/library-1.5.6/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/c37a67a5f549d5ac9c9129c9f659771a/play-services-location-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/c37a67a5f549d5ac9c9129c9f659771a/play-services-location-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.kaopiz:kprogresshud:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/09203b6ba8f794936fa80d64173f5234/kprogresshud-1.2.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.kaopiz:kprogresshud:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/09203b6ba8f794936fa80d64173f5234/kprogresshud-1.2.0/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a62303a0aa30fa5176ab6a54a863c888/navigation-runtime-ktx-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a62303a0aa30fa5176ab6a54a863c888/navigation-runtime-ktx-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f9d070aef706452a7618da29d34b960b/navigation-common-ktx-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f9d070aef706452a7618da29d34b960b/navigation-common-ktx-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e8bf575b74287e591f74c5381f464cb9/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e8bf575b74287e591f74c5381f464cb9/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5afd93537d0e4871c9a73ac7e13e3aa2/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5afd93537d0e4871c9a73ac7e13e3aa2/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/6ff66cc9df003206bd757314c549711d/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/6ff66cc9df003206bd757314c549711d/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3df9e5b30ad5cb11dd88c8883214c18d/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3df9e5b30ad5cb11dd88c8883214c18d/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d2e08dff5e970e16097a34363c813628/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d2e08dff5e970e16097a34363c813628/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/643454e2a3be091cae15c6a2c9f107fd/firebase-installations-interop-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/643454e2a3be091cae15c6a2c9f107fd/firebase-installations-interop-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2735c92598e0fd5ff1b41e162551df63/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2735c92598e0fd5ff1b41e162551df63/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d6ff17d43ba1b1160d72f065dc5a27d6/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/d6ff17d43ba1b1160d72f065dc5a27d6/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bc87e490863ccbe865b90d347fef14cb/play-services-places-placereport-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bc87e490863ccbe865b90d347fef14cb/play-services-places-placereport-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aecd3db04378a0f373d5ebdb4d2cdb46/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aecd3db04378a0f373d5ebdb4d2cdb46/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e05e6b1ed95b7f13af18613ea831acd5/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e05e6b1ed95b7f13af18613ea831acd5/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a9a3182f2bbf606af60110c8e41b12c1/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a9a3182f2bbf606af60110c8e41b12c1/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3fec0761f509cc7abdbe5761b44a7321/navigation-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3fec0761f509cc7abdbe5761b44a7321/navigation-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a2fd5859b9b37210e1d159a955e46d24/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a2fd5859b9b37210e1d159a955e46d24/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2a7394d6a85232801c14a7e1aa03904b/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2a7394d6a85232801c14a7e1aa03904b/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/80e697ef87181a314729d38ed424fe8b/fragment-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/80e697ef87181a314729d38ed424fe8b/fragment-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/59bea6fa6876888e0d41c6c20e799558/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/59bea6fa6876888e0d41c6c20e799558/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ad4861690904a20c51542b4e7575c66b/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ad4861690904a20c51542b4e7575c66b/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8c05c95ce19da9b20f8fc7c7622dc8ac/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8c05c95ce19da9b20f8fc7c7622dc8ac/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5fe6590cd377bd4c07e7aa8ad79ec941/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5fe6590cd377bd4c07e7aa8ad79ec941/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/c556f3b1abdce6dac21abceb52c42770/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/c556f3b1abdce6dac21abceb52c42770/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5639ca2234247015e6130e3f98a131ec/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5639ca2234247015e6130e3f98a131ec/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/95d03666d18d989740dbf256e5f528b6/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/95d03666d18d989740dbf256e5f528b6/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/793363f5a80a7dbd67c1a0ce95f98e02/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/793363f5a80a7dbd67c1a0ce95f98e02/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/98d401a3b53b537a08543007f2892d13/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/98d401a3b53b537a08543007f2892d13/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2b2a44cd2410ef358765a925cbda02ac/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2b2a44cd2410ef358765a925cbda02ac/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3485581af5e45ae2d18841a7aadde8ad/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/3485581af5e45ae2d18841a7aadde8ad/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4ee9a3f4673153f57673fb30e5f49b92/navigation-common-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/4ee9a3f4673153f57673fb30e5f49b92/navigation-common-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/fa60a7c17939f56ee92b705c895d8abe/activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/fa60a7c17939f56ee92b705c895d8abe/activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a51ba6d9c77acb3f5fe11e4c304e2b17/core-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a51ba6d9c77acb3f5fe11e4c304e2b17/core-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/41791fce2048efc4cad76ac033444caf/lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/41791fce2048efc4cad76ac033444caf/lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e612aafcdda0fb8c75b15094bd7d4315/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/e612aafcdda0fb8c75b15094bd7d4315/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ecb57ca21228626027e3a8366217b298/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ecb57ca21228626027e3a8366217b298/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/98ad3fabb7f188bd794fbe52c18688e2/firebase-encoders-json-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/98ad3fabb7f188bd794fbe52c18688e2/firebase-encoders-json-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/547362e7dd2ca4dd9179f83f6e0e5c3f/lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/547362e7dd2ca4dd9179f83f6e0e5c3f/lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2debf63f25ec9e6f3db369c170a0147d/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/2debf63f25ec9e6f3db369c170a0147d/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/81d1ac0badd1c68ea7123c50c6cb4ea8/lifecycle-livedata-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/81d1ac0badd1c68ea7123c50c6cb4ea8/lifecycle-livedata-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7df4f4f85fe22465a2c05574e7dae3bb/room-runtime-2.2.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7df4f4f85fe22465a2c05574e7dae3bb/room-runtime-2.2.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/0a7d923f046f35a5d29f451763d131af/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/0a7d923f046f35a5d29f451763d131af/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/21b858206856d1b44ec564335301d99c/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/21b858206856d1b44ec564335301d99c/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5049b3ad937b7b5a21f7695f0da45599/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/5049b3ad937b7b5a21f7695f0da45599/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9a110a2c3e9078e96675dcc87c554cd6/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/9a110a2c3e9078e96675dcc87c554cd6/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bdbc52b2c3359711af7d0bdfaedd789d/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/bdbc52b2c3359711af7d0bdfaedd789d/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/40742dbbc065da7596355450faceee24/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/40742dbbc065da7596355450faceee24/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/91e4613e458420ed7004fd7ed404fd12/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/91e4613e458420ed7004fd7ed404fd12/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a52cf215e7e878ea923246139ab6589e/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a52cf215e7e878ea923246139ab6589e/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/0740335e7d80a3951eb11dc7a540a73f/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/0740335e7d80a3951eb11dc7a540a73f/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/515d659478a99c24d9057c3251431a45/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/515d659478a99c24d9057c3251431a45/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/18c24ba5775f6cf2005fbc2b3eaafaaa/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/18c24ba5775f6cf2005fbc2b3eaafaaa/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/90beedc274499cd40f9fff715bfe8d35/transport-api-2.2.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/90beedc274499cd40f9fff715bfe8d35/transport-api-2.2.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.pnikosis:materialish-progress:1.7] /Users/vansi/.gradle/caches/transforms-2/files-2.1/61358d6f96a78fc8277edd6bda80cdde/materialish-progress-1.7/AndroidManifest.xml:7:5-9:41
+MERGED from [com.pnikosis:materialish-progress:1.7] /Users/vansi/.gradle/caches/transforms-2/files-2.1/61358d6f96a78fc8277edd6bda80cdde/materialish-progress-1.7/AndroidManifest.xml:7:5-9:41
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+		ADDED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/vansi/Desktop/Viettell/TrackCarVCC/app/src/main/AndroidManifest.xml
+activity#com.gun0912.tedpermission.TedPermissionActivity
+ADDED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:10:9-14:67
+	android:screenOrientation
+		ADDED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:13:13-52
+	android:configChanges
+		ADDED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:12:13-144
+	android:theme
+		ADDED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:14:13-64
+	android:name
+		ADDED from [gun0912.ted:tedpermission:2.2.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/01759cc4aa2f59e243d35f3a1f264f26/jetified-tedpermission-2.2.2/AndroidManifest.xml:11:13-75
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7eb843c251db4f542cb77031d83429b8/play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:28:9-34:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:29:13-82
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:35:9-41:19
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:25:9-31:19
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:25:9-31:19
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:14:9-20:19
+MERGED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:14:9-20:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:32:9-36:35
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:32:9-36:35
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:37:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:36:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:36:13-84
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
+ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:38:13-40:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:40:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:20.1.2] /Users/vansi/.gradle/caches/transforms-2/files-2.1/ed3fb056aa6d38432600577eed015271/jetified-firebase-messaging-20.1.2/AndroidManifest.xml:39:17-119
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:25:22-65
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:27:5-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:27:22-78
+provider#androidx.work.impl.WorkManagerInitializer
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:31:9-37:35
+	android:authorities
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:33:13-68
+	android:multiprocess
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:36:13-40
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:35:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:34:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:32:13-69
+service#androidx.work.impl.background.systemalarm.SystemAlarmService
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:39:9-44:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:42:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:43:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:44:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:41:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:40:13-88
+service#androidx.work.impl.background.systemjob.SystemJobService
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:45:9-51:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:48:13-70
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:49:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:50:13-69
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:51:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:47:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:46:13-84
+service#androidx.work.impl.foreground.SystemForegroundService
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:52:9-57:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:55:13-77
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:56:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:57:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:54:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:53:13-81
+receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:59:9-64:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:62:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:63:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:64:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:61:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:60:13-88
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:65:9-75:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:68:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:69:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:70:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:67:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:66:13-106
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:71:13-74:29
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:72:17-87
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:72:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:73:17-90
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:73:25-87
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:76:9-86:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:79:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:80:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:81:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:78:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:77:13-104
+intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:82:13-85:29
+action#android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:83:17-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:83:25-74
+action#android.intent.action.BATTERY_LOW
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:84:17-76
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:84:25-73
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:87:9-97:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:90:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:91:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:92:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:89:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:88:13-104
+intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:93:13-96:29
+action#android.intent.action.DEVICE_STORAGE_LOW
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:94:17-83
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:94:25-80
+action#android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:95:17-82
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:95:25-79
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:98:9-107:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:101:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:102:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:103:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:100:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:99:13-103
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:104:13-106:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:105:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:105:25-76
+receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:108:9-119:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:111:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:112:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:113:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:110:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:109:13-88
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:114:13-118:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:115:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:115:25-76
+action#android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:116:17-73
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:116:25-70
+action#android.intent.action.TIMEZONE_CHANGED
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:117:17-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:117:25-78
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:120:9-129:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:123:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:124:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:125:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:122:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:121:13-99
+intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:126:13-128:29
+action#androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:127:17-98
+	android:name
+		ADDED from [androidx.work:work-runtime:2.3.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/358ead03fa8d11daadfd19e74b486fee/work-runtime-2.3.3/AndroidManifest.xml:127:25-95
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:26:22-79
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.1.1] /Users/vansi/.gradle/caches/transforms-2/files-2.1/f77bd979aabe61c93dd9b371f232c0b0/firebase-iid-20.1.1/AndroidManifest.xml:42:25-78
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7aef140d6929daa057df620efbe725ee/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:28:13-30:85
+	android:value
+		ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:30:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/a50cd5f1c2948473fa4b0bda637dc74d/firebase-datatransport-17.0.3/AndroidManifest.xml:29:17-115
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:16.0.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/1bee878af3b1d79ee49a6d179da0a386/firebase-installations-16.0.0/AndroidManifest.xml:18:17-127
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/aa7c5204824fcd0d5f722c895172ab51/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/72c610286c44b482722e8e98c72edd94/transport-backend-cct-2.2.0/AndroidManifest.xml:33:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/b2ce55ae2c4cc8cceff2c369b4e07b2a/transport-runtime-2.2.0/AndroidManifest.xml:33:13-132
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/vansi/.gradle/caches/transforms-2/files-2.1/8e77ac4440b1cf4de4445837e9874a59/lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7df4f4f85fe22465a2c05574e7dae3bb/room-runtime-2.2.3/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7df4f4f85fe22465a2c05574e7dae3bb/room-runtime-2.2.3/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.3] /Users/vansi/.gradle/caches/transforms-2/files-2.1/7df4f4f85fe22465a2c05574e7dae3bb/room-runtime-2.2.3/AndroidManifest.xml:26:13-74
