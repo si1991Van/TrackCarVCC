@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements
     private static final int GIAO_VIEC_LAI_XE = 6;
     private static final int XEP_XE_BAN_TCT = 7;
     private static final int XEM_VA_KY_DUYET_XE_TPHC = 8;
+    private static final int PTGD_CHUYEN_TRACH = 9;
     private static final String NHANVIEN = "NHANVIEN";
     private static final String TRUONGPHONG = "TRUONGPHONG";
     private static final String DOITRUONGXE = "DOITRUONGXE";
@@ -141,7 +142,9 @@ public class MainActivity extends AppCompatActivity implements
     private static final String BANXETCT = "BANXETCT";
     private static final String TPHANHCHINH = "TPHANHCHINH";
     private static final String LAIXE = "LAIXE";
+    private static final String PTGDCHUYENTRACH = "PTGDCHUYENTRACH";
     public static String HANHTRINH = "HANHTRINH";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_xep_xe, R.id.nav_view_and_approval,
                 R.id.nav_share, R.id.nav_xep_xe_ban_tct, R.id.nav_view_and_approval_tphc_tct,
-                R.id.nav_send)
+                R.id.nav_send, R.id.nav_view_and_approval_ptgd_chuyen_trach)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -198,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void initViewMenu() {
-        for (int i = 1; i <= 8; i++) {
+        for (int i = 1; i <= 9; i++) {
             navigationView.getMenu().getItem(i).setVisible(false);
         }
         if (CommonVCC.getUserLogin().getRoleCode() == null) return;
@@ -228,6 +231,11 @@ public class MainActivity extends AppCompatActivity implements
                 case TPHANHCHINH:
                     navigationView.getMenu().getItem(XEM_VA_KY_DUYET_XE_TPHC).setVisible(true);
                     break;
+
+                case PTGDCHUYENTRACH:
+                    navigationView.getMenu().getItem(PTGD_CHUYEN_TRACH).setVisible(true);
+                    break;
+
             }
         }
     }
@@ -556,6 +564,11 @@ public class MainActivity extends AppCompatActivity implements
             bundle.putSerializable(DetailGiaoViecFragment.EXTRA_BOOK_CAR, bookCarDto);
             bundle.putSerializable(DetailGiaoViecFragment.EXTRA_TYPE_MENU, typeMenu);
             Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment).navigate(R.id.nav_detail_giao_viec, bundle);
+        }else if (typeMenu.equals(GiaoViecFragment.TYPE_MENU)){
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(DetailGiaoViecFragment.EXTRA_BOOK_CAR, bookCarDto);
+            bundle.putSerializable(DetailGiaoViecFragment.EXTRA_TYPE_MENU, typeMenu);
+            Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment).navigate(R.id.nav_view_and_approval_ptgd_chuyen_trach, bundle);
         }
 
     }

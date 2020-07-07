@@ -36,6 +36,13 @@
         tools:layout="@layout/fragment_view_and_sign_approval" />
 
     <fragment
+        android:id="@+id/nav_view_and_approval_ptgd_chuyen_trach"
+        android:name="com.vcc.trackcar.ui.ptgd_chuyen_trach.PTGDChuyenTrachFragment"
+        android:label="PTGD chuyên trách"
+        tools:layout="@layout/fragment_view_and_sign_approval" />
+
+
+    <fragment
         android:id="@+id/nav_xep_xe"
         android:name="com.vcc.trackcar.ui.xep_xe_doi_truong_xe.XepXeFragment"
         android:label="@string/menu_xep_xe_qldx"

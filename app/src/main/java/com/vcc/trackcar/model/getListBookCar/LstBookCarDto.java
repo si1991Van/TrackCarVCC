@@ -182,6 +182,34 @@ public class LstBookCarDto implements Serializable {
     @Expose
     private String statusDriver;
 
+    @SerializedName("toAddressExtend")
+    @Expose
+    private String toAddressExtend;
+    @SerializedName("endTimeExtend")
+    @Expose
+    private String endTimeExtend;
+    @SerializedName("internalProvince")
+    @Expose
+    private long internalProvince; // 1 la noi tinh; 2 la ngoai tinh
+
+
+
+    @SerializedName("viceManagerId")
+    @Expose
+    private long viceManagerId;
+    @SerializedName("viceManagerName")
+    @Expose
+    private String viceManagerName;
+    @SerializedName("viceManagerEmail")
+    @Expose
+    private String viceManagerEmail;
+    @SerializedName("statusViceManager")
+    @Expose
+    private String statusViceManager;
+    @SerializedName("reasonViceManager")
+    @Expose
+    private String reasonViceManager;
+
     public String getStatusDriver() {
         return statusDriver;
     }
@@ -636,5 +664,69 @@ public class LstBookCarDto implements Serializable {
 
     public void setStatusDriverBoard(String statusDriverBoard) {
         this.statusDriverBoard = statusDriverBoard;
+    }
+
+    public String getToAddressExtend() {
+        return toAddressExtend;
+    }
+
+    public void setToAddressExtend(String toAddressExtend) {
+        this.toAddressExtend = toAddressExtend;
+    }
+
+    public String getEndTimeExtend() {
+        return endTimeExtend;
+    }
+
+    public void setEndTimeExtend(String endTimeExtend) {
+        this.endTimeExtend = endTimeExtend;
+    }
+
+    public long getInternalProvince() {
+        return internalProvince;
+    }
+
+    public void setInternalProvince(long internalProvince) {
+        this.internalProvince = internalProvince;
+    }
+
+    public long getViceManagerId() {
+        return viceManagerId;
+    }
+
+    public void setViceManagerId(long viceManagerId) {
+        this.viceManagerId = viceManagerId;
+    }
+
+    public String getViceManagerName() {
+        return viceManagerName;
+    }
+
+    public void setViceManagerName(String viceManagerName) {
+        this.viceManagerName = viceManagerName;
+    }
+
+    public String getViceManagerEmail() {
+        return viceManagerEmail;
+    }
+
+    public void setViceManagerEmail(String viceManagerEmail) {
+        this.viceManagerEmail = viceManagerEmail;
+    }
+
+    public String getStatusViceManager() {
+        return statusViceManager;
+    }
+
+    public void setStatusViceManager(String statusViceManager) {
+        this.statusViceManager = statusViceManager;
+    }
+
+    public String getReasonViceManager() {
+        return reasonViceManager;
+    }
+
+    public void setReasonViceManager(String reasonViceManager) {
+        this.reasonViceManager = reasonViceManager;
     }
 }

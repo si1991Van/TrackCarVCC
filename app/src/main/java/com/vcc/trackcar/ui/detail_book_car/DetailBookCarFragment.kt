@@ -21,10 +21,12 @@ import com.shreyaspatil.MaterialDialog.MaterialDialog
 import com.tedpark.tedpermission.rx2.TedRx2Permission
 import com.vcc.trackcar.MainActivity
 import com.vcc.trackcar.R
+import com.vcc.trackcar.model.addBookCar.BookCarDto
 import com.vcc.trackcar.model.addBookCar.SysUserRequest
 import com.vcc.trackcar.model.administrativeApproveRejectBookCar.AdministrativeApproveRejectBookCarBody
 import com.vcc.trackcar.model.administrativeApproveRejectBookCar.AdministrativeApproveRejectBookCarRespon
 import com.vcc.trackcar.model.auth.AuthenticationInfo
+import com.vcc.trackcar.model.auth.ResultInfo
 import com.vcc.trackcar.model.closeBookCar.CloseBookCarBody
 import com.vcc.trackcar.model.closeBookCar.CloseBookCarRespon
 import com.vcc.trackcar.model.closeManagerBookCar.CloseManagerBookCarBody
@@ -32,17 +34,22 @@ import com.vcc.trackcar.model.closeManagerBookCar.CloseManagerBookCarRespon
 import com.vcc.trackcar.model.driverBoardApproveRejectBookCar.DriverBoardApproveRejectBookCarBody
 import com.vcc.trackcar.model.driverBoardApproveRejectBookCar.DriverBoardApproveRejectBookCarRespon
 import com.vcc.trackcar.model.getListBookCar.LstBookCarDto
+import com.vcc.trackcar.model.getListUser.LstUserDto
 import com.vcc.trackcar.model.getListUserTogether.GetListUserTogetherBody
 import com.vcc.trackcar.model.getListUserTogether.GetListUserTogetherRespon
 import com.vcc.trackcar.model.manageApproveRejectBookCar.ManageApproveRejectBookCarBody
 import com.vcc.trackcar.model.manageApproveRejectBookCar.ManageApproveRejectBookCarRespon
 import com.vcc.trackcar.model.managerCarApproveRejectBookCar.ManagerCarApproveRejectBookCarBody
 import com.vcc.trackcar.model.managerCarApproveRejectBookCar.ManagerCarApproveRejectBookCarRespon
+import com.vcc.trackcar.model.updateBookCar.UpdateBookCarBody
+import com.vcc.trackcar.model.updateBookCar.UpdateBookCarRespon
 import com.vcc.trackcar.remote.API
 import com.vcc.trackcar.ui.base.CommonVCC
 import com.vcc.trackcar.ui.detail_book_car.adapter.PeopleTogetherAdapter
+import com.vcc.trackcar.ui.detail_book_car.dialog.DialogRateBookCar
 import com.vcc.trackcar.ui.detail_book_car.open_command.OpenCommandFragment
 import com.vcc.trackcar.ui.list_book_added.ListBookAddedFragment
+import com.vcc.trackcar.ui.ptgd_chuyen_trach.PTGDChuyenTrachFragment
 import com.vcc.trackcar.ui.view_and_sign_approval.ViewAndSignApprovalFragment
 import com.vcc.trackcar.ui.view_and_sign_approval_manager_car.ViewAndApprovalManagerCarFragment
 import com.vcc.trackcar.ui.xem_ky_duyet_tp_hanhchinh_tct.XemKyDuyetTPHCTCTFragment
@@ -55,21 +62,24 @@ import io.reactivex.schedulers.Schedulers
 import jp.wasabeef.recyclerview.animators.SlideInDownAnimator
 import kotlinx.android.synthetic.main.detail_book_car_fragment.*
 import uk.co.onemandan.materialtextview.MaterialTextView
+import java.io.Serializable
 
 class DetailBookCarFragment : Fragment() {
 
     companion object {
         const val EXTRA_BOOK_CAR = "EXTRA_BOOK_CAR"
         const val EXTRA_TYPE_MENU = "EXTRA_TYPE_MENU"
+        const val PTGDCHUYENTRACH = "PTGDCHUYENTRACH"
 
         fun newInstance() = DetailBookCarFragment()
     }
 
     private lateinit var mainActivcity: MainActivity
     private lateinit var viewModel: DetailBookCarViewModel
-
+    private lateinit var listPeopleTogetherSelected: List<LstUserDto>
     private var peopleTogetherAdapter = PeopleTogetherAdapter()
     private var peopleApproveAdapter = PeopleTogetherAdapter()
+//    private var type: String = ""
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -132,6 +142,7 @@ class DetailBookCarFragment : Fragment() {
             // mo man hinh mo lenh.
             val bundle = Bundle()
             bundle.putSerializable(OpenCommandFragment.EXTRA_OPEN_COMMAND, viewModel.bookCarDto)
+            bundle.putSerializable(OpenCommandFragment.EXTRA_LIST_USER, listPeopleTogetherSelected as Serializable)
             mainActivcity.navigateFragment(R.id.nav_open_command, bundle)
         }
     }
@@ -139,6 +150,7 @@ class DetailBookCarFragment : Fragment() {
     private fun initData() {
         viewModel.bookCarDto = arguments?.getSerializable(EXTRA_BOOK_CAR) as LstBookCarDto
         viewModel.typeMenu = arguments?.getInt(EXTRA_TYPE_MENU, 0)
+//        type = arguments?.getString(PTGDCHUYENTRACH).toString()
 
         if (!viewModel.bookCarDto.licenseCar.isNullOrEmpty() || !viewModel.bookCarDto.driverName.isNullOrEmpty()) {
             layout_chon_xe_va_lai_xe.visibility = View.VISIBLE
@@ -160,6 +172,16 @@ class DetailBookCarFragment : Fragment() {
             }
         }
 
+        if (viewModel.typeMenu == PTGDChuyenTrachFragment.TYPE_MENU){
+            var bookCarDto = viewModel.bookCarDto
+
+            if (bookCarDto.typeBookCar == "4" && bookCarDto.status == "2" && bookCarDto.statusViceManager == "2"){
+                viewBookCar()
+            }
+
+
+        }
+
         if (viewModel.typeMenu == ListBookAddedFragment.TYPE_MENU) {
 
             var bookCarDto = viewModel.bookCarDto
@@ -168,7 +190,9 @@ class DetailBookCarFragment : Fragment() {
                 closeBookCar()
             } else if (bookCarDto.typeBookCar == "3" && bookCarDto.status == "2" && bookCarDto.statusCaptainCar == "2") {
                 closeBookCar()
-            } else viewBookCar()
+            }else if (bookCarDto.typeBookCar == "4" && bookCarDto.status == "2" && bookCarDto.statusViceManager == "2") {
+                closeBookCar()
+            }else viewBookCar()
         }
 
         if (viewModel.typeMenu == ViewAndSignApprovalFragment.TYPE_MENU) {
@@ -196,6 +220,7 @@ class DetailBookCarFragment : Fragment() {
                 btn_tu_choi.visibility = View.GONE
                 btn_yeu_cau_sua.visibility = View.GONE
                 btn_dong_lenh.visibility = View.GONE
+                btn_mo_lenh.visibility = View.GONE
             } else if (viewModel.bookCarDto.statusManagerCar == "1" && viewModel.bookCarDto.typeBookCar == "3" && viewModel.bookCarDto.status != "5") {
                 // view lenh
                 viewBookCar()
@@ -247,8 +272,11 @@ class DetailBookCarFragment : Fragment() {
 
         text_time_start.text = viewModel.bookCarDto.startTime
 
-        text_time_end.text = viewModel.bookCarDto.endTime
-
+        if (viewModel.bookCarDto.endTimeExtend != null){
+            text_time_end.text = viewModel.bookCarDto.endTimeExtend
+        }else{
+            text_time_end.text =viewModel.bookCarDto.endTime
+        }
         tv_type_car.setContentText(
             viewModel.bookCarDto.carTypeName, MaterialTextView.ANIMATE_TYPE.NONE
         )
@@ -271,6 +299,16 @@ class DetailBookCarFragment : Fragment() {
         fetchGetListUserTogether()
 
         peopleApproveAdapter.swapDataPeopleApprove(viewModel.bookCarDto)
+
+        if (viewModel.bookCarDto.toAddressExtend != null){
+            text_pos_toAddressExtend.text = viewModel.bookCarDto.toAddressExtend
+        }else{
+            imvToAddressExtend.visibility = View.GONE
+            imv_location_toAddressExtend.visibility = View.GONE
+            text_label_location_toAddressExtend.visibility = View.GONE
+            layout_location_toAddressExtend.visibility = View.GONE
+        }
+
     }
 
     private fun fetchGetListUserTogether() {
@@ -291,7 +329,7 @@ class DetailBookCarFragment : Fragment() {
                     mainActivcity.hideLoading()
                     if (respon.resultInfo.status == CommonVCC.RESULT_STATUS_OK) {
                         peopleTogetherAdapter.swapData(respon.lstBookCarDto)
-
+                        listPeopleTogetherSelected = respon.lstBookCarDto
                         text_so_nguoi_di_cung_da_chon.text = getString(
                             R.string.num_people_together_selected, respon.lstBookCarDto.size
                         )
@@ -374,8 +412,58 @@ class DetailBookCarFragment : Fragment() {
             fetchDriverBoardApproveRejectBookCar(flag, lyDoDongViec)
         } else if (viewModel.typeMenu == XemKyDuyetTPHCTCTFragment.TYPE_MENU) {
             fetchAdministrativeApproveRejectBookCar(flag, lyDoDongViec)
+        }else if (viewModel.typeMenu == PTGDChuyenTrachFragment.TYPE_MENU){
+            viceManagerApproveRejectBookCar(flag, lyDoDongViec)
         }
 
+    }
+
+    private fun viceManagerApproveRejectBookCar(flag: Int, lyDoDongViec: String) {
+        var body = AdministrativeApproveRejectBookCarBody().apply {
+            bookCarDto = viewModel.bookCarDto.apply {
+//                this.reasonAdministrative = reasonManage
+                this.reasonViceManager = reasonManage
+            }
+            sysUserRequest = SysUserRequest().apply {
+                var userLogin = CommonVCC.getUserLogin()
+                authenticationInfo = AuthenticationInfo(userLogin.loginName, userLogin.password)
+                this.flag = flag
+                sysUserId = userLogin.sysUserId
+                email = userLogin.email
+                loginName = userLogin.loginName
+            }
+        }
+
+        mainActivcity.showLoading()
+
+        API.service.viceManagerApproveRejectBookCar(body).subscribeOn(Schedulers.io()) //(*)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object : SingleObserver<AdministrativeApproveRejectBookCarRespon> {
+                    override fun onSuccess(respon: AdministrativeApproveRejectBookCarRespon) {
+                        mainActivcity.hideLoading()
+                        if (respon.resultInfo.status == CommonVCC.RESULT_STATUS_OK) {
+                            Toasty.success(
+                                    activity!!, respon.resultInfo.message, Toast.LENGTH_SHORT, true
+                            ).show()
+                            mainActivcity.popBackStackFragment()
+                        } else {
+                            Toasty.error(
+                                    activity!!, respon.resultInfo.message, Toast.LENGTH_SHORT, true
+                            ).show()
+                        }
+                    }
+
+                    override fun onSubscribe(d: Disposable) {
+                    }
+
+                    override fun onError(e: Throwable) {
+                        mainActivcity.hideLoading()
+                        Toasty.error(
+                                activity!!, getString(R.string.loi_ket_noi), Toast.LENGTH_SHORT, true
+                        ).show()
+                    }
+
+                })
     }
 
     private fun fetchAdministrativeApproveRejectBookCar(flag: Int, lyDoDongViec: String) {
@@ -570,18 +658,18 @@ class DetailBookCarFragment : Fragment() {
 
     private fun viewBookCar() {
         layout_duyet_tuchoi_sua.visibility = View.GONE
-        btn_mo_lenh.visibility = View.VISIBLE
     }
 
     private fun closeBookCar() {
         layout_duyet_tuchoi_sua.visibility = View.VISIBLE
-        btn_mo_lenh.visibility = View.GONE
+        btn_mo_lenh.visibility = View.VISIBLE
         btn_duyet_lenh.visibility = View.GONE
         btn_tu_choi.visibility = View.GONE
         btn_yeu_cau_sua.visibility = View.GONE
         btn_dong_lenh.visibility = View.VISIBLE
 
         btn_dong_lenh.setOnClickListener {
+
             if (viewModel.typeMenu == ViewAndSignApprovalFragment.TYPE_MENU && viewModel.bookCarDto.typeBookCar == "4") { // close kieu di dac biet T/P Bo Phan
                 closeManagerBookCar()
                 return@setOnClickListener
@@ -609,7 +697,8 @@ class DetailBookCarFragment : Fragment() {
                             Toasty.success(
                                 activity!!, respon.resultInfo.message, Toast.LENGTH_SHORT, true
                             ).show()
-                            mainActivcity.popBackStackFragment()
+                            showDialogRate()
+
                         } else {
                             Toasty.error(
                                 activity!!, respon.resultInfo.message, Toast.LENGTH_SHORT, true
@@ -625,6 +714,7 @@ class DetailBookCarFragment : Fragment() {
                         Toasty.error(
                             activity!!, getString(R.string.loi_ket_noi), Toast.LENGTH_SHORT, true
                         ).show()
+                        showDialogRate()
                     }
 
                 })
@@ -675,5 +765,56 @@ class DetailBookCarFragment : Fragment() {
 
             })
 
+    }
+
+
+    private fun showDialogRate(){
+        val dialog = DialogRateBookCar(mainActivcity, onClickOk = {score, text ->
+            fetchUpdateBookCar(score, text)
+            mainActivcity.popBackStackFragment()
+        })
+        dialog.show()
+    }
+
+
+    private fun fetchUpdateBookCar(score: Int, scoreText: String) {
+        mainActivcity.showLoading()
+        val body = prepareBodyUpdateBookCar(score, scoreText)
+        API.service.rateBookCar(body)
+                .subscribeOn(Schedulers.io()) //(*)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object : SingleObserver<ResultInfo> {
+                    override fun onSubscribe(d: Disposable) {
+
+                    }
+                    override fun onSuccess(resultInfo: ResultInfo) {
+                        mainActivcity.hideLoading()
+                        if (resultInfo.getStatus() == CommonVCC.RESULT_STATUS_OK) {
+                            activity?.let { Toasty.success(it, resultInfo.getMessage(), Toasty.LENGTH_LONG).show() }
+                            mainActivcity.popBackStackFragment()
+                        } else {
+                            activity?.let { Toasty.error(it, resultInfo.getMessage(), Toast.LENGTH_SHORT, true).show() }
+                        }
+                    }
+
+                    override fun onError(e: Throwable) {
+                        mainActivcity.hideLoading()
+                        activity?.let { Toasty.error(it, getString(R.string.loi_ket_noi), Toast.LENGTH_SHORT, true).show() }
+                    }
+                })
+    }
+
+    private fun prepareBodyUpdateBookCar(score: Int, scoreText: String): UpdateBookCarBody {
+
+        val userLogin = CommonVCC.getUserLogin()
+        val bookCarDto = BookCarDto()
+        bookCarDto.bookCarId = viewModel.bookCarDto.bookCarId
+        bookCarDto.score = score.toLong()
+        bookCarDto.scoreText = scoreText
+
+        val sysUserRequest = SysUserRequest()
+        sysUserRequest.authenticationInfo = AuthenticationInfo(userLogin.loginName, userLogin.password)
+
+        return UpdateBookCarBody(bookCarDto, listPeopleTogetherSelected, sysUserRequest)
     }
 }

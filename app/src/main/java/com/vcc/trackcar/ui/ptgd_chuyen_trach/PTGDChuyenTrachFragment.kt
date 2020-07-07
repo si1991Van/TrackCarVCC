@@ -1,4 +1,4 @@
-package com.vcc.trackcar.ui.xem_ky_duyet_tp_hanhchinh_tct
+package com.vcc.trackcar.ui.ptgd_chuyen_trach
 
 import android.content.Context
 import android.os.Bundle
@@ -19,6 +19,7 @@ import com.vcc.trackcar.ui.base.CommonVCC
 import com.vcc.trackcar.ui.detail_book_car.DetailBookCarFragment
 import com.vcc.trackcar.ui.list_book_added.adapter.ListBookCarAdapter
 import com.vcc.trackcar.ui.list_book_added.adapter.OnItemBookListener
+import com.vcc.trackcar.ui.xem_ky_duyet_tp_hanhchinh_tct.XemKyDuyetTphctctViewModel
 import es.dmoral.toasty.Toasty
 import io.reactivex.Observable
 import io.reactivex.SingleObserver
@@ -28,12 +29,11 @@ import io.reactivex.schedulers.Schedulers
 import jp.wasabeef.recyclerview.animators.SlideInDownAnimator
 import kotlinx.android.synthetic.main.xem_ky_duyet_tphctct_fragment.*
 
-class XemKyDuyetTPHCTCTFragment : Fragment(), OnItemBookListener {
+class PTGDChuyenTrachFragment : Fragment(), OnItemBookListener {
 
     companion object {
-        const val TYPE_MENU = 9
-        const val TYPE_MENU_PTGD = 10
-        fun newInstance() = XemKyDuyetTPHCTCTFragment()
+        const val TYPE_MENU = 10
+        fun newInstance() = PTGDChuyenTrachFragment()
     }
 
     private lateinit var viewModel: XemKyDuyetTphctctViewModel
@@ -145,6 +145,7 @@ class XemKyDuyetTPHCTCTFragment : Fragment(), OnItemBookListener {
         val bundle = Bundle()
         bundle.putSerializable(DetailBookCarFragment.EXTRA_BOOK_CAR, bookCarDto)
         bundle.putSerializable(DetailBookCarFragment.EXTRA_TYPE_MENU, TYPE_MENU)
+
         mainActivcity!!.navigateFragment(R.id.nav_detail_book_car, bundle)
     }
 

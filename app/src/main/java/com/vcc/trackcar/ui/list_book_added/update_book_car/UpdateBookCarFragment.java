@@ -716,6 +716,7 @@ public class UpdateBookCarFragment extends Fragment implements View.OnClickListe
     private void fetchUpdateBookCar() {
         mainActivcity.showLoading();
         UpdateBookCarBody body = prepareBodyUpdateBookCar();
+
         API.INSTANCE.getService().updateBookCar(body)
                 .subscribeOn(Schedulers.io()) //(*)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -783,6 +784,17 @@ public class UpdateBookCarFragment extends Fragment implements View.OnClickListe
             bookCarDto.setDriverCode(mViewModel.carDieuChuyen.getDriverCode());
             bookCarDto.setPhoneNumberDriver(mViewModel.carDieuChuyen.getPhoneNumberDriver());
         }
+
+        int intTo = text_pos_to.getText().toString().lastIndexOf( " ");
+        int intFrom = text_pos_from.getText().toString().lastIndexOf( " ");
+        String strTo = text_pos_to.getText().toString().substring(intTo);
+        String strFrom = text_pos_from.getText().toString().substring(intFrom);
+        if (strTo.equals(strFrom)){
+            bookCarDto.setInternalProvince(1);
+        }else {
+            bookCarDto.setInternalProvince(2);
+        }
+
         bookCarDto.setContent(edit_text_content.getText().toString());
 
         SysUserRequest sysUserRequest = new SysUserRequest();

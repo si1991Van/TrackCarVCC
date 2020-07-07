@@ -46,6 +46,11 @@
             android:id="@+id/nav_view_and_approval_tphc_tct"
             android:icon="@drawable/ic_xem_ky_duyet_tphc_tct"
             android:title="@string/menu_view_and_approval_tphc_tct" />
+
+        <item
+            android:id="@+id/nav_view_and_approval_ptgd_chuyen_trach"
+            android:icon="@drawable/ic_danh_sach_lenh_da_lap"
+            android:title="PTGD chuyên trách" />
     </group>
 
     <item

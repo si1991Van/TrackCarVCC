@@ -1,8 +1,6 @@
 package com.vcc.trackcar.remote
 
-import android.util.Log
 import com.google.gson.GsonBuilder
-import com.vcc.trackcar.R
 import com.vcc.trackcar.model.PlacesResults
 import com.vcc.trackcar.model.addBookCar.AddBookCarBody
 import com.vcc.trackcar.model.addBookCar.AddBookCarRespon
@@ -10,6 +8,7 @@ import com.vcc.trackcar.model.administrativeApproveRejectBookCar.AdministrativeA
 import com.vcc.trackcar.model.administrativeApproveRejectBookCar.AdministrativeApproveRejectBookCarRespon
 import com.vcc.trackcar.model.auth.AuthBody
 import com.vcc.trackcar.model.auth.AuthRespon
+import com.vcc.trackcar.model.auth.ResultInfo
 import com.vcc.trackcar.model.captainCarApproveRejectBookCar.CaptainCarApproveRejectBookCarBody
 import com.vcc.trackcar.model.captainCarApproveRejectBookCar.CaptainCarApproveRejectBookCarRespon
 import com.vcc.trackcar.model.closeBookCar.CloseBookCarBody
@@ -55,28 +54,19 @@ import com.vcc.trackcar.model.updateLocation.UpdateLocationBody
 import com.vcc.trackcar.model.updateLocation.UpdateLocationRespon
 import com.vcc.trackcar.model.updateTokenUser.UpdateTokenUserBody
 import com.vcc.trackcar.model.updateTokenUser.UpdateTokenUserRespon
-import com.vcc.trackcar.ui.base.App
 import io.reactivex.Single
-import okhttp3.*
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
-import java.io.FileNotFoundException
-import java.io.IOException
-import java.io.InputStream
-import java.security.*
-import java.security.cert.Certificate
+import retrofit2.http.*
 import java.security.cert.CertificateException
-import java.security.cert.CertificateFactory
-import java.security.cert.X509Certificate
-import java.util.*
 import java.util.concurrent.TimeUnit
-import javax.net.ssl.*
+import javax.net.ssl.SSLContext
+import javax.net.ssl.TrustManager
+import javax.net.ssl.X509TrustManager
 
 object API {
 //        const val BASE_URL = "http://10.61.19.230:8866/oto-service/service/"
@@ -227,7 +217,15 @@ object API {
         @POST("BookCarRestService/service/getAppVersion")
         fun getAppVersion(): Single<GetAppVersionRespon>
 
-        @POST("BookCarRestService/service/addBookCar")
-        fun openCommand(@Body addBookCarBody: AddBookCarBody): Single<AddBookCarRespon>
+        //
+        @POST("BookCarRestService/service/rateBookCar")
+        fun rateBookCar(@Body updateBookCarBody: UpdateBookCarBody): Single<ResultInfo>
+
+        @POST("BookCarRestService/service/extendBookCar")
+        fun extentBookCar(@Body addBookCarBody: AddBookCarBody): Single<AddBookCarRespon>
+
+        @POST("BookCarRestService/service/viceManagerApproveRejectBookCar")
+        fun viceManagerApproveRejectBookCar(@Body administrativeApproveRejectBookCarBody: AdministrativeApproveRejectBookCarBody): Single<AdministrativeApproveRejectBookCarRespon>
+
     }
 }

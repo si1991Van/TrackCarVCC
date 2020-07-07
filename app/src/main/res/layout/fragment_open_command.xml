@@ -72,7 +72,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/ic_next_1" />
 
@@ -138,10 +137,14 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="12dp"
                         android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="12dp"
                         android:src="@drawable/ic_next_1_coppy_2"
-                        android:visibility="gone" />
+                        android:visibility="visible" />
 
                 </RelativeLayout>
             </LinearLayout>
@@ -180,12 +183,13 @@
                 android:background="@drawable/border_text_view"
                 android:gravity="center_vertical">
 
-                <TextView
+                <EditText
                     android:id="@+id/text_content"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="30dp"
+                    android:background="@android:color/transparent"
                     android:fontFamily="@font/muli_semibold"
                     android:textColor="#7b7b7b"
                     android:textSize="14sp"

@@ -211,6 +211,7 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
         addBookCarViewModel.getDiem_den().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
+
                 text_pos_to.setText(s.trim());
             }
         });
@@ -658,8 +659,6 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
         }else {
             bookCarDto.setInternalProvince(2);
         }
-
-
         bookCarDto.setContent(edit_text_content.getText().toString());
 
         SysUserRequest sysUserRequest = new SysUserRequest();

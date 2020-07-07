@@ -101,6 +101,21 @@ public class BookCarDto {
     @Expose
     private long internalProvince; // 1 la noi tinh; 2 la ngoai tinh
 
+    @SerializedName("score")
+    @Expose
+    private long score;
+    @SerializedName("scoreText")
+    @Expose
+    private String scoreText;
+    @SerializedName("toAddressExtend")
+    @Expose
+    private String toAddressExtend;
+    @SerializedName("endTimeExtend")
+    @Expose
+    private String endTimeExtend;
+    @SerializedName("goodsWeight")
+    @Expose
+    private double goodsWeight;
 
     public String getDriverCode() {
         return driverCode;
@@ -348,5 +363,45 @@ public class BookCarDto {
 
     public void setInternalProvince(long internalProvince) {
         this.internalProvince = internalProvince;
+    }
+
+    public long getScore() {
+        return score;
+    }
+
+    public void setScore(long score) {
+        this.score = score;
+    }
+
+    public String getScoreText() {
+        return scoreText;
+    }
+
+    public void setScoreText(String scoreText) {
+        this.scoreText = scoreText;
+    }
+
+    public String getToAddressExtend() {
+        return toAddressExtend;
+    }
+
+    public void setToAddressExtend(String toAddressExtend) {
+        this.toAddressExtend = toAddressExtend;
+    }
+
+    public String getEndTimeExtend() {
+        return endTimeExtend;
+    }
+
+    public void setEndTimeExtend(String endTimeExtend) {
+        this.endTimeExtend = endTimeExtend;
+    }
+
+    public double getGoodsWeight() {
+        return goodsWeight;
+    }
+
+    public void setGoodsWeight(double goodsWeight) {
+        this.goodsWeight = goodsWeight;
     }
 }

@@ -4,13 +4,15 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.vcc.trackcar.ui.select_address.model.DataSelectAddress;
 
-import com.vcc.trackcar.model.getListBookCar.LstBookCarDto;
-
+import java.util.Date;
 
 public class OpenCommandViewModel extends ViewModel {
 
-    public LstBookCarDto bookCarDto;
+
+    public Date dateStart = null;
+    public DataSelectAddress dataSelectAddress = new DataSelectAddress();
 
     private MutableLiveData<String> time_end_text;
 
@@ -22,8 +24,6 @@ public class OpenCommandViewModel extends ViewModel {
         diem_den = new MutableLiveData<>();
     }
 
-
-
     public LiveData<String> getTime_end_text() {
         return time_end_text;
     }
@@ -31,7 +31,6 @@ public class OpenCommandViewModel extends ViewModel {
     public void setTime_end_text(String time_end_text) {
         this.time_end_text.setValue(time_end_text);
     }
-
 
     public LiveData<String> getDiem_den() {
         return diem_den;
@@ -41,4 +40,6 @@ public class OpenCommandViewModel extends ViewModel {
         this.diem_den.setValue(diem_den);
     }
 
+    public com.vcc.trackcar.model.getListBookCar.LstBookCarDto bookCarDto = new com.vcc.trackcar.model.getListBookCar.LstBookCarDto();
+    public com.vcc.trackcar.model.getListDriverCar.LstBookCarDto carDieuChuyen = new com.vcc.trackcar.model.getListDriverCar.LstBookCarDto();
 }

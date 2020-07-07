@@ -11,6 +11,7 @@ import com.vcc.trackcar.R
 import com.vcc.trackcar.model.getListBookCar.LstBookCarDto
 import com.vcc.trackcar.ui.base.App.getContext
 import com.vcc.trackcar.ui.giao_viec.GiaoViecFragment
+import com.vcc.trackcar.ui.ptgd_chuyen_trach.PTGDChuyenTrachFragment
 import com.vcc.trackcar.ui.view_and_sign_approval.ViewAndSignApprovalFragment
 import com.vcc.trackcar.ui.view_and_sign_approval_manager_car.ViewAndApprovalManagerCarFragment
 import com.vcc.trackcar.ui.xem_ky_duyet_tp_hanhchinh_tct.XemKyDuyetTPHCTCTFragment
@@ -138,7 +139,41 @@ class ListBookCarAdapter(
                     itemView.layout_reason.visibility = View.GONE
                     itemView.view_layout_reason.visibility = View.GONE
                 }
-            } else if (typeMenu == ViewAndApprovalManagerCarFragment.TYPE_MENU) { // Xem và ký duyệt xe(Thủ trưởng đơn vị xe)
+            }else if (typeMenu == PTGDChuyenTrachFragment.TYPE_MENU){
+                when (bookCarDto.statusViceManager) {
+                    "1" -> {
+                        itemView.tv_state.text = mContext.getString(R.string.dang_cho_duyet)
+                        itemView.tv_state.setTextColor(Color.GRAY)
+                        itemView.imv_radio_status.setImageResource(R.drawable.ic_radio_button_grey_24dp)
+
+                        itemView.tv_reason.visibility = View.GONE
+                    }
+                    "2" -> {
+                        itemView.tv_state.text = mContext.getString(R.string.da_duoc_duyet)
+                        itemView.tv_state.setTextColor(Color.GREEN)
+                        itemView.imv_radio_status.setImageResource(R.drawable.ic_radio_button_green_16dp)
+
+                        itemView.tv_reason.visibility = View.GONE
+                    }
+                    "3" -> {
+                        itemView.tv_state.text = mContext.getString(R.string.tu_choi)
+                        itemView.tv_state.setTextColor(Color.RED)
+                        itemView.imv_radio_status.setImageResource(R.drawable.ic_radio_button_red_24dp)
+                    }
+                    "4" -> {
+                        itemView.tv_state.text = mContext.getString(R.string.yeu_cau_sua)
+                        itemView.tv_state.setTextColor(
+                                ContextCompat.getColor(getContext(), R.color.sunshade)
+                        )
+                        itemView.imv_radio_status.setImageResource(R.drawable.ic_radio_button_yellow_24dp)
+                    }
+                }
+                itemView.tv_reason.text = bookCarDto.reasonViceManager
+                if (bookCarDto.reasonViceManager.isNullOrEmpty()) {
+                    itemView.layout_reason.visibility = View.GONE
+                    itemView.view_layout_reason.visibility = View.GONE
+                }
+            }else if (typeMenu == ViewAndApprovalManagerCarFragment.TYPE_MENU) { // Xem và ký duyệt xe(Thủ trưởng đơn vị xe)
                 when (bookCarDto.statusManagerCar) {
                     "1" -> {
                         itemView.tv_state.text = mContext.getString(R.string.dang_cho_duyet)

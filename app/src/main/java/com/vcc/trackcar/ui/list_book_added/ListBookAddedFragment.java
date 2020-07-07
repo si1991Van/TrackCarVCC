@@ -178,15 +178,15 @@ public class ListBookAddedFragment extends Fragment implements OnItemBookListene
 
         if (status.equals("1") || status.equals("4"))
             suaLenh(bookCarDto);
-        else if ((typeBookCar.equals("1") || typeBookCar.equals("2")) && status.equals("2") && statusManagerCar.equals("4"))
+        else if (("1".equals(typeBookCar) || "2".equals(typeBookCar)) && status.equals("2") && statusManagerCar.equals("4"))
             suaLenh(bookCarDto);
-        else if ((typeBookCar.equals("1") || typeBookCar.equals("2")) && status.equals("2") && statusCaptainCar.equals("4"))
+        else if (("1".equals(typeBookCar) || "2".equals(typeBookCar)) && status.equals("2") && statusCaptainCar.equals("4"))
             suaLenh(bookCarDto);
-        else if (typeBookCar.equals("3") && status.equals("2") && statusCaptainCar.equals("4"))
+        else if ("3".equals(typeBookCar) && status.equals("2") && statusCaptainCar.equals("4"))
             suaLenh(bookCarDto);
-        else if (typeBookCar.equals("4") && status.equals("2") && statusDriverBoard.equals("4"))
+        else if ("4".equals(typeBookCar) && status.equals("2") && statusDriverBoard.equals("4"))
             suaLenh(bookCarDto);
-        else if (typeBookCar.equals("4") && status.equals("2") && (statusAdministrative != null && statusAdministrative.equals("4")))
+        else if ("4".equals(typeBookCar) && status.equals("2") && (statusAdministrative != null && statusAdministrative.equals("4")))
             suaLenh(bookCarDto);
         else detailBookCar(bookCarDto);
 

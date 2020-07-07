@@ -389,6 +389,56 @@
 
                 </RelativeLayout>
 
+                <ImageView
+                    android:id="@+id/imvToAddressExtend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/imv_location_to"
+                    android:layout_marginLeft="7dp"
+                    android:src="@drawable/line_4" />
+
+                <ImageView
+                    android:id="@+id/imv_location_toAddressExtend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_location_to"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:src="@drawable/ic_location_to" />
+
+                <TextView
+                    android:id="@+id/text_label_location_toAddressExtend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_location_to"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_toEndOf="@+id/imv_location_toAddressExtend"
+                    android:text="Điểm đến tiếp theo"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_location_toAddressExtend"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/text_label_location_toAddressExtend"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_toEndOf="@+id/imv_location_from"
+                    android:background="@drawable/border_text_view"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/text_pos_toAddressExtend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="30dp"
+                        android:textColor="#7b7b7b"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -759,25 +809,30 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_dong_lenh"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:background="@drawable/bg_btn_action"
             android:text="@string/dong_lenh"
+            android:layout_marginRight="@dimen/dp_5"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_mo_lenh"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_btn_duyet_lenh"
+            android:text="@string/mo_lenh"
             android:textColor="@android:color/white"
             android:visibility="gone" />
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_mo_lenh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:background="@drawable/bg_btn_duyet_lenh"
-        android:text="@string/mo_lenh"
-        android:textColor="@android:color/white"
-        android:visibility="gone" />
+
 
 </RelativeLayout>
