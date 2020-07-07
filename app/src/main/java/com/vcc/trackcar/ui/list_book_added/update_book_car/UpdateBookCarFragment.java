@@ -129,8 +129,12 @@ public class UpdateBookCarFragment extends Fragment implements View.OnClickListe
     private TextView text_pos_from;
     private RelativeLayout layout_location_to;
     private TextView text_pos_to;
-
+    private LinearLayout lnInternalProvince;
+    private TextView txtInternalProvince;
+    private EditText edit_text_goodsWeight;
     private EditText edit_text_content;
+    private String strTo = "";
+    private String strFrom = "";
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mViewModel = ViewModelProviders.of(this).get(UpdateBookCarViewModel.class);
@@ -248,6 +252,15 @@ public class UpdateBookCarFragment extends Fragment implements View.OnClickListe
             @Override
             public void onChanged(String s) {
                 text_pos_to.setText(s.trim());
+                int intTo = text_pos_to.getText().toString().lastIndexOf( " ");
+                int intFrom = text_pos_from.getText().toString().lastIndexOf( " ");
+                strTo = text_pos_to.getText().toString().substring(intTo);
+                strFrom = text_pos_from.getText().toString().substring(intFrom);
+                if (strTo.equals(strFrom)){
+                    txtInternalProvince.setText("Đi nội tỉnh");
+                }else {
+                    txtInternalProvince.setText("Đi ngoại tỉnh");
+                }
             }
         });
         if (mViewModel.dataSelectAddress.getType() != 0) {
@@ -257,6 +270,12 @@ public class UpdateBookCarFragment extends Fragment implements View.OnClickListe
                 mViewModel.setDiem_den(mViewModel.dataSelectAddress.getData());
             }
         }
+        if (mViewModel.bookCarDto.getInternalProvince() == 1){
+            txtInternalProvince.setText("Đi nội tỉnh");
+        }else{
+            txtInternalProvince.setText("Đi ngoại tỉnh");
+        }
+        edit_text_goodsWeight.setText(String.valueOf(mViewModel.bookCarDto.getGoodsWeight()));
     }
 
     private void fetchGetListManager() {
@@ -515,7 +534,9 @@ public class UpdateBookCarFragment extends Fragment implements View.OnClickListe
         imv_location_pin.setOnClickListener(this);
 
         text_so_nguoi_di_cung_da_chon = root.findViewById(R.id.text_so_nguoi_di_cung_da_chon);
-
+        lnInternalProvince = root.findViewById(R.id.lnInternalProvince);
+        txtInternalProvince = root.findViewById(R.id.txtInternalProvince);
+        edit_text_goodsWeight = root.findViewById(R.id.edit_text_goodsWeight);
         layout_location_from = root.findViewById(R.id.layout_location_from);
         layout_location_from.setOnClickListener(new View.OnClickListener() {
             @Override

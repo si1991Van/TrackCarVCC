@@ -192,7 +192,9 @@ public class LstBookCarDto implements Serializable {
     @Expose
     private long internalProvince; // 1 la noi tinh; 2 la ngoai tinh
 
-
+    @SerializedName("goodsWeight")
+    @Expose
+    private double goodsWeight;
 
     @SerializedName("viceManagerId")
     @Expose
@@ -728,5 +730,13 @@ public class LstBookCarDto implements Serializable {
 
     public void setReasonViceManager(String reasonViceManager) {
         this.reasonViceManager = reasonViceManager;
+    }
+
+    public double getGoodsWeight() {
+        return goodsWeight;
+    }
+
+    public void setGoodsWeight(double goodsWeight) {
+        this.goodsWeight = goodsWeight;
     }
 }

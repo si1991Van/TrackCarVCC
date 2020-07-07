@@ -114,16 +114,22 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
     SingleDateAndTimePickerDialog dialogDataTimeEnd;
     private TextView tv_bien_so, tv_nguoi_lai;
     private LinearLayout layout_chon_xe_va_lai_xe;
+
     private RelativeLayout layout_chon_xe, layout_chon_lai_xe;
     private ImageView imv_location_pin;
 
     private TextView text_so_nguoi_di_cung_da_chon;
 
+
     private RelativeLayout layout_location_from;
     private TextView text_pos_from;
     private RelativeLayout layout_location_to;
     private TextView text_pos_to;
-
+    private LinearLayout lnInternalProvince;
+    private TextView txtInternalProvince;
+    private EditText edit_text_goodsWeight;
+    private String strTo = "";
+    private String strFrom = "";
     private EditText edit_text_content;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -211,8 +217,17 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
         addBookCarViewModel.getDiem_den().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-
+                lnInternalProvince.setVisibility(View.VISIBLE);
                 text_pos_to.setText(s.trim());
+                int intTo = text_pos_to.getText().toString().lastIndexOf( " ");
+                int intFrom = text_pos_from.getText().toString().lastIndexOf( " ");
+                strTo = text_pos_to.getText().toString().substring(intTo);
+                strFrom = text_pos_from.getText().toString().substring(intFrom);
+                if (strTo.equals(strFrom)){
+                    txtInternalProvince.setText("Đi nội tỉnh");
+                }else {
+                    txtInternalProvince.setText("Đi ngoại tỉnh");
+                }
             }
         });
         if (addBookCarViewModel.dataSelectAddress.getType() != 0) {
@@ -389,6 +404,11 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
         text_so_nguoi_di_cung_da_chon = root.findViewById(R.id.text_so_nguoi_di_cung_da_chon);
 
         layout_location_from = root.findViewById(R.id.layout_location_from);
+        lnInternalProvince = root.findViewById(R.id.lnInternalProvince);
+        txtInternalProvince = root.findViewById(R.id.txtInternalProvince);
+        edit_text_goodsWeight = root.findViewById(R.id.edit_text_goodsWeight);
+
+
         layout_location_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -650,16 +670,13 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
             bookCarDto.setDriverCode(addBookCarViewModel.carDieuChuyen.getDriverCode());
             bookCarDto.setPhoneNumberDriver(addBookCarViewModel.carDieuChuyen.getPhoneNumberDriver());
         }
-        int intTo = text_pos_to.getText().toString().lastIndexOf( " ");
-        int intFrom = text_pos_from.getText().toString().lastIndexOf( " ");
-        String strTo = text_pos_to.getText().toString().substring(intTo);
-        String strFrom = text_pos_from.getText().toString().substring(intFrom);
         if (strTo.equals(strFrom)){
             bookCarDto.setInternalProvince(1);
         }else {
             bookCarDto.setInternalProvince(2);
         }
         bookCarDto.setContent(edit_text_content.getText().toString());
+        bookCarDto.setGoodsWeight(Double.parseDouble(edit_text_goodsWeight.getText().toString()));
 
         SysUserRequest sysUserRequest = new SysUserRequest();
         sysUserRequest.setAuthenticationInfo(new AuthenticationInfo(userLogin.getLoginName(), userLogin.getPassword()));
