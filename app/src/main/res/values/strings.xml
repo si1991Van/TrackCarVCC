@@ -13,7 +13,7 @@
     <string name="menu_gallery">Lập phiếu đặt xe</string>
     <string name="menu_slideshow">Danh sách phiếu đã lập</string>
     <string name="menu_duyet_phieu_tpbp">Duyệt phiếu (Trưởng bộ phận)</string>
-    <string name="menu_giao_viec_lai_xe">Giao việc (Lái Xe)</string>
+    <string name="menu_giao_viec_lai_xe">Nhận việc (Lái Xe)</string>
     <string name="menu_send">Báo cáo</string>
     <string name="dat_xe">Đặt xe</string>
     <string name="don_vi">Đơn vị</string>
@@ -164,6 +164,7 @@
     <string name="con_lai">Còn lại</string>
     <string name="nhap_content_cv">Nhập nội dung công việc</string>
     <string name="content_cv">Nội dung công việc</string>
+    <string name="content_cv_continue">Nội dung công việc tiếp theo</string>
     <string name="please_input_content">Vui lòng điền nội dung công việc !</string>
     <string name="lich_su_phieu_dat_xe_cua">Danh sách phiếu đặt của %s</string>
     <string name="no_book_history_car">Xe này không có lịch sử đặt phiếu</string>

@@ -270,12 +270,12 @@ public class UpdateBookCarFragment extends Fragment implements View.OnClickListe
                 mViewModel.setDiem_den(mViewModel.dataSelectAddress.getData());
             }
         }
-        if (mViewModel.bookCarDto.getInternalProvince() == 1){
+        if (bookCarDtoUpdate.getInternalProvince() == 1){
             txtInternalProvince.setText("Đi nội tỉnh");
         }else{
             txtInternalProvince.setText("Đi ngoại tỉnh");
         }
-        edit_text_goodsWeight.setText(String.valueOf(mViewModel.bookCarDto.getGoodsWeight()));
+        edit_text_goodsWeight.setText(String.valueOf(bookCarDtoUpdate.getGoodsWeight()));
     }
 
     private void fetchGetListManager() {

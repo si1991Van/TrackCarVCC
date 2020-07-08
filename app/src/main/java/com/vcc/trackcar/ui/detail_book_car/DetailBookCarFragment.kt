@@ -308,6 +308,13 @@ class DetailBookCarFragment : Fragment() {
             text_label_location_toAddressExtend.visibility = View.GONE
             layout_location_toAddressExtend.visibility = View.GONE
         }
+        if (viewModel.bookCarDto.internalProvince.toInt() == 1){
+            txtInternalProvince.text = "Đi nội tỉnh"
+        }else{
+            txtInternalProvince.text = "Đi ngoại tỉnh"
+        }
+        text_goodsWeight.text = viewModel.bookCarDto.goodsWeight.toString()
+
 
     }
 
@@ -662,7 +669,11 @@ class DetailBookCarFragment : Fragment() {
 
     private fun closeBookCar() {
         layout_duyet_tuchoi_sua.visibility = View.VISIBLE
-        btn_mo_lenh.visibility = View.VISIBLE
+        if (viewModel.bookCarDto.typeBookCar != "4" && viewModel.bookCarDto.toAddressExtend == null) {
+            btn_mo_lenh.visibility = View.VISIBLE
+        }else{
+            btn_mo_lenh.visibility = View.GONE
+        }
         btn_duyet_lenh.visibility = View.GONE
         btn_tu_choi.visibility = View.GONE
         btn_yeu_cau_sua.visibility = View.GONE
