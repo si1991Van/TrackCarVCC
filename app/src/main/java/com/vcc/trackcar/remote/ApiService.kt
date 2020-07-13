@@ -217,13 +217,13 @@ object API {
         @POST("BookCarRestService/service/getAppVersion")
         fun getAppVersion(): Single<GetAppVersionRespon>
 
-        //
+        //api danh gia.
         @POST("BookCarRestService/service/rateBookCar")
         fun rateBookCar(@Body updateBookCarBody: UpdateBookCarBody): Single<ResultInfo>
-
+        //api mo lenh.
         @POST("BookCarRestService/service/extendBookCar")
         fun extentBookCar(@Body addBookCarBody: AddBookCarBody): Single<AddBookCarRespon>
-
+        //api duyet tu choi yeu cau sua cua account PTGD chuyen trach
         @POST("BookCarRestService/service/viceManagerApproveRejectBookCar")
         fun viceManagerApproveRejectBookCar(@Body administrativeApproveRejectBookCarBody: AdministrativeApproveRejectBookCarBody): Single<AdministrativeApproveRejectBookCarRespon>
 

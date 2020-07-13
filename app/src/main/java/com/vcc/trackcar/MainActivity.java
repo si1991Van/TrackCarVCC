@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements
     private static final int XEP_XE_BAN_TCT = 7;
     private static final int XEM_VA_KY_DUYET_XE_TPHC = 8;
     private static final int PTGD_CHUYEN_TRACH = 9;
+    private static final int GIAM_SAT_XE = 10;
     private static final String NHANVIEN = "NHANVIEN";
     private static final String TRUONGPHONG = "TRUONGPHONG";
     private static final String DOITRUONGXE = "DOITRUONGXE";
@@ -171,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_xep_xe, R.id.nav_view_and_approval,
                 R.id.nav_share, R.id.nav_xep_xe_ban_tct, R.id.nav_view_and_approval_tphc_tct,
-                R.id.nav_send, R.id.nav_view_and_approval_ptgd_chuyen_trach)
+                R.id.nav_send, R.id.nav_view_and_approval_ptgd_chuyen_trach, R.id.nav_supervise)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -201,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void initViewMenu() {
-        for (int i = 1; i <= 9; i++) {
+        for (int i = 1; i <= 10; i++) {
             navigationView.getMenu().getItem(i).setVisible(false);
         }
         if (CommonVCC.getUserLogin().getRoleCode() == null) return;
@@ -218,15 +219,18 @@ public class MainActivity extends AppCompatActivity implements
                     break;
                 case DOITRUONGXE:
                     navigationView.getMenu().getItem(XEP_XE_QL_DX).setVisible(true);
+                    navigationView.getMenu().getItem(GIAM_SAT_XE).setVisible(true);
                     break;
                 case THUTRUONGXE:
                     navigationView.getMenu().getItem(XEM_VA_KY_DUYET_XE_TT_XE).setVisible(true);
+                    navigationView.getMenu().getItem(GIAM_SAT_XE).setVisible(true);
                     break;
                 case LAIXE:
                     navigationView.getMenu().getItem(GIAO_VIEC_LAI_XE).setVisible(true);
                     break;
                 case BANXETCT:
                     navigationView.getMenu().getItem(XEP_XE_BAN_TCT).setVisible(true);
+                    navigationView.getMenu().getItem(GIAM_SAT_XE).setVisible(true);
                     break;
                 case TPHANHCHINH:
                     navigationView.getMenu().getItem(XEM_VA_KY_DUYET_XE_TPHC).setVisible(true);

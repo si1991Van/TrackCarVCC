@@ -130,4 +130,9 @@
         android:name="com.vcc.trackcar.ui.detail_book_car.open_command.OpenCommandFragment"
         android:label="@string/title_open_command"
         tools:layout="@layout/fragment_open_command" />
+    <fragment
+        android:id="@+id/nav_supervise"
+        android:name="com.vcc.trackcar.ui.giam_sat_xe.SuperviseFragment"
+        android:label="Giám sát xe"
+        tools:layout="@layout/fragment_supervise" />
 </navigation>
