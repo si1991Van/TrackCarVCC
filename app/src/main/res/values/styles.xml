@@ -34,4 +34,10 @@
         <!--Overridden section-->
         <item name="listPreferredItemHeightSmall">56dp</item>
     </style>
+    <style name="BlackText_medium_gray" parent="@android:style/TextAppearance">
+        <!--<item name="android:textViewStyle">@style/RobotoTextViewStyle</item>-->
+        <!--<item name="android:buttonStyle">@style/RobotoButtonStyle</item>-->
+        <item name="android:textColor">@color/c2</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

@@ -101,6 +101,83 @@
                 android:padding="16dp">
 
                 <RelativeLayout
+                    android:id="@+id/rlDepartment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <ImageView
+                        android:id="@+id/imv_don_vi"
+                        android:layout_width="16dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/transport"
+                        app:srcCompat="@drawable/ic_add_car"
+                        tools:srcCompat="@drawable/ic_add_car" />
+
+                    <TextView
+                        android:id="@+id/text_label_don_vi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_toEndOf="@+id/imv_don_vi"
+                        android:text="Đơn vị"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_department"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/text_label_don_vi"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_toEndOf="@+id/imv_don_vi"
+                        android:background="@drawable/border_text_view"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="2dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/ic_search_find_detail" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/text_department"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_text_view"
+                            android:fontFamily="@font/muli_semibold"
+                            android:hint="@string/search"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/image_clear_search_department"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical|right"
+                            android:layout_marginEnd="4dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:src="@drawable/close_grey"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_8">

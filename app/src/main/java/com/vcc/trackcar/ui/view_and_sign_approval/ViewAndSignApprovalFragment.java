@@ -2,12 +2,15 @@ package com.vcc.trackcar.ui.view_and_sign_approval;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +33,7 @@ import com.vcc.trackcar.ui.base.CommonVCC;
 import com.vcc.trackcar.ui.detail_book_car.DetailBookCarFragment;
 import com.vcc.trackcar.ui.list_book_added.adapter.ListBookCarAdapter;
 import com.vcc.trackcar.ui.list_book_added.adapter.OnItemBookListener;
+import com.vcc.trackcar.utils.CommonUtils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -50,6 +54,7 @@ public class ViewAndSignApprovalFragment extends Fragment implements OnItemBookL
     private MainActivity mainActivcity;
     private ListBookCarAdapter listBookCarAdapter;
     private TextView tv_no_data;
+    private EditText edtSearch;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -129,6 +134,24 @@ public class ViewAndSignApprovalFragment extends Fragment implements OnItemBookL
         rcv_list_book_car.setAdapter(listBookCarAdapter);
 
         tv_no_data = root.findViewById(R.id.tv_no_data);
+        edtSearch = root.findViewById(R.id.edtSearch);
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                viewAndSignApprovalViewModel.listBookCar = CommonUtils.INSTANCE.searchBookCarDTO(s.toString(), viewAndSignApprovalViewModel.listBookCar);
+                listBookCarAdapter.swapData(viewAndSignApprovalViewModel.listBookCar);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override

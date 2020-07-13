@@ -140,6 +140,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
 
     private TextView marker_title;
     private GoogleMap mMap;
+    private RelativeLayout rlDepartment;
+    private AutoCompleteTextView text_department;
+    private ImageView image_clear_search_department;
 
     private CustomListViewDialog customDialog;
     private BookCarHistoryAdapter bookCarHistoryAdapter;
@@ -287,6 +290,30 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
             public void onClick(View view) {
                 text_auto_car.setText("");
                 image_clear_search.setVisibility(View.GONE);
+            }
+        });
+        rlDepartment = root.findViewById(R.id.rlDepartment);
+        text_department = root.findViewById(R.id.text_department);
+        image_clear_search_department = root.findViewById(R.id.image_clear_search_department);
+        rlDepartment.setVisibility(View.GONE);
+        String[] listRoleCode = CommonVCC.getUserLogin().getRoleCode().split(";");
+        for (String roleCode : listRoleCode) {
+            if (roleCode.equals("BANXETCT")){
+                rlDepartment.setVisibility(View.VISIBLE);
+            }
+        }
+        text_department.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                text_department.showDropDown();
+                return false;
+            }
+        });
+        image_clear_search_department.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text_department.setText("");
+                image_clear_search_department.setVisibility(View.GONE);
             }
         });
 

@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
+import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -152,6 +153,10 @@ class DetailXepXeFragment : Fragment() {
             showDialogReason(
                 getString(R.string.yeu_cau_sua), getString(R.string.yeu_cau_sua_ly_do), 4
             )
+        }
+
+        cbCarPairing.setOnCheckedChangeListener { buttonView, isChecked ->
+
         }
     }
 

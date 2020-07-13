@@ -2,6 +2,8 @@ package com.vcc.trackcar.ui.view_and_sign_approval_manager_car
 
 import android.content.Context
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.*
 import android.view.animation.OvershootInterpolator
 import android.widget.Toast
@@ -19,6 +21,7 @@ import com.vcc.trackcar.ui.base.CommonVCC
 import com.vcc.trackcar.ui.detail_book_car.DetailBookCarFragment
 import com.vcc.trackcar.ui.list_book_added.adapter.ListBookCarAdapter
 import com.vcc.trackcar.ui.list_book_added.adapter.OnItemBookListener
+import com.vcc.trackcar.utils.CommonUtils
 import es.dmoral.toasty.Toasty
 import io.reactivex.Observable
 import io.reactivex.SingleObserver
@@ -26,6 +29,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import jp.wasabeef.recyclerview.animators.SlideInDownAnimator
+import kotlinx.android.synthetic.main.search_box.*
 import kotlinx.android.synthetic.main.view_and_approval_manager_car_fragment.*
 
 class ViewAndApprovalManagerCarFragment : Fragment(), OnItemBookListener {
@@ -78,6 +82,21 @@ class ViewAndApprovalManagerCarFragment : Fragment(), OnItemBookListener {
             }
             setHasFixedSize(true)
         }
+        edtSearch.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+//                CommonUtils.searchBookCarDTO(s.toString(), viewModel.listBookCar)
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                viewModel.listBookCar = CommonUtils.searchBookCarDTO(s.toString(), viewModel.listBookCar)
+                listBookCarAdapter.swapData(viewModel.listBookCar)
+            }
+
+        })
     }
 
     private fun initData() {

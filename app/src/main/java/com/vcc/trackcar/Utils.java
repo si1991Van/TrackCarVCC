@@ -21,8 +21,13 @@ import android.content.Context;
 import android.location.Location;
 import android.preference.PreferenceManager;
 
+import com.vcc.trackcar.model.getListBookCar.LstBookCarDto;
+import com.vcc.trackcar.utils.StringUtil;
+
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 class Utils {
 
@@ -62,4 +67,6 @@ class Utils {
         return context.getString(R.string.location_updated,
                 DateFormat.getDateTimeInstance().format(new Date()));
     }
+
+
 }

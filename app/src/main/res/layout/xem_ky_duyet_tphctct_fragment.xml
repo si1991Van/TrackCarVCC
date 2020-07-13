@@ -6,6 +6,7 @@
     android:background="@color/alto"
     android:orientation="vertical"
     tools:context=".ui.select_people.SelectPeopleFragment">
+    <include layout="@layout/searchbox"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_list_book_car"
