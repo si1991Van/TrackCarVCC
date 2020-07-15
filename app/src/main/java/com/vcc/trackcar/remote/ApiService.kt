@@ -229,7 +229,7 @@ object API {
         @POST("BookCarRestService/service/viceManagerApproveRejectBookCar")
         fun viceManagerApproveRejectBookCar(@Body administrativeApproveRejectBookCarBody: AdministrativeApproveRejectBookCarBody): Single<AdministrativeApproveRejectBookCarRespon>
         // api lay ra danh sach don vi xe theo sysGroupId.
-        @POST("bookCarService/bookCar/searchCatVehicle")
+        @POST("BookCarRestService/service/searchCatVehicle")
         fun searchCatVehicle(@Body requestBody: GetListManagerBody): Single<CatVehicleReponseDTO>
 
 

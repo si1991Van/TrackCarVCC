@@ -9,7 +9,7 @@ open class BaseResponse<T> {
     @Expose
     var resultInfo: ResultInfo? = null
 
-    @SerializedName("data")
+    @SerializedName("catVehicleDTO")
     @Expose
-    var data: List<T>? = null
+    var catVehicleDTO: List<T>? = null
 }

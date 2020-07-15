@@ -49,6 +49,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.shreyaspatil.MaterialDialog.MaterialDialog;
+import com.vcc.trackcar.model.CatVehicleDTO;
 import com.vcc.trackcar.model.addBookCar.SysUserRequest;
 import com.vcc.trackcar.model.auth.AuthenticationInfo;
 import com.vcc.trackcar.model.auth.UserLogin;
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements
 
     public List<com.vcc.trackcar.model.getListDriverCar.LstBookCarDto> listCar = new ArrayList<>();
     public List<com.vcc.trackcar.model.getListDriverCar.LstBookCarDto> listDriver = new ArrayList<>();
+    public List<CatVehicleDTO> listCatVihicle = new ArrayList<>();
 
     // ================
     private static final String TAG = "resPMain";

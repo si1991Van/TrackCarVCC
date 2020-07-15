@@ -61,6 +61,7 @@ import com.kienht.bottomsheetbehavior.BottomSheetBehavior;
 import com.shreyaspatil.MaterialDialog.MaterialDialog;
 import com.vcc.trackcar.MainActivity;
 import com.vcc.trackcar.R;
+import com.vcc.trackcar.model.CatVehicleReponseDTO;
 import com.vcc.trackcar.model.addBookCar.SysUserRequest;
 import com.vcc.trackcar.model.api_matrix.Element;
 import com.vcc.trackcar.model.api_matrix.MatrixRespon;
@@ -80,6 +81,7 @@ import com.vcc.trackcar.model.getListDriverCar.BookCarDto;
 import com.vcc.trackcar.model.getListDriverCar.GetListDriverCarBody;
 import com.vcc.trackcar.model.getListDriverCar.GetListDriverCarRespon;
 import com.vcc.trackcar.model.getListDriverCar.LstBookCarDto;
+import com.vcc.trackcar.model.getListManager.GetListManagerBody;
 import com.vcc.trackcar.remote.API;
 import com.vcc.trackcar.remote.APIGG;
 import com.vcc.trackcar.ui.base.CommonVCC;
@@ -88,6 +90,7 @@ import com.vcc.trackcar.ui.direction.DirectionFinderListener;
 import com.vcc.trackcar.ui.direction.Route;
 import com.vcc.trackcar.ui.home.adapter.AutoCarAdapter;
 import com.vcc.trackcar.ui.home.adapter.BookCarHistoryAdapter;
+import com.vcc.trackcar.ui.home.adapter.CatVehicleAdapter;
 import com.vcc.trackcar.ui.home.adapter.CustomListViewDialog;
 import com.vcc.trackcar.ui.home.custom_infowindow_maps.CustomInfoWindowGoogleMap;
 import com.vcc.trackcar.ui.home.custom_infowindow_maps.InfoWindowData;
@@ -109,6 +112,7 @@ import java.util.Random;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import es.dmoral.toasty.Toasty;
+import io.reactivex.Scheduler;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -127,6 +131,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     private AutoCompleteTextView text_auto_car;
     private ImageView image_clear_search;
     private AutoCarAdapter adapterAutoCar;
+    private CatVehicleAdapter catVehicleAdapter;
 
     private RelativeLayout layout_location_from;
     private RelativeLayout layout_location_to;
@@ -160,7 +165,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     private static final Gap GAP = new Gap(PATTERN_GAP_LENGTH_PX);
     private static final Dot DOT = new Dot();
     private static final List<PatternItem> PATTERN_DOTTED = Arrays.asList(DOT, GAP);
-
+    private String[] listRoleCode = CommonVCC.getUserLogin().getRoleCode().split(";");
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -295,18 +300,41 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         rlDepartment = root.findViewById(R.id.rlDepartment);
         text_department = root.findViewById(R.id.text_department);
         image_clear_search_department = root.findViewById(R.id.image_clear_search_department);
-        rlDepartment.setVisibility(View.GONE);
-        String[] listRoleCode = CommonVCC.getUserLogin().getRoleCode().split(";");
-        for (String roleCode : listRoleCode) {
-            if (roleCode.equals("BANXETCT")){
-                rlDepartment.setVisibility(View.VISIBLE);
-            }
-        }
+        rlDepartment.setVisibility(isHasRoleCodeBANXETCT() ? View.VISIBLE : View.GONE);
+        catVehicleAdapter = new CatVehicleAdapter(root.getContext(), R.layout.item_car_search_home,
+                mainActivcity.listCatVihicle, carDto -> {
+            text_department.setText(carDto.getLicenseCar());
+            text_department.dismissDropDown();
+            mainActivcity.hideKeyBoard();
+        });
+        text_department.setAdapter(catVehicleAdapter);
+        text_department.setThreshold(0);
         text_department.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 text_department.showDropDown();
                 return false;
+            }
+        });
+        text_department.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.length() != 0) {
+                    image_clear_search_department.setVisibility(View.VISIBLE);
+                    text_department.showDropDown();
+                } else {
+                    image_clear_search_department.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
         image_clear_search_department.setOnClickListener(new View.OnClickListener() {
@@ -382,12 +410,20 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     }
 
     private boolean isHasRoleCodeHanhTrinh() {
-        String[] listRoleCode = CommonVCC.getUserLogin().getRoleCode().split(";");
+//        String[] listRoleCode = CommonVCC.getUserLogin().getRoleCode().split(";");
         for (String roleCode : listRoleCode) {
             if (roleCode.equals(MainActivity.HANHTRINH)) return true;
         }
         return false;
     }
+
+    private boolean isHasRoleCodeBANXETCT() {
+        for (String roleCode : listRoleCode) {
+            if (roleCode.equals("BANXETCT")) return true;
+        }
+        return false;
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -492,9 +528,15 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     }
 
     private void initData() {
-        if (mainActivcity.listCar.size() == 0) {
+        if (isHasRoleCodeBANXETCT()){
+            if (mainActivcity.listCatVihicle == null || mainActivcity.listCatVihicle.size() == 0){
+                getGetListCatVihicle();
+            }
+        }else {
+            if (mainActivcity.listCar.size() == 0) {
 //            fetchGetListDriverCar();
-            getchGetListCar();
+                getchGetListCar();
+            }
         }
         text_pos_from.setText(getNgayDauCuoiThang(1));
         text_pos_to.setText(getNgayDauCuoiThang(2));
@@ -520,6 +562,38 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
 
         if (type == 2) return endDay + "/" + fixMonth + "/" + year + " 23:59";
         else return "01/" + fixMonth + "/" + year + " 00:00";
+    }
+
+    private void getGetListCatVihicle(){
+        GetListManagerBody body = new GetListManagerBody();
+        body.setSysGroupId(CommonVCC.getUserLogin().getSysGroupId());
+        API.INSTANCE.getService().searchCatVehicle(body).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new SingleObserver<CatVehicleReponseDTO>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onSuccess(CatVehicleReponseDTO respon) {
+                if (respon.getResultInfo().getStatus().equals(CommonVCC.RESULT_STATUS_OK)) {
+                    if (respon.getCatVehicleDTO() != null) {
+                        if (mainActivcity.listCatVihicle != null && mainActivcity.listCatVihicle.size() > 0) {
+                            mainActivcity.listCatVihicle.clear();
+                        }
+                        mainActivcity.listCatVihicle.addAll(respon.getCatVehicleDTO());
+                        catVehicleAdapter.setList(mainActivcity.listCatVihicle);
+                    }
+                } else {
+                    Toasty.error(getActivity(), respon.getResultInfo().getMessage(), Toast.LENGTH_SHORT, true).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                showErrorDialog(getString(R.string.loi_ket_noi), getString(R.string.please_check_connect_again));
+            }
+        });
     }
 
     private void getchGetListCar() {
