@@ -1,6 +1,7 @@
 package com.vcc.trackcar.remote
 
 import com.google.gson.GsonBuilder
+import com.vcc.trackcar.model.CatVehicleReponseDTO
 import com.vcc.trackcar.model.PlacesResults
 import com.vcc.trackcar.model.addBookCar.AddBookCarBody
 import com.vcc.trackcar.model.addBookCar.AddBookCarRespon
@@ -70,7 +71,8 @@ import javax.net.ssl.X509TrustManager
 
 object API {
 //        const val BASE_URL = "http://10.61.19.230:8866/oto-service/service/"
-        const val BASE_URL = "http://10.61.18.229:8084/oto-service/service/"
+//        const val BASE_URL = "http://10.61.18.229:8084/oto-service/service/"
+        const val BASE_URL = "http://192.168.1.100:8581/oto-service/service/"
 //    const val BASE_URL = "https://qlotomobile.congtrinhviettel.com.vn/oto-service/service/"
 
     val service: AppRepository by lazy {
@@ -226,6 +228,11 @@ object API {
         //api duyet tu choi yeu cau sua cua account PTGD chuyen trach
         @POST("BookCarRestService/service/viceManagerApproveRejectBookCar")
         fun viceManagerApproveRejectBookCar(@Body administrativeApproveRejectBookCarBody: AdministrativeApproveRejectBookCarBody): Single<AdministrativeApproveRejectBookCarRespon>
+        // api lay ra danh sach don vi xe theo sysGroupId.
+        @POST("bookCarService/bookCar/searchCatVehicle")
+        fun searchCatVehicle(@Body requestBody: GetListManagerBody): Single<CatVehicleReponseDTO>
+
+
 
     }
 }
