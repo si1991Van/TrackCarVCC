@@ -49,6 +49,9 @@ import com.vcc.trackcar.model.manageApproveRejectBookCar.ManageApproveRejectBook
 import com.vcc.trackcar.model.manageApproveRejectBookCar.ManageApproveRejectBookCarRespon
 import com.vcc.trackcar.model.managerCarApproveRejectBookCar.ManagerCarApproveRejectBookCarBody
 import com.vcc.trackcar.model.managerCarApproveRejectBookCar.ManagerCarApproveRejectBookCarRespon
+import com.vcc.trackcar.model.request_body.BranchRequestBody
+import com.vcc.trackcar.model.response.BranchReponseDTO
+import com.vcc.trackcar.model.response.TypeCarTruckReponseDTO
 import com.vcc.trackcar.model.updateBookCar.UpdateBookCarBody
 import com.vcc.trackcar.model.updateBookCar.UpdateBookCarRespon
 import com.vcc.trackcar.model.updateLocation.UpdateLocationBody
@@ -228,9 +231,15 @@ object API {
         //api duyet tu choi yeu cau sua cua account PTGD chuyen trach
         @POST("BookCarRestService/service/viceManagerApproveRejectBookCar")
         fun viceManagerApproveRejectBookCar(@Body administrativeApproveRejectBookCarBody: AdministrativeApproveRejectBookCarBody): Single<AdministrativeApproveRejectBookCarRespon>
-        // api lay ra danh sach don vi xe theo sysGroupId.
+        // api lay ra danh sach bien xe theo sysGroupId.
         @POST("BookCarRestService/service/searchCatVehicle")
         fun searchCatVehicle(@Body requestBody: GetListManagerBody): Single<CatVehicleReponseDTO>
+        // api lay danh sach don vi xe
+        @POST("BookCarRestService/service/getListTypeCarTruck")
+        fun getListTypeCarTruck(): Single<TypeCarTruckReponseDTO>
+        // api lay danh sach loai xe theo kieu 5 xe ban tai.
+        @POST("BookCarRestService/service/getBranch")
+        fun getBranch(@Body requestBody: BranchRequestBody): Single<BranchReponseDTO>
 
 
 

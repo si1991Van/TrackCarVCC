@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -62,6 +63,7 @@ import com.shreyaspatil.MaterialDialog.MaterialDialog;
 import com.vcc.trackcar.MainActivity;
 import com.vcc.trackcar.R;
 import com.vcc.trackcar.model.CatVehicleReponseDTO;
+import com.vcc.trackcar.model.addBookCar.BookCarDto;
 import com.vcc.trackcar.model.addBookCar.SysUserRequest;
 import com.vcc.trackcar.model.api_matrix.Element;
 import com.vcc.trackcar.model.api_matrix.MatrixRespon;
@@ -77,11 +79,11 @@ import com.vcc.trackcar.model.getHistoryDetailCar.GetHistoryDetailCarRespon;
 import com.vcc.trackcar.model.getListCar.GetListCarBody;
 import com.vcc.trackcar.model.getListCar.GetListCarBodyDto;
 import com.vcc.trackcar.model.getListCar.GetListCarRespon;
-import com.vcc.trackcar.model.getListDriverCar.BookCarDto;
-import com.vcc.trackcar.model.getListDriverCar.GetListDriverCarBody;
-import com.vcc.trackcar.model.getListDriverCar.GetListDriverCarRespon;
 import com.vcc.trackcar.model.getListDriverCar.LstBookCarDto;
 import com.vcc.trackcar.model.getListManager.GetListManagerBody;
+import com.vcc.trackcar.model.request_body.BranchRequestBody;
+import com.vcc.trackcar.model.response.BranchReponseDTO;
+import com.vcc.trackcar.model.response.TypeCarTruckReponseDTO;
 import com.vcc.trackcar.remote.API;
 import com.vcc.trackcar.remote.APIGG;
 import com.vcc.trackcar.ui.base.CommonVCC;
@@ -92,6 +94,7 @@ import com.vcc.trackcar.ui.home.adapter.AutoCarAdapter;
 import com.vcc.trackcar.ui.home.adapter.BookCarHistoryAdapter;
 import com.vcc.trackcar.ui.home.adapter.CatVehicleAdapter;
 import com.vcc.trackcar.ui.home.adapter.CustomListViewDialog;
+import com.vcc.trackcar.ui.home.adapter.TypeCarTruckAdapter;
 import com.vcc.trackcar.ui.home.custom_infowindow_maps.CustomInfoWindowGoogleMap;
 import com.vcc.trackcar.ui.home.custom_infowindow_maps.InfoWindowData;
 
@@ -101,6 +104,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -110,9 +114,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import es.dmoral.toasty.Toasty;
-import io.reactivex.Scheduler;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -132,6 +134,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     private ImageView image_clear_search;
     private AutoCarAdapter adapterAutoCar;
     private CatVehicleAdapter catVehicleAdapter;
+    private TypeCarTruckAdapter typeCarTruckAdapter;
 
     private RelativeLayout layout_location_from;
     private RelativeLayout layout_location_to;
@@ -166,6 +169,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     private static final Dot DOT = new Dot();
     private static final List<PatternItem> PATTERN_DOTTED = Arrays.asList(DOT, GAP);
     private String[] listRoleCode = CommonVCC.getUserLogin().getRoleCode().split(";");
+    private List<BookCarDto> listTypeCarTruck = new ArrayList<>();
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -244,23 +249,41 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
                 mainActivcity.hideKeyBoard();
                 if (!isHasRoleCodeHanhTrinh()) {
                     Toasty.error(getContext(), getString(R.string.no_permission_user), Toasty.LENGTH_SHORT).show();
-                } else if (homeViewModel.carDtoSelected == null) {
+                }else if (isHasRoleCodeBANXETCT() && TextUtils.isEmpty(text_auto_car.getText().toString())){
+                    Toasty.warning(getContext(), "Vui long chọn đơn vị ", Toasty.LENGTH_SHORT).show();
+                }else if (homeViewModel.carDtoSelected == null && homeViewModel.catVehicleDTO == null) {
                     Toasty.warning(getContext(), getString(R.string.please_chon_xe), Toasty.LENGTH_SHORT).show();
                 } else if (text_pos_from.getText().equals("")) {
                     Toasty.warning(getContext(), getString(R.string.please_chon_thoi_gian_tu), Toasty.LENGTH_SHORT).show();
                 } else if (text_pos_to.getText().equals("")) {
                     Toasty.warning(getContext(), getString(R.string.please_chon_thoi_gian_den), Toasty.LENGTH_SHORT).show();
                 } else {
-                    updateInfoCar(homeViewModel.carDtoSelected);
+                    if (isHasRoleCodeBANXETCT()){
+                        updateInfoCar(homeViewModel.catVehicleDTO.getCarId(), homeViewModel.catVehicleDTO.getLicenseCar());
+                    }else {
+                        updateInfoCar(homeViewModel.carDtoSelected.getCarId(), homeViewModel.carDtoSelected.getLicenseCar());
+                    }
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
             }
         });
 
         text_auto_car = root.findViewById(R.id.text_auto_car);
-        adapterAutoCar = new AutoCarAdapter(root.getContext(), R.layout.item_car_search_home, mainActivcity.listCar, this);
-        text_auto_car.setAdapter(adapterAutoCar);
-        text_auto_car.setThreshold(0);
+        if (!isHasRoleCodeBANXETCT()){
+            adapterAutoCar = new AutoCarAdapter(root.getContext(), R.layout.item_car_search_home, mainActivcity.listCar, this);
+            text_auto_car.setAdapter(adapterAutoCar);
+            text_auto_car.setThreshold(0);
+        }else {
+            catVehicleAdapter = new CatVehicleAdapter(root.getContext(), R.layout.item_car_search_home, mainActivcity.listCatVihicle, carDto -> {
+                text_auto_car.setText(carDto.getLicenseCar());
+                text_auto_car.dismissDropDown();
+                mainActivcity.hideKeyBoard();
+                homeViewModel.catVehicleDTO = carDto;
+            });
+            text_auto_car.setAdapter(catVehicleAdapter);
+            text_auto_car.setThreshold(0);
+        }
+
         text_auto_car.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -301,13 +324,14 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         text_department = root.findViewById(R.id.text_department);
         image_clear_search_department = root.findViewById(R.id.image_clear_search_department);
         rlDepartment.setVisibility(isHasRoleCodeBANXETCT() ? View.VISIBLE : View.GONE);
-        catVehicleAdapter = new CatVehicleAdapter(root.getContext(), R.layout.item_car_search_home,
-                mainActivcity.listCatVihicle, carDto -> {
-            text_department.setText(carDto.getLicenseCar());
+        typeCarTruckAdapter = new TypeCarTruckAdapter(root.getContext(), R.layout.item_car_search_home,
+                listTypeCarTruck, carDto -> {
+            text_department.setText(carDto.getSysGroupName());
             text_department.dismissDropDown();
             mainActivcity.hideKeyBoard();
+            getGetListCatVihicle(carDto.getSysGroupId());
         });
-        text_department.setAdapter(catVehicleAdapter);
+        text_department.setAdapter(typeCarTruckAdapter);
         text_department.setThreshold(0);
         text_department.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -529,8 +553,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
 
     private void initData() {
         if (isHasRoleCodeBANXETCT()){
-            if (mainActivcity.listCatVihicle == null || mainActivcity.listCatVihicle.size() == 0){
-                getGetListCatVihicle();
+            if (listTypeCarTruck == null || listTypeCarTruck.size() == 0){
+                getListTypeCarTruck();
             }
         }else {
             if (mainActivcity.listCar.size() == 0) {
@@ -564,9 +588,40 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         else return "01/" + fixMonth + "/" + year + " 00:00";
     }
 
-    private void getGetListCatVihicle(){
+    private void getListTypeCarTruck(){
+        BranchRequestBody body = new BranchRequestBody();
+        body.setSysUserRequest(CommonVCC.getSysUserRequest());
+        body.setBookCarDto(new BookCarDto());
+        API.INSTANCE.getService().getBranch(body).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new SingleObserver<BranchReponseDTO>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onSuccess(BranchReponseDTO response) {
+                if (response.getResultInfo().getStatus().equals(CommonVCC.RESULT_STATUS_OK)){
+                    if (response.getLstBookCarDto() != null) {
+                        if (listTypeCarTruck != null && listTypeCarTruck.size() > 0) {
+                            listTypeCarTruck.clear();
+                        }
+                        listTypeCarTruck.addAll(response.getLstBookCarDto());
+                        typeCarTruckAdapter.setList(listTypeCarTruck);
+                    }
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+        });
+    }
+
+    private void getGetListCatVihicle(Integer sysGroupId){
         GetListManagerBody body = new GetListManagerBody();
-        body.setSysGroupId(CommonVCC.getUserLogin().getSysGroupId());
+        body.setSysGroupId(sysGroupId);
         API.INSTANCE.getService().searchCatVehicle(body).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(new SingleObserver<CatVehicleReponseDTO>() {
             @Override
@@ -822,13 +877,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         homeViewModel.carDtoSelected = carDto;
     }
 
-    private void updateInfoCar(LstBookCarDto carDto) {
+    private void updateInfoCar(Integer carId, String licenseCar) {
         mainActivcity.showLoading();
         GetHistoryCarBody body = new GetHistoryCarBody();
 
         CarInfoHistory bookCarDto = new CarInfoHistory();
-        bookCarDto.setCarId(carDto.getCarId());
-        bookCarDto.setLicenseCar(carDto.getLicenseCar());
+        bookCarDto.setCarId(carId);
+        bookCarDto.setLicenseCar(licenseCar);
         bookCarDto.setFromTimeSearch(text_pos_from.getText().toString());
         bookCarDto.setToTimeSearch(text_pos_to.getText().toString());
         body.setBookCarDto(bookCarDto);
@@ -859,9 +914,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
                                 homeViewModel.listBookCarHistory.addAll(respon.getLstBookCarDto());
                                 bookCarHistoryAdapter.swapData(homeViewModel.listBookCarHistory);
                                 customDialog.show();
-                                customDialog.setTitleDialog(carDto.getLicenseCar());
+                                customDialog.setTitleDialog(licenseCar);
                                 imv_list_book_car_history.setVisibility(View.VISIBLE);
-                                marker_title.setText(getString(R.string.thong_tin_xe, carDto.getLicenseCar()));
+                                marker_title.setText(getString(R.string.thong_tin_xe, licenseCar));
                             }
                         } else {
                             Toasty.error(getActivity(), respon.getResultInfo().getMessage(), Toast.LENGTH_SHORT, true).show();

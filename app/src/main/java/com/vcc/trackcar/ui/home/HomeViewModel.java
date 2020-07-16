@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.Polyline;
+import com.vcc.trackcar.model.CatVehicleDTO;
 import com.vcc.trackcar.model.getHistoryCar.BookCarHistory;
 import com.vcc.trackcar.model.getHistoryCar.MakerCar;
 import com.vcc.trackcar.model.getListDriverCar.LstBookCarDto;
@@ -19,6 +20,7 @@ public class HomeViewModel extends ViewModel {
 
     public Date dateStart = new Date();
     public LstBookCarDto carDtoSelected = null;
+    public CatVehicleDTO catVehicleDTO = null;
     public Polyline polyCar;
     public Marker makerFirst;
     public Marker makerEnd;

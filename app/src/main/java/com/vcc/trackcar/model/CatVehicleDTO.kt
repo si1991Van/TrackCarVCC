@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 class CatVehicleDTO {
     @SerializedName("carId")
     @Expose
-    var carId: Long? = 0
+    var carId: Int? = 0
     
     @SerializedName("licenseCar")
     @Expose

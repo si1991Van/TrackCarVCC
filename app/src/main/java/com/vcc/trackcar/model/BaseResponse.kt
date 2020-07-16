@@ -12,4 +12,8 @@ open class BaseResponse<T> {
     @SerializedName("catVehicleDTO")
     @Expose
     var catVehicleDTO: List<T>? = null
+
+    @SerializedName("lstBookCarDto")
+    @Expose
+    var lstBookCarDto: List<T>? = null
 }

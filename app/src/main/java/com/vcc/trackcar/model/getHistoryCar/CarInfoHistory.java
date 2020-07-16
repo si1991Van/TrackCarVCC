@@ -16,6 +16,9 @@ public class CarInfoHistory {
     @SerializedName("toTimeSearch")
     @Expose
     private String toTimeSearch;
+    @SerializedName("sysGroupId")
+    @Expose
+    private String sysGroupId;
 
     public Integer getCarId() {
         return carId;

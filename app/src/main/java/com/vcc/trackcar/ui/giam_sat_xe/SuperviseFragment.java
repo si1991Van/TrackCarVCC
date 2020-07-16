@@ -115,8 +115,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
 
     private static final int COLOR_BLACK_ARGB = 0xffd58431;
 
-    private static final int POLYLINE_STROKE_WIDTH_PX = 12;
-
     private HomeViewModel homeViewModel;
 
     private MainActivity mainActivcity;
@@ -127,10 +125,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
 
     private LinearLayout layout_location_from;
     private LinearLayout layout_location_to;
-    SingleDateAndTimePickerDialog dialogDataTimeStart;
-    SingleDateAndTimePickerDialog dialogDataTimeEnd;
-//    private TextView text_pos_to;
-//    private TextView text_pos_from;
     private Button btn_tim_kiem_xe;
 
     private BottomSheetBehavior bottomSheetBehavior;
@@ -148,8 +142,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
     private static MapRipple mapRipple;
 
     private Polyline polylineEstimate;
-    private static final int ZOOM_LEVEL = 18;
-    private static final int TILT_LEVEL = 25;
     private static final int PATTERN_GAP_LENGTH_PX = 10;
     private static final Gap GAP = new Gap(PATTERN_GAP_LENGTH_PX);
     private static final Dot DOT = new Dot();
@@ -211,20 +203,14 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
         layout_location_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialogDataTimeStart.display();
             }
         });
-        dialogDataTimeStart = initDateTimePickerDialogStart(root);
-//        text_pos_from = root.findViewById(R.id.text_pos_from);
         layout_location_to = root.findViewById(R.id.layout_location_to);
         layout_location_to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialogDataTimeEnd.display();
             }
         });
-        dialogDataTimeEnd = initDateTimePickerDialogEnd(root);
-//        text_pos_to = root.findViewById(R.id.text_pos_to);
 
         btn_tim_kiem_xe = root.findViewById(R.id.btn_tim_kiem_xe);
         btn_tim_kiem_xe.setOnClickListener(new View.OnClickListener() {
@@ -236,11 +222,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
                 } else if (homeViewModel.carDtoSelected == null) {
                     Toasty.warning(getContext(), getString(R.string.please_chon_xe), Toasty.LENGTH_SHORT).show();
                 }
-//                else if (text_pos_from.getText().equals("")) {
-//                    Toasty.warning(getContext(), getString(R.string.please_chon_thoi_gian_tu), Toasty.LENGTH_SHORT).show();
-//                } else if (text_pos_to.getText().equals("")) {
-//                    Toasty.warning(getContext(), getString(R.string.please_chon_thoi_gian_den), Toasty.LENGTH_SHORT).show();
-//                }
                 else {
                     updateInfoCar(homeViewModel.carDtoSelected);
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -409,28 +390,12 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
                 latLng = new LatLng(0.0, 0.0);
             }
             mapRipple = new MapRipple(mMap, latLng, mainActivcity.getApplicationContext());
-
-//            mapRipple.withNumberOfRipples(3);
             mapRipple.withFillColor(Color.parseColor("#FFA3D2E4"));
-//            mapRipple.withStrokeColor(Color.BLACK);
-//            mapRipple.withStrokewidth(0);      // 10dp
             mapRipple.withDistance(3000);      // 2000 metres radius
             mapRipple.withRippleDuration(12000);    //12000ms
             mapRipple.withTransparency(0.5f);
             mapRipple.startRippleMapAnimation();
 
-//            mapRadar = new MapRadar(mMap, latLng, context);
-//            //mapRadar.withClockWiseAnticlockwise(true);
-//            mapRadar.withDistance(2000);
-//            mapRadar.withClockwiseAnticlockwiseDuration(2);
-//            //mapRadar.withOuterCircleFillColor(Color.parseColor("#12000000"));
-//            mapRadar.withOuterCircleStrokeColor(Color.parseColor("#fccd29"));
-//            //mapRadar.withRadarColors(Color.parseColor("#00000000"), Color.parseColor("#ff000000"));  //starts from transparent to fuly black
-//            mapRadar.withRadarColors(Color.parseColor("#00fccd29"), Color.parseColor("#fffccd29"));  //starts from transparent to fuly black
-//            //mapRadar.withOuterCircleStrokewidth(7);
-//            //mapRadar.withRadarSpeed(5);
-//            mapRadar.withOuterCircleTransparency(0.5f);
-//            mapRadar.withRadarTransparency(0.5f);
         }
     }
 
@@ -441,11 +406,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
 
             // Asking user if explanation is needed
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)) {
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-
-                //Prompt the user once explanation has been shown
                 requestPermissions(
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         MY_PERMISSIONS_REQUEST_FINE_LOCATION);
@@ -465,11 +425,8 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
 
     private void initData() {
         if (mainActivcity.listCar.size() == 0) {
-//            fetchGetListDriverCar();
             getchGetListCar();
         }
-//        text_pos_from.setText(getNgayDauCuoiThang(1));
-//        text_pos_to.setText(getNgayDauCuoiThang(2));
     }
 
     private void fetchDirections(String origin, String destination) {
@@ -478,20 +435,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-    }
-
-    private String getNgayDauCuoiThang(int type) {
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH) + 1;
-        int endDay = cal.getActualMaximum(Calendar.DATE);
-
-        String fixMonth = "";
-        if (month / 10 == 0) fixMonth = "0" + month;
-        else fixMonth = month + "";
-
-        if (type == 2) return endDay + "/" + fixMonth + "/" + year + " 23:59";
-        else return "01/" + fixMonth + "/" + year + " 00:00";
     }
 
     private void getchGetListCar() {
@@ -561,7 +504,7 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
         info.setMaLenh(makerEnd.getCode() == null ? "" : makerEnd.getCode());
         info.setNguoiLai(makerEnd.getDriverName() == null ? "" : makerEnd.getDriverName());
         info.setNguoiTao(makerEnd.getFullName() == null ? "" : makerEnd.getFullName());
-        info.setThoiGianDi(tinhThoiGianDaDi(makerFirst.getUtcTime(), makerEnd.getUtcTime()));
+
         info.setThoiGianDuKienConLai("Chưa biết");
         info.setContent(makerEnd.getContent());
 
@@ -580,136 +523,12 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
         homeViewModel.makerEnd.showInfoWindow();
     }
 
-    private String tinhThoiGianDaDi(String dateStart, String dateStop) {
-
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date d1 = null;
-        Date d2 = null;
-        long diffSeconds = 0, diffMinutes = 0, diffHours = 0, diffDays = 0;
-        try {
-            d1 = format.parse(dateStart);
-            d2 = format.parse(dateStop);
-
-            long diff = d2.getTime() - d1.getTime();
-
-            diffSeconds = diff / 1000 % 60;
-            diffMinutes = diff / (60 * 1000) % 60;
-            diffHours = diff / (60 * 60 * 1000) % 24;
-            diffDays = diff / (24 * 60 * 60 * 1000);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        String result = "";
-        if (diffDays > 0) {
-            result += diffDays + " ngày ";
-        }
-        if (diffHours > 0) {
-            result += diffHours + " giờ ";
-        }
-        if (diffMinutes > 0) {
-            result += diffMinutes + " phút ";
-        }
-        if (diffSeconds > 0) {
-            result += diffSeconds + " giây ";
-        }
-        return result;
-    }
-
-    private void stylePolyline(Polyline polyline) {
-        polyline.setEndCap(new RoundCap());
-        polyline.setWidth(POLYLINE_STROKE_WIDTH_PX);
-        polyline.setColor(COLOR_BLACK_ARGB);
-        polyline.setJointType(JointType.ROUND);
-    }
 
     @Override
     public void onPolylineClick(Polyline polyline) {
     }
 
-    private void getApiMatricTest() {
 
-        Intent intent = null;
-        try {
-            intent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://www.google.com/maps/dir/?api=1" +
-                            "&origin=" + URLEncoder.encode("xom O, Tam Sơn, Từ Sơn, Bắc Ninh", "UTF-8") +
-                            "&destination=" + URLEncoder.encode("Ngo Gia Tu, Long Biên, Hà Nội", "UTF-8") +
-                            "&travelmode=driving"));
-
-            intent.setPackage("com.google.android.apps.maps");
-
-            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                startActivity(intent);
-            } else {
-                Toasty.warning(getContext(), getString(R.string.please_install_maps_application), Toast.LENGTH_LONG).show();
-            }
-            startActivity(intent);
-        } catch (UnsupportedEncodingException e) {
-            Toasty.warning(getContext(), getString(R.string.error_parse_address), Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void getApiMatricTest1() {
-        mainActivcity.showLoading();
-        Map<String, String> mapQuery = new HashMap<>();
-        mapQuery.put("units", "imperial");
-        mapQuery.put("origins", "21.025965, 105.788488");
-        mapQuery.put("destinations", "Ngo+gia+tu,Long+Bien|Ha+Noi,VN");
-        mapQuery.put("key", getString(R.string.google_maps_key));
-
-        APIGG.INSTANCE.getService().getDistanceInfo(mapQuery)
-                .subscribeOn(Schedulers.io()) //(*)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<MatrixRespon>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onSuccess(MatrixRespon response) {
-                        mainActivcity.hideLoading();
-                        if (response != null &&
-                                response.getRows() != null &&
-                                response.getRows().size() > 0 &&
-                                response.getRows().get(0) != null &&
-                                response.getRows().get(0).getElements() != null &&
-                                response.getRows().get(0).getElements().size() > 0 &&
-                                response.getRows().get(0).getElements().get(0) != null &&
-                                response.getRows().get(0).getElements().get(0).getDistance() != null &&
-                                response.getRows().get(0).getElements().get(0).getDuration() != null) {
-
-                            Element element = response.getRows().get(0).getElements().get(0);
-
-                            Toasty.error(getActivity(), element.getDistance().getText() + "\n" + element.getDuration().getText(), Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        mainActivcity.hideLoading();
-                        Toasty.error(getActivity(), getString(R.string.loi_ket_noi), Toast.LENGTH_SHORT, true).show();
-                    }
-                });
-    }
-
-    private LatLng getCurrentCoordinate() {
-        Location location = getCurrentLocation();
-        if (location == null) return new LatLng(21.024673, 105.789692); // so 6 Pham Van Bach
-        return new LatLng(location.getLatitude(), location.getLongitude());
-    }
-
-    private Location getCurrentLocation() {
-        int permissionCheck = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) return null;
-
-        LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-        return location;
-    }
 
     @Override
     public void onClickItemCarSearch(LstBookCarDto carDto) {
@@ -727,8 +546,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
         CarInfoHistory bookCarDto = new CarInfoHistory();
         bookCarDto.setCarId(carDto.getCarId());
         bookCarDto.setLicenseCar(carDto.getLicenseCar());
-//        bookCarDto.setFromTimeSearch(text_pos_from.getText().toString());
-//        bookCarDto.setToTimeSearch(text_pos_to.getText().toString());
         body.setBookCarDto(bookCarDto);
 
         UserLogin userLogin = CommonVCC.getUserLogin();
@@ -799,77 +616,10 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
 
     }
 
-    private SingleDateAndTimePickerDialog initDateTimePickerDialogStart(View root) {
-        return new SingleDateAndTimePickerDialog.Builder(root.getContext())
-                .titleTextColor(ContextCompat.getColor(getContext(), R.color.colorPrimary))
-                .mainColor(ContextCompat.getColor(getContext(), R.color.colorPrimary))
-                .bottomSheet()
-                .curved()
-                .displayMinutes(true)
-                .displayHours(true)
-                .displayDays(false)
-                .displayDaysOfMonth(true)
-                .displayMonth(true)
-                .displayYears(true)
-//                .mustBeOnFuture()
-//                .minDateRange(Calendar.getInstance().getTime())
-                .defaultDate(Calendar.getInstance().getTime())
-                .listener(new SingleDateAndTimePickerDialog.Listener() {
-                    @Override
-                    public void onDateSelected(Date date) {
-                        DateFormat dateFormat;
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                            dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.forLanguageTag("vn-VN"));
-                        } else {
-                            dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", new Locale("vi", "VN"));
-                        }
-                        homeViewModel.dateStart = date;
-//                        text_pos_from.setText(dateFormat.format(date));
-                    }
-                })
-                .build();
-    }
-
-    private SingleDateAndTimePickerDialog initDateTimePickerDialogEnd(View root) {
-        return new SingleDateAndTimePickerDialog.Builder(root.getContext())
-                .title(root.getContext().getString(R.string.theo_doi_lo_trinh_den))
-                .titleTextColor(ContextCompat.getColor(getContext(), R.color.colorPrimary))
-                .mainColor(ContextCompat.getColor(getContext(), R.color.colorPrimary))
-                .bottomSheet()
-                .curved()
-                .displayMinutes(true)
-                .displayHours(true)
-                .displayDays(false)
-                .displayDaysOfMonth(true)
-                .displayMonth(true)
-                .displayYears(true)
-//                .mustBeOnFuture()
-//                .minDateRange(Calendar.getInstance().getTime())
-                .defaultDate(Calendar.getInstance().getTime())
-                .listener(new SingleDateAndTimePickerDialog.Listener() {
-                    @Override
-                    public void onDateSelected(Date date) {
-                        if (homeViewModel.dateStart != null && date.getTime() <= homeViewModel.dateStart.getTime()) {
-                            Toasty.error(getActivity(), getString(R.string.ban_phai_chon_thoi_gian_end_sau_start), Toasty.LENGTH_LONG).show();
-                        } else {
-                            DateFormat dateFormat;
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.forLanguageTag("vn-VN"));
-                            } else {
-                                dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", new Locale("vi", "VN"));
-                            }
-//                            text_pos_to.setText(dateFormat.format(date));
-                        }
-                    }
-                })
-                .build();
-    }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (dialogDataTimeStart.isDisplaying()) dialogDataTimeStart.dismiss();
-        if (dialogDataTimeEnd.isDisplaying()) dialogDataTimeEnd.dismiss();
 
         if (locationTrackObj != null) locationTrackObj.stopUsingGPS();
         try {
@@ -884,8 +634,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (dialogDataTimeStart.isDisplaying()) dialogDataTimeStart.dismiss();
-        if (dialogDataTimeEnd.isDisplaying()) dialogDataTimeEnd.dismiss();
     }
 
     @Override
@@ -935,14 +683,6 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
         return polylineOptions;
     }
 
-    public static CameraUpdate buildCameraUpdate(LatLng latLng) {
-        CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(latLng)
-                .tilt(TILT_LEVEL)
-                .zoom(ZOOM_LEVEL)
-                .build();
-        return CameraUpdateFactory.newCameraPosition(cameraPosition);
-    }
 
     @Override
     public void onDirectionFinderSuccess(List<Route> routes) {
