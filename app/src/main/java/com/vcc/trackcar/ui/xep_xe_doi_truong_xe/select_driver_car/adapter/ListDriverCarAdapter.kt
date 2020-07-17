@@ -16,6 +16,7 @@ class ListDriverCarAdapter(var context: Context,var onItemCar: OnItemCar) :
     RecyclerView.Adapter<ListDriverCarAdapter.CarViewHolder>() {
 
     private var listData: ArrayList<LstBookCarDto> = arrayListOf()
+    private var isSelected: Boolean = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -29,9 +30,10 @@ class ListDriverCarAdapter(var context: Context,var onItemCar: OnItemCar) :
         holder.bind(listData[position])
     }
 
-    fun swapData(driverCar: List<LstBookCarDto>) {
+    fun swapData(driverCar: List<LstBookCarDto>, isSelected: Boolean) {
         listData.clear()
         listData.addAll(driverCar)
+        this.isSelected = isSelected
         notifyDataSetChanged()
     }
 
@@ -41,26 +43,34 @@ class ListDriverCarAdapter(var context: Context,var onItemCar: OnItemCar) :
             itemView.tv_driver_name.text = carDto.driverName
             itemView.tv_driver_email.text = carDto.driverEmail
 
-            if (carDto.onCommandDriver == "0") itemView.layout_car.setBackgroundColor(
-                ContextCompat.getColor(
-                    context, R.color.magic_mint
+            if (isSelected){
+                itemView.layout_car.setBackgroundColor(ContextCompat.getColor(context, R.color.magic_mint))
+            }else {
+                if (carDto.onCommandDriver == "0") itemView.layout_car.setBackgroundColor(
+                        ContextCompat.getColor(
+                                context, R.color.magic_mint
+                        )
                 )
-            )
-            else itemView.layout_car.setBackgroundColor(
-                ContextCompat.getColor(
-                    context, R.color.alto
+                else itemView.layout_car.setBackgroundColor(
+                        ContextCompat.getColor(
+                                context, R.color.alto
+                        )
                 )
-            )
+            }
 
             itemView.setOnClickListener {
-                if (carDto.onCommandDriver == "0") {
+                if (isSelected){
                     onItemCar.onItemDriverCar(carDto)
-                } else {
-                    Toasty.error(
-                        context,
-                        context.getString(R.string.warning_choose_driver),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                }else {
+                    if (carDto.onCommandDriver == "0") {
+                        onItemCar.onItemDriverCar(carDto)
+                    } else {
+                        Toasty.error(
+                                context,
+                                context.getString(R.string.warning_choose_driver),
+                                Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
             }
         }

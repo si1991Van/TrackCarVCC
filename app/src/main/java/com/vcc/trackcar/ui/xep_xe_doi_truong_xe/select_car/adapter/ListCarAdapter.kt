@@ -13,7 +13,7 @@ import com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_driver_car.adapter.OnItem
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.select_car_item.view.*
 
-class ListCarAdapter(var context: Context, var onItemCar: OnItemCar) :
+class ListCarAdapter(var context: Context, var isSelected: Boolean, var onItemCar: OnItemCar) :
     RecyclerView.Adapter<ListCarAdapter.CarViewHolder>() {
     private var listData: ArrayList<LstBookCarDto> = arrayListOf()
 
@@ -29,34 +29,42 @@ class ListCarAdapter(var context: Context, var onItemCar: OnItemCar) :
         holder.bind(listData[position])
     }
 
-    fun swapData(listCar: List<LstBookCarDto>) {
+    fun swapData(listCar: List<LstBookCarDto>, isSelected: Boolean) {
         listData.clear()
         listData.addAll(listCar)
+        this.isSelected = isSelected
         notifyDataSetChanged()
     }
 
     inner class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(lstBookCarDto: LstBookCarDto) {
             itemView.tv_car.text = lstBookCarDto.licenseCar
-
-            if (lstBookCarDto.onCommandCar == "0") itemView.layout_car.setBackgroundColor(
-                ContextCompat.getColor(
-                    context, R.color.magic_mint
+            if (isSelected){
+                itemView.layout_car.setBackgroundColor(ContextCompat.getColor(context, R.color.magic_mint))
+            }else {
+                if (lstBookCarDto.onCommandCar == "0") itemView.layout_car.setBackgroundColor(
+                        ContextCompat.getColor(
+                                context, R.color.magic_mint
+                        )
                 )
-            )
-            else itemView.layout_car.setBackgroundColor(
-                ContextCompat.getColor(
-                    context, R.color.alto
+                else itemView.layout_car.setBackgroundColor(
+                        ContextCompat.getColor(
+                                context, R.color.alto
+                        )
                 )
-            )
 
+            }
             itemView.setOnClickListener {
-                if (lstBookCarDto.onCommandCar == "0") {
+                if (isSelected){
                     onItemCar.onItemDriverCar(lstBookCarDto)
-                } else {
-                    Toasty.error(
-                        context, context.getString(R.string.warning_choose_car), Toast.LENGTH_SHORT
-                    ).show()
+                }else {
+                    if (lstBookCarDto.onCommandCar == "0") {
+                        onItemCar.onItemDriverCar(lstBookCarDto)
+                    } else {
+                        Toasty.error(
+                                context, context.getString(R.string.warning_choose_car), Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
             }
         }

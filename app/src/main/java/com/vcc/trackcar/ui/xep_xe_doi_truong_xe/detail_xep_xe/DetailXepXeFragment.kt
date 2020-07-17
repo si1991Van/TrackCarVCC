@@ -38,6 +38,7 @@ import com.vcc.trackcar.ui.base.PrefManager
 import com.vcc.trackcar.ui.detail_book_car.adapter.PeopleTogetherAdapter
 import com.vcc.trackcar.ui.login.LoginActivity
 import com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_driver_car.ListDriverCarFragment.Companion.EXTRA_BOOK_CAR_LIST_DRIVER
+import com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_driver_car.ListDriverCarFragment.Companion.EXTRA_CAR_PAIRING
 import com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_driver_car.ListDriverCarFragment.Companion.EXTRA_SELECTED_CAR_LIST_DRIVER
 import es.dmoral.toasty.Toasty
 import io.reactivex.SingleObserver
@@ -61,6 +62,7 @@ class DetailXepXeFragment : Fragment() {
 
     private var peopleTogetherAdapter = PeopleTogetherAdapter()
     private var peopleApproveAdapter = PeopleTogetherAdapter()
+    private var isSelected: Boolean = false
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -121,6 +123,7 @@ class DetailXepXeFragment : Fragment() {
             var bundle = Bundle()
             bundle.putSerializable(EXTRA_BOOK_CAR_LIST_DRIVER, viewModel.bookCarDto)
             bundle.putSerializable(EXTRA_SELECTED_CAR_LIST_DRIVER, viewModel.carDieuChuyen)
+            bundle.putSerializable(EXTRA_CAR_PAIRING, isSelected)
             mainActivcity.navigateFragment(R.id.nav_select_car_xe, bundle)
         }
 
@@ -128,6 +131,7 @@ class DetailXepXeFragment : Fragment() {
             var bundle = Bundle()
             bundle.putSerializable(EXTRA_BOOK_CAR_LIST_DRIVER, viewModel.bookCarDto)
             bundle.putSerializable(EXTRA_SELECTED_CAR_LIST_DRIVER, viewModel.carDieuChuyen)
+            bundle.putSerializable(EXTRA_CAR_PAIRING, isSelected)
             mainActivcity.navigateFragment(R.id.nav_select_car, bundle)
         }
 
@@ -155,8 +159,10 @@ class DetailXepXeFragment : Fragment() {
             )
         }
 
-        cbCarPairing.setOnCheckedChangeListener { buttonView, isChecked ->
 
+
+        cbCarPairing.setOnCheckedChangeListener { buttonView, isChecked ->
+            isSelected = isChecked
         }
     }
 
@@ -184,6 +190,7 @@ class DetailXepXeFragment : Fragment() {
             imv_next_chon_xe.visibility = View.GONE
             imv_next_chon_nguoi_lai.visibility = View.GONE
             imv_location_pin.visibility = View.GONE
+            cbCarPairing.isEnabled = false
         }
 
         tv_phone_driver.setOnClickListener {

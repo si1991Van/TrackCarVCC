@@ -41,6 +41,7 @@ class ListDriverCarFragment : Fragment(), OnItemCar {
     companion object {
         const val EXTRA_SELECTED_CAR_LIST_DRIVER = "EXTRA_SELECTED_CAR_LIST_DRIVER"
         const val EXTRA_BOOK_CAR_LIST_DRIVER = "EXTRA_BOOK_CAR_LIST_DRIVER"
+        const val EXTRA_CAR_PAIRING = "EXTRA_CAR_PAIRING"
 
         fun newInstance() = ListDriverCarFragment()
     }
@@ -100,7 +101,7 @@ class ListDriverCarFragment : Fragment(), OnItemCar {
                     }
                     .toList()
                     .blockingGet()
-                listDriverCarAdapter.swapData(resultSearch)
+                listDriverCarAdapter.swapData(resultSearch, viewModel.isSelected)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -114,7 +115,7 @@ class ListDriverCarFragment : Fragment(), OnItemCar {
 
         imgClearTextSearch.setOnClickListener {
             edtSearch.setText("")
-            listDriverCarAdapter.swapData(viewModel.listDriverCar)
+            listDriverCarAdapter.swapData(viewModel.listDriverCar, viewModel.isSelected)
         }
     }
 
@@ -122,10 +123,11 @@ class ListDriverCarFragment : Fragment(), OnItemCar {
         viewModel.carDieuChuyen = arguments?.getSerializable(EXTRA_SELECTED_CAR_LIST_DRIVER) as com.vcc.trackcar.model.getListDriverCar.LstBookCarDto
 
         viewModel.bookCarDto = arguments?.getSerializable(EXTRA_BOOK_CAR_LIST_DRIVER) as LstBookCarDto
+        viewModel.isSelected = arguments?.getBoolean(EXTRA_CAR_PAIRING)!!
 
 //        viewModel.listDriverCar = mainActivity.listDriver
         if (viewModel.listDriverCar.isEmpty()) fetchGetListDriverCar()
-        else listDriverCarAdapter.swapData(viewModel.listDriverCar)
+        else listDriverCarAdapter.swapData(viewModel.listDriverCar, viewModel.isSelected)
     }
 
     private fun fetchGetListDriverCar() {
@@ -156,7 +158,7 @@ class ListDriverCarFragment : Fragment(), OnItemCar {
 //                        mainActivity.listDriver.clear()
 //                        mainActivity.listDriver.addAll(respon.lstBookCarDto)
                         viewModel.listDriverCar = respon.lstBookCarDto
-                        listDriverCarAdapter.swapData(viewModel.listDriverCar)
+                        listDriverCarAdapter.swapData(viewModel.listDriverCar, viewModel.isSelected)
                     } else {
                         Toasty.error(
                             activity!!,

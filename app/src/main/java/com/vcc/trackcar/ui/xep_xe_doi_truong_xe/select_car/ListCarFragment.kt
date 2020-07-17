@@ -25,6 +25,7 @@ import com.vcc.trackcar.model.getListCar.GetListCarRespon
 import com.vcc.trackcar.remote.API
 import com.vcc.trackcar.ui.base.CommonVCC
 import com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_car.adapter.ListCarAdapter
+import com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_driver_car.ListDriverCarFragment
 import com.vcc.trackcar.ui.xep_xe_doi_truong_xe.select_driver_car.adapter.OnItemCar
 import com.vcc.trackcar.utils.DistanceCalculator
 import com.vcc.trackcar.utils.StringUtil
@@ -43,6 +44,7 @@ class ListCarFragment : Fragment(), OnItemCar {
     companion object {
         const val EXTRA_SELECTED_CAR_LIST_DRIVER = "EXTRA_SELECTED_CAR_LIST_DRIVER"
         const val EXTRA_BOOK_CAR_LIST_DRIVER = "EXTRA_BOOK_CAR_LIST_DRIVER"
+        const val EXTRA_CAR_PAIRING = "EXTRA_CAR_PAIRING"
 
         fun newInstance() = ListCarFragment()
     }
@@ -77,7 +79,7 @@ class ListCarFragment : Fragment(), OnItemCar {
     }
 
     private fun initView() {
-        listCarAdapter = ListCarAdapter(activity!!, this)
+        listCarAdapter = ListCarAdapter(activity!!, viewModel.isSelected,this)
         rcv_car_select.run {
             layoutManager = LinearLayoutManager(mainActivity)
             adapter = listCarAdapter
@@ -98,7 +100,7 @@ class ListCarFragment : Fragment(), OnItemCar {
                         keySearch
                     )
                 }.toList().blockingGet()
-                listCarAdapter.swapData(resultSearch)
+                listCarAdapter.swapData(resultSearch, viewModel.isSelected)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -112,19 +114,19 @@ class ListCarFragment : Fragment(), OnItemCar {
 
         imgClearTextSearch.setOnClickListener {
             edtSearch.setText("")
-            listCarAdapter.swapData(viewModel.listDriverCar)
+            listCarAdapter.swapData(viewModel.listDriverCar, viewModel.isSelected)
         }
     }
 
     private fun initData() {
         viewModel.carDieuChuyen =
             arguments?.getSerializable(EXTRA_SELECTED_CAR_LIST_DRIVER) as com.vcc.trackcar.model.getListDriverCar.LstBookCarDto
-        viewModel.bookCarDto =
-            arguments?.getSerializable(EXTRA_BOOK_CAR_LIST_DRIVER) as LstBookCarDto
+        viewModel.bookCarDto = arguments?.getSerializable(EXTRA_BOOK_CAR_LIST_DRIVER) as LstBookCarDto
+        viewModel.isSelected = arguments?.getBoolean(EXTRA_CAR_PAIRING)!!
 
 //        viewModel.listDriverCar = mainActivity.listCar
         if (viewModel.listDriverCar.isEmpty()) fetchGetListCar()
-        else listCarAdapter.swapData(viewModel.listDriverCar)
+        else listCarAdapter.swapData(viewModel.listDriverCar, viewModel.isSelected)
     }
 
     private fun fetchGetListCar() {
@@ -142,7 +144,7 @@ class ListCarFragment : Fragment(), OnItemCar {
                     mainActivity.hideLoading()
                     if (respon.resultInfo.status == CommonVCC.RESULT_STATUS_OK) {
                         viewModel.listDriverCar = respon.lstBookCarDto
-                        listCarAdapter.swapData(viewModel.listDriverCar)
+                        listCarAdapter.swapData(viewModel.listDriverCar, viewModel.isSelected)
                     } else {
                         Toasty.error(
                             activity!!, respon.resultInfo.message, Toast.LENGTH_SHORT, true
