@@ -79,6 +79,7 @@ class DetailBookCarFragment : Fragment() {
     private lateinit var listPeopleTogetherSelected: List<LstUserDto>
     private var peopleTogetherAdapter = PeopleTogetherAdapter()
     private var peopleApproveAdapter = PeopleTogetherAdapter()
+    private var isSelected: Boolean = false
 //    private var type: String = ""
 
     override fun onAttach(context: Context) {
@@ -145,18 +146,24 @@ class DetailBookCarFragment : Fragment() {
             bundle.putSerializable(OpenCommandFragment.EXTRA_LIST_USER, listPeopleTogetherSelected as Serializable)
             mainActivcity.navigateFragment(R.id.nav_open_command, bundle)
         }
+
+        cbCarPairing.setOnCheckedChangeListener { buttonView, isChecked ->
+            isSelected = isChecked
+        }
     }
 
     private fun initData() {
         viewModel.bookCarDto = arguments?.getSerializable(EXTRA_BOOK_CAR) as LstBookCarDto
         viewModel.typeMenu = arguments?.getInt(EXTRA_TYPE_MENU, 0)
 //        type = arguments?.getString(PTGDCHUYENTRACH).toString()
-
-        if (!viewModel.bookCarDto.licenseCar.isNullOrEmpty() || !viewModel.bookCarDto.driverName.isNullOrEmpty()) {
+        if (viewModel.bookCarDto?.pairingCar != null) {
+            cbCarPairing.isChecked = viewModel?.bookCarDto?.pairingCar?.toInt() == 0
+        }
+        if (!viewModel.bookCarDto?.licenseCar.isNullOrEmpty() || !viewModel.bookCarDto?.driverName.isNullOrEmpty()) {
             layout_chon_xe_va_lai_xe.visibility = View.VISIBLE
-            tv_bien_so.text = viewModel.bookCarDto.licenseCar
-            tv_nguoi_lai.text = viewModel.bookCarDto.driverName
-            tv_phone_driver.text = viewModel.bookCarDto.phoneNumberDriver
+            tv_bien_so.text = viewModel.bookCarDto?.licenseCar
+            tv_nguoi_lai.text = viewModel.bookCarDto?.driverName
+            tv_phone_driver.text = viewModel.bookCarDto?.phoneNumberDriver
             tv_phone_driver.setOnClickListener {
                 TedRx2Permission.with(mainActivcity)
                     .setDeniedMessage(R.string.reject_permission)
@@ -165,17 +172,19 @@ class DetailBookCarFragment : Fragment() {
                     .subscribe { permissionResult ->
                         if (permissionResult.isGranted) {
                             val intent = Intent(Intent.ACTION_CALL)
-                            intent.data = Uri.parse("tel:" + viewModel.bookCarDto.phoneNumberDriver)
+                            intent.data = Uri.parse("tel:" + viewModel.bookCarDto?.phoneNumberDriver)
                             startActivity(intent)
                         }
                     }
             }
+
+            cbCarPairing.isEnabled = false
         }
 
         if (viewModel.typeMenu == PTGDChuyenTrachFragment.TYPE_MENU){
             var bookCarDto = viewModel.bookCarDto
 
-            if (bookCarDto.typeBookCar == "4" && bookCarDto.status == "2" && bookCarDto.statusViceManager == "2"){
+            if (bookCarDto?.typeBookCar == "4" && bookCarDto?.status == "2" && bookCarDto?.statusViceManager == "2"){
                 viewBookCar()
             }
 
@@ -186,33 +195,33 @@ class DetailBookCarFragment : Fragment() {
 
             var bookCarDto = viewModel.bookCarDto
 
-            if ((bookCarDto.typeBookCar == "1" || bookCarDto.typeBookCar == "2") && bookCarDto.status == "2" && bookCarDto.statusManagerCar == "2") {
+            if ((bookCarDto?.typeBookCar == "1" || bookCarDto?.typeBookCar == "2") && bookCarDto?.status == "2" && bookCarDto.statusManagerCar == "2") {
                 closeBookCar()
-            } else if (bookCarDto.typeBookCar == "3" && bookCarDto.status == "2" && bookCarDto.statusCaptainCar == "2") {
+            } else if (bookCarDto?.typeBookCar == "3" && bookCarDto?.status == "2" && bookCarDto?.statusCaptainCar == "2") {
                 closeBookCar()
-            }else if (bookCarDto.typeBookCar == "4" && bookCarDto.status == "2" && bookCarDto.statusViceManager == "2") {
+            }else if (bookCarDto?.typeBookCar == "4" && bookCarDto.status == "2" && bookCarDto?.statusViceManager == "2") {
                 closeBookCar()
             }else viewBookCar()
         }
 
         if (viewModel.typeMenu == ViewAndSignApprovalFragment.TYPE_MENU) {
 
-            if (viewModel.bookCarDto.statusManage == "1") { // duyet tu cho sua
-            } else if (viewModel.bookCarDto.statusManage == "3" || viewModel.bookCarDto.statusManage == "4" || viewModel.bookCarDto.statusManage == "5" || viewModel.bookCarDto.statusManage == "6") {
+            if (viewModel?.bookCarDto?.statusManage == "1") { // duyet tu cho sua
+            } else if (viewModel?.bookCarDto?.statusManage == "3" || viewModel?.bookCarDto?.statusManage == "4" || viewModel.bookCarDto?.statusManage == "5" || viewModel.bookCarDto?.statusManage == "6") {
                 viewBookCar()
-            } else if (viewModel.bookCarDto.statusManage == "2" && viewModel.bookCarDto.statusAdministrative != "2") {
+            } else if (viewModel.bookCarDto?.statusManage == "2" && viewModel.bookCarDto?.statusAdministrative != "2") {
                 viewBookCar()
-            } else if (viewModel.bookCarDto.statusManage == "2" && viewModel.bookCarDto.statusAdministrative == "2") {
+            } else if (viewModel.bookCarDto?.statusManage == "2" && viewModel.bookCarDto?.statusAdministrative == "2") {
                 closeBookCar()
             }
         }
 
         if (viewModel.typeMenu == ViewAndApprovalManagerCarFragment.TYPE_MENU) {
 
-            if (viewModel.bookCarDto.statusManagerCar == "1" && (viewModel.bookCarDto.typeBookCar == "1" || viewModel.bookCarDto.typeBookCar == "2")) {
+            if (viewModel.bookCarDto?.statusManagerCar == "1" && (viewModel.bookCarDto?.typeBookCar == "1" || viewModel.bookCarDto?.typeBookCar == "2")) {
                 // duyet, tu choi, yeu cau sua
                 btn_duyet_lenh.text = getString(R.string.duyet_lenh)
-            } else if (viewModel.bookCarDto.statusManagerCar == "1" && viewModel.bookCarDto.typeBookCar == "3" && viewModel.bookCarDto.status == "5") {
+            } else if (viewModel.bookCarDto?.statusManagerCar == "1" && viewModel.bookCarDto?.typeBookCar == "3" && viewModel.bookCarDto?.status == "5") {
                 // duyet lenh
                 layout_duyet_tuchoi_sua.visibility = View.VISIBLE
                 btn_duyet_lenh.visibility = View.VISIBLE
@@ -221,23 +230,23 @@ class DetailBookCarFragment : Fragment() {
                 btn_yeu_cau_sua.visibility = View.GONE
                 btn_dong_lenh.visibility = View.GONE
                 btn_mo_lenh.visibility = View.GONE
-            } else if (viewModel.bookCarDto.statusManagerCar == "1" && viewModel.bookCarDto.typeBookCar == "3" && viewModel.bookCarDto.status != "5") {
+            } else if (viewModel.bookCarDto?.statusManagerCar == "1" && viewModel.bookCarDto?.typeBookCar == "3" && viewModel.bookCarDto?.status != "5") {
                 // view lenh
                 viewBookCar()
-            } else if (viewModel.bookCarDto.statusManagerCar != "1") {
+            } else if (viewModel.bookCarDto?.statusManagerCar != "1") {
                 // view lenh
                 viewBookCar()
             }
         }
 
         if (viewModel.typeMenu == XepXeBanTCTFragment.TYPE_MENU) {
-            if (viewModel.bookCarDto.statusDriverBoard != "1") {
+            if (viewModel.bookCarDto?.statusDriverBoard != "1") {
                 viewBookCar()
             }
         }
 
         if (viewModel.typeMenu == XemKyDuyetTPHCTCTFragment.TYPE_MENU) {
-            if (viewModel.bookCarDto.statusAdministrative != "1") {
+            if (viewModel.bookCarDto?.statusAdministrative != "1") {
                 // view lenh
                 viewBookCar()
             }else{
@@ -246,11 +255,11 @@ class DetailBookCarFragment : Fragment() {
         }
 
 
-        tv_don_vi.text = "${viewModel.bookCarDto.departmentName} - ${viewModel.bookCarDto.sysGroupName}"
-        tv_ho_ten.text = viewModel.bookCarDto.fullName
-        tv_email.text = viewModel.bookCarDto.email
-        tv_phone.text = viewModel.bookCarDto.phoneNumber
-        text_content.text = viewModel.bookCarDto.content
+        tv_don_vi.text = "${viewModel.bookCarDto?.departmentName} - ${viewModel.bookCarDto?.sysGroupName}"
+        tv_ho_ten.text = viewModel.bookCarDto?.fullName
+        tv_email.text = viewModel.bookCarDto?.email
+        tv_phone.text = viewModel.bookCarDto?.phoneNumber
+        text_content.text = viewModel.bookCarDto?.content
 
         tv_phone.setOnClickListener {
             TedRx2Permission.with(mainActivcity)
@@ -260,28 +269,28 @@ class DetailBookCarFragment : Fragment() {
                 .subscribe { permissionResult ->
                     if (permissionResult.isGranted) {
                         val intent = Intent(Intent.ACTION_CALL)
-                        intent.data = Uri.parse("tel:" + viewModel.bookCarDto.phoneNumber)
+                        intent.data = Uri.parse("tel:" + viewModel.bookCarDto?.phoneNumber)
                         startActivity(intent)
                     }
                 }
         }
 
-        text_pos_from.text = viewModel.bookCarDto.fromAddress
+        text_pos_from.text = viewModel.bookCarDto?.fromAddress
 
-        text_pos_to.text = viewModel.bookCarDto.toAddress
+        text_pos_to.text = viewModel.bookCarDto?.toAddress
 
-        text_time_start.text = viewModel.bookCarDto.startTime
+        text_time_start.text = viewModel.bookCarDto?.startTime
 
-        if (viewModel.bookCarDto.endTimeExtend != null){
-            text_time_end.text = viewModel.bookCarDto.endTimeExtend
+        if (viewModel.bookCarDto?.endTimeExtend != null){
+            text_time_end.text = viewModel.bookCarDto?.endTimeExtend
         }else{
-            text_time_end.text =viewModel.bookCarDto.endTime
+            text_time_end.text =viewModel.bookCarDto?.endTime
         }
         tv_type_car.setContentText(
-            viewModel.bookCarDto.carTypeName, MaterialTextView.ANIMATE_TYPE.NONE
+            viewModel.bookCarDto?.carTypeName, MaterialTextView.ANIMATE_TYPE.NONE
         )
 
-        when (viewModel.bookCarDto.typeBookCar) {
+        when (viewModel.bookCarDto?.typeBookCar) {
             "1" -> tv_kieu_di.setContentText(
                 getString(R.string.mot_chieu), MaterialTextView.ANIMATE_TYPE.NONE
             )
@@ -298,22 +307,22 @@ class DetailBookCarFragment : Fragment() {
 
         fetchGetListUserTogether()
 
-        peopleApproveAdapter.swapDataPeopleApprove(viewModel.bookCarDto)
+        peopleApproveAdapter.swapDataPeopleApprove(viewModel?.bookCarDto!!)
 
-        if (viewModel.bookCarDto.toAddressExtend != null){
-            text_pos_toAddressExtend.text = viewModel.bookCarDto.toAddressExtend
+        if (viewModel.bookCarDto?.toAddressExtend != null){
+            text_pos_toAddressExtend.text = viewModel.bookCarDto?.toAddressExtend
         }else{
             imvToAddressExtend.visibility = View.GONE
             imv_location_toAddressExtend.visibility = View.GONE
             text_label_location_toAddressExtend.visibility = View.GONE
             layout_location_toAddressExtend.visibility = View.GONE
         }
-        if (viewModel.bookCarDto.internalProvince.toInt() == 1){
+        if (viewModel.bookCarDto?.internalProvince?.toInt() == 1){
             txtInternalProvince.text = "Đi nội tỉnh"
         }else{
             txtInternalProvince.text = "Đi ngoại tỉnh"
         }
-        text_goodsWeight.text = viewModel.bookCarDto.goodsWeight.toString()
+        text_goodsWeight.text = viewModel.bookCarDto?.goodsWeight.toString()
 
 
     }
@@ -429,7 +438,7 @@ class DetailBookCarFragment : Fragment() {
         var body = AdministrativeApproveRejectBookCarBody().apply {
             bookCarDto = viewModel.bookCarDto.apply {
 //                this.reasonAdministrative = reasonManage
-                this.reasonViceManager = reasonManage
+                this?.reasonViceManager = this?.reasonManage
             }
             sysUserRequest = SysUserRequest().apply {
                 var userLogin = CommonVCC.getUserLogin()
@@ -476,7 +485,7 @@ class DetailBookCarFragment : Fragment() {
     private fun fetchAdministrativeApproveRejectBookCar(flag: Int, lyDoDongViec: String) {
         var body = AdministrativeApproveRejectBookCarBody().apply {
             bookCarDto = viewModel.bookCarDto.apply {
-                this.reasonAdministrative = reasonManage
+                this?.reasonAdministrative = this?.reasonManage
             }
             sysUserRequest = SysUserRequest().apply {
                 var userLogin = CommonVCC.getUserLogin()
@@ -523,7 +532,7 @@ class DetailBookCarFragment : Fragment() {
     private fun fetchDriverBoardApproveRejectBookCar(flag: Int, lyDoDongViec: String) {
         var body = DriverBoardApproveRejectBookCarBody().apply {
             bookCarDto = viewModel.bookCarDto.apply {
-                this.reasonDriverBoard = reasonManage
+                this?.reasonDriverBoard = this?.reasonManage
             }
             sysUserRequest = SysUserRequest().apply {
                 var userLogin = CommonVCC.getUserLogin()
@@ -571,7 +580,7 @@ class DetailBookCarFragment : Fragment() {
 
         var body = ManageApproveRejectBookCarBody().apply {
             bookCarDto = viewModel.bookCarDto.apply {
-                this.reasonManage = reasonManage
+                this?.reasonManage = reasonManage
             }
             sysUserRequest = SysUserRequest().apply {
                 var userLogin = CommonVCC.getUserLogin()
@@ -619,7 +628,7 @@ class DetailBookCarFragment : Fragment() {
 
         var body = ManagerCarApproveRejectBookCarBody().apply {
             bookCarDto = viewModel.bookCarDto.apply {
-                this.reasonManagerCar = reasonManage
+                this?.reasonManagerCar = reasonManage
             }
             sysUserRequest = SysUserRequest().apply {
                 var userLogin = CommonVCC.getUserLogin()
@@ -669,7 +678,7 @@ class DetailBookCarFragment : Fragment() {
 
     private fun closeBookCar() {
         layout_duyet_tuchoi_sua.visibility = View.VISIBLE
-        if (viewModel.bookCarDto.typeBookCar != "4" && viewModel.bookCarDto.toAddressExtend == null) {
+        if (viewModel.bookCarDto?.typeBookCar != "4" && viewModel.bookCarDto?.toAddressExtend == null) {
             btn_mo_lenh.visibility = View.VISIBLE
         }else{
             btn_mo_lenh.visibility = View.GONE
@@ -681,7 +690,7 @@ class DetailBookCarFragment : Fragment() {
 
         btn_dong_lenh.setOnClickListener {
 
-            if (viewModel.typeMenu == ViewAndSignApprovalFragment.TYPE_MENU && viewModel.bookCarDto.typeBookCar == "4") { // close kieu di dac biet T/P Bo Phan
+            if (viewModel.typeMenu == ViewAndSignApprovalFragment.TYPE_MENU && viewModel.bookCarDto?.typeBookCar == "4") { // close kieu di dac biet T/P Bo Phan
                 closeManagerBookCar()
                 return@setOnClickListener
             }
@@ -819,7 +828,7 @@ class DetailBookCarFragment : Fragment() {
 
         val userLogin = CommonVCC.getUserLogin()
         val bookCarDto = BookCarDto()
-        bookCarDto.bookCarId = viewModel.bookCarDto.bookCarId
+        bookCarDto.bookCarId = viewModel.bookCarDto?.bookCarId
         bookCarDto.score = score.toLong()
         bookCarDto.scoreText = scoreText
 

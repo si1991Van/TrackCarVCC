@@ -5,7 +5,7 @@ import com.vcc.trackcar.model.getListBookCar.LstBookCarDto
 
 class DetailXepXeViewModel : ViewModel() {
     // TODO: Implement the ViewModel
-    lateinit var bookCarDto: LstBookCarDto
+    var bookCarDto: LstBookCarDto? = null
 
     var carDieuChuyen = com.vcc.trackcar.model.getListDriverCar.LstBookCarDto()
 }

@@ -212,6 +212,12 @@ public class LstBookCarDto implements Serializable {
     @Expose
     private String reasonViceManager;
 
+    @SerializedName("pairingCar")
+    @Expose
+    private long pairingCar;
+
+
+
     public String getStatusDriver() {
         return statusDriver;
     }
@@ -738,5 +744,13 @@ public class LstBookCarDto implements Serializable {
 
     public void setGoodsWeight(double goodsWeight) {
         this.goodsWeight = goodsWeight;
+    }
+
+    public long getPairingCar() {
+        return pairingCar;
+    }
+
+    public void setPairingCar(long pairingCar) {
+        this.pairingCar = pairingCar;
     }
 }

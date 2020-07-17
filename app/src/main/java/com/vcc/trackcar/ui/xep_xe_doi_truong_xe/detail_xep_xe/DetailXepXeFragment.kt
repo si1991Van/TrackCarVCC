@@ -159,8 +159,6 @@ class DetailXepXeFragment : Fragment() {
             )
         }
 
-
-
         cbCarPairing.setOnCheckedChangeListener { buttonView, isChecked ->
             isSelected = isChecked
         }
@@ -175,14 +173,14 @@ class DetailXepXeFragment : Fragment() {
             tv_bien_so.text = if (viewModel.carDieuChuyen.licenseCar.isNullOrEmpty()) "" else viewModel.carDieuChuyen.licenseCar
             tv_nguoi_lai.text = if (viewModel.carDieuChuyen.driverName.isNullOrEmpty()) "" else viewModel.carDieuChuyen.driverName
             tv_phone_driver.text = if (viewModel.carDieuChuyen.phoneNumberDriver.isNullOrEmpty()) "" else viewModel.carDieuChuyen.phoneNumberDriver
-        } else if (!viewModel.bookCarDto.licenseCar.isNullOrEmpty()) {
+        } else if (!viewModel.bookCarDto?.licenseCar.isNullOrEmpty()) {
             layout_chon_xe_va_lai_xe.visibility = View.VISIBLE
-            tv_bien_so.text = viewModel.bookCarDto.licenseCar
-            tv_nguoi_lai.text = viewModel.bookCarDto.driverName
-            tv_phone_driver.text = viewModel.bookCarDto.phoneNumberDriver
+            tv_bien_so.text = viewModel.bookCarDto?.licenseCar
+            tv_nguoi_lai.text = viewModel.bookCarDto?.driverName
+            tv_phone_driver.text = viewModel.bookCarDto?.phoneNumberDriver
         }
 
-        if (viewModel.bookCarDto.statusCaptainCar != "1") {
+        if (viewModel.bookCarDto?.statusCaptainCar != "1") {
             // view lenh
             layout_duyet_tuchoi_sua.visibility = View.GONE
             layout_chon_xe.setOnClickListener(null)
@@ -199,22 +197,22 @@ class DetailXepXeFragment : Fragment() {
                 .subscribe { permissionResult ->
                     if (permissionResult.isGranted) {
                         val intent = Intent(Intent.ACTION_CALL)
-                        intent.data = Uri.parse("tel:" + viewModel.bookCarDto.phoneNumberDriver)
+                        intent.data = Uri.parse("tel:" + viewModel.bookCarDto?.phoneNumberDriver)
                         startActivity(intent)
                     }
                 }
         }
 
         tv_don_vi.text =
-            "${viewModel.bookCarDto.departmentName} - ${viewModel.bookCarDto.sysGroupName}"
+            "${viewModel.bookCarDto?.departmentName} - ${viewModel.bookCarDto?.sysGroupName}"
 
-        tv_ho_ten.text = viewModel.bookCarDto.fullName
+        tv_ho_ten.text = viewModel.bookCarDto?.fullName
 
-        tv_email.text = viewModel.bookCarDto.email
+        tv_email.text = viewModel.bookCarDto?.email
 
-        tv_phone.text = viewModel.bookCarDto.phoneNumber
+        tv_phone.text = viewModel.bookCarDto?.phoneNumber
 
-        text_content.text = viewModel.bookCarDto.content
+        text_content.text = viewModel.bookCarDto?.content
 
         tv_phone.setOnClickListener {
             TedRx2Permission.with(mainActivcity).setDeniedMessage(R.string.reject_permission)
@@ -222,25 +220,25 @@ class DetailXepXeFragment : Fragment() {
                 .subscribe { permissionResult ->
                     if (permissionResult.isGranted) {
                         val intent = Intent(Intent.ACTION_CALL)
-                        intent.data = Uri.parse("tel:" + viewModel.bookCarDto.phoneNumber)
+                        intent.data = Uri.parse("tel:" + viewModel.bookCarDto?.phoneNumber)
                         startActivity(intent)
                     }
                 }
         }
 
-        text_pos_from.text = viewModel.bookCarDto.fromAddress
+        text_pos_from.text = viewModel.bookCarDto?.fromAddress
 
-        text_pos_to.text = viewModel.bookCarDto.toAddress
+        text_pos_to.text = viewModel.bookCarDto?.toAddress
 
-        text_time_start.text = viewModel.bookCarDto.startTime
+        text_time_start.text = viewModel.bookCarDto?.startTime
 
-        text_time_end.text = viewModel.bookCarDto.endTime
+        text_time_end.text = viewModel.bookCarDto?.endTime
 
         tv_type_car.setContentText(
-            viewModel.bookCarDto.carTypeName, MaterialTextView.ANIMATE_TYPE.NONE
+            viewModel.bookCarDto?.carTypeName, MaterialTextView.ANIMATE_TYPE.NONE
         )
 
-        when (viewModel.bookCarDto.typeBookCar) {
+        when (viewModel.bookCarDto?.typeBookCar) {
             "1" -> tv_kieu_di.setContentText(
                 getString(R.string.mot_chieu), MaterialTextView.ANIMATE_TYPE.NONE
             )
@@ -257,8 +255,11 @@ class DetailXepXeFragment : Fragment() {
 
         fetchGetListUserTogether()
 
-        peopleApproveAdapter.swapDataPeopleApprove(viewModel.bookCarDto)
+        peopleApproveAdapter.swapDataPeopleApprove(viewModel.bookCarDto!!)
 
+        if (viewModel.bookCarDto?.pairingCar != null) {
+            cbCarPairing.isChecked = viewModel.bookCarDto?.pairingCar?.toInt() == 0
+        }
     }
 
     private fun fetchGetListUserTogether() {
@@ -357,14 +358,14 @@ class DetailXepXeFragment : Fragment() {
 
         var body = CaptainCarApproveRejectBookCarBody().apply {
             bookCarDto = viewModel.bookCarDto.apply {
-                reasonCaptainCar = reasonManage
+                this?.reasonCaptainCar = this?.reasonManage
                 if (flag == 2) {
-                    carId = viewModel.carDieuChuyen.carId
-                    licenseCar = viewModel.carDieuChuyen.licenseCar
-                    driverId = viewModel.carDieuChuyen.driverId
-                    driverName = viewModel.carDieuChuyen.driverName
-                    driverCode = viewModel.carDieuChuyen.driverCode
-                    phoneNumberDriver = viewModel.carDieuChuyen.phoneNumberDriver
+                    this?.carId = viewModel.carDieuChuyen.carId
+                    this?.licenseCar = viewModel.carDieuChuyen.licenseCar
+                    this?.driverId = viewModel.carDieuChuyen.driverId
+                    this?.driverName = viewModel.carDieuChuyen.driverName
+                    this?.driverCode = viewModel.carDieuChuyen.driverCode
+                    this?.phoneNumberDriver = viewModel.carDieuChuyen.phoneNumberDriver
                 }
             }
             sysUserRequest = SysUserRequest().apply {
