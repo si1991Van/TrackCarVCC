@@ -117,6 +117,8 @@ public class BookCarDto {
     @Expose
     private double goodsWeight;
 
+
+
     public String getDriverCode() {
         return driverCode;
     }

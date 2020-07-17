@@ -61,6 +61,9 @@ import com.kienht.bottomsheetbehavior.BottomSheetBehavior;
 import com.shreyaspatil.MaterialDialog.MaterialDialog;
 import com.vcc.trackcar.MainActivity;
 import com.vcc.trackcar.R;
+import com.vcc.trackcar.model.CatVehicleDTO;
+import com.vcc.trackcar.model.CatVehicleReponseDTO;
+import com.vcc.trackcar.model.addBookCar.BookCarDto;
 import com.vcc.trackcar.model.addBookCar.SysUserRequest;
 import com.vcc.trackcar.model.api_matrix.Element;
 import com.vcc.trackcar.model.api_matrix.MatrixRespon;
@@ -71,12 +74,17 @@ import com.vcc.trackcar.model.getHistoryCar.CarInfoHistory;
 import com.vcc.trackcar.model.getHistoryCar.GetHistoryCarBody;
 import com.vcc.trackcar.model.getHistoryCar.GetHistoryCarRespon;
 import com.vcc.trackcar.model.getHistoryCar.MakerCar;
+import com.vcc.trackcar.model.getHistoryCar.VehicleMonitoringRequest;
 import com.vcc.trackcar.model.getHistoryDetailCar.GetHistoryDetailCarBody;
 import com.vcc.trackcar.model.getHistoryDetailCar.GetHistoryDetailCarRespon;
 import com.vcc.trackcar.model.getListCar.GetListCarBody;
 import com.vcc.trackcar.model.getListCar.GetListCarBodyDto;
 import com.vcc.trackcar.model.getListCar.GetListCarRespon;
 import com.vcc.trackcar.model.getListDriverCar.LstBookCarDto;
+import com.vcc.trackcar.model.getListManager.GetListManagerBody;
+import com.vcc.trackcar.model.request_body.BranchRequestBody;
+import com.vcc.trackcar.model.request_body.VehicleMonitoringRequestBody;
+import com.vcc.trackcar.model.response.BranchReponseDTO;
 import com.vcc.trackcar.remote.API;
 import com.vcc.trackcar.remote.APIGG;
 import com.vcc.trackcar.ui.base.CommonVCC;
@@ -86,7 +94,9 @@ import com.vcc.trackcar.ui.direction.Route;
 import com.vcc.trackcar.ui.home.HomeViewModel;
 import com.vcc.trackcar.ui.home.adapter.AutoCarAdapter;
 import com.vcc.trackcar.ui.home.adapter.BookCarHistoryAdapter;
+import com.vcc.trackcar.ui.home.adapter.CatVehicleAdapter;
 import com.vcc.trackcar.ui.home.adapter.CustomListViewDialog;
+import com.vcc.trackcar.ui.home.adapter.TypeCarTruckAdapter;
 import com.vcc.trackcar.ui.home.custom_infowindow_maps.CustomInfoWindowGoogleMap;
 import com.vcc.trackcar.ui.home.custom_infowindow_maps.InfoWindowData;
 
@@ -96,6 +106,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -111,7 +122,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class SuperviseFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnPolylineClickListener, AutoCarAdapter.OnItemCarClick, BookCarHistoryAdapter.RecyclerViewItemClickListener, DirectionFinderListener {
+public class SuperviseFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnPolylineClickListener, BookCarHistoryAdapter.RecyclerViewItemClickListener, DirectionFinderListener {
 
     private static final int COLOR_BLACK_ARGB = 0xffd58431;
 
@@ -119,9 +130,12 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
 
     private MainActivity mainActivcity;
 
-    private AutoCompleteTextView text_auto_car;
+    private AutoCompleteTextView text_Unit;
+    private AutoCompleteTextView txt_car_license;
+    private AutoCompleteTextView txt_car_status;
     private ImageView image_clear_search;
-    private AutoCarAdapter adapterAutoCar;
+    private ImageView img_clear_search_car_license;
+    private ImageView img_clear_search_car_status;
 
     private LinearLayout layout_location_from;
     private LinearLayout layout_location_to;
@@ -146,6 +160,11 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
     private static final Gap GAP = new Gap(PATTERN_GAP_LENGTH_PX);
     private static final Dot DOT = new Dot();
     private static final List<PatternItem> PATTERN_DOTTED = Arrays.asList(DOT, GAP);
+//    private SuperviseViewModel viewModel = new SuperviseViewModel();
+    private List<BookCarDto> listUnit  = new ArrayList<>();
+    private List<CatVehicleDTO> listCar = new ArrayList();
+    private TypeCarTruckAdapter typeCarTruckAdapter;
+    private CatVehicleAdapter catVehicleAdapter;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -199,48 +218,43 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
             }
         });
 
-        layout_location_from = root.findViewById(R.id.layout_location_from);
-        layout_location_from.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-        layout_location_to = root.findViewById(R.id.layout_location_to);
-        layout_location_to.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
+
 
         btn_tim_kiem_xe = root.findViewById(R.id.btn_tim_kiem_xe);
         btn_tim_kiem_xe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivcity.hideKeyBoard();
-                if (!isHasRoleCodeHanhTrinh()) {
+                if (!isHasRoleCode()) {
                     Toasty.error(getContext(), getString(R.string.no_permission_user), Toasty.LENGTH_SHORT).show();
-                } else if (homeViewModel.carDtoSelected == null) {
+                } else if (homeViewModel.carDtoSelected == null && homeViewModel.catVehicleDTO == null) {
                     Toasty.warning(getContext(), getString(R.string.please_chon_xe), Toasty.LENGTH_SHORT).show();
                 }
                 else {
-                    updateInfoCar(homeViewModel.carDtoSelected);
+                    updateInfoCar(homeViewModel.catVehicleDTO.getCarId(), homeViewModel.catVehicleDTO.getLicenseCar(), homeViewModel.catVehicleDTO.getSysGroupId(),"1");
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
             }
         });
 
-        text_auto_car = root.findViewById(R.id.text_auto_car);
-        adapterAutoCar = new AutoCarAdapter(root.getContext(), R.layout.item_car_search_home, mainActivcity.listCar, this);
-        text_auto_car.setAdapter(adapterAutoCar);
-        text_auto_car.setThreshold(0);
-        text_auto_car.setOnTouchListener(new View.OnTouchListener() {
+        text_Unit = root.findViewById(R.id.text_Unit);
+        typeCarTruckAdapter = new TypeCarTruckAdapter(root.getContext(), R.layout.item_car_search_home, listUnit, carDto -> {
+            text_Unit.setText(carDto.getSysGroupName());
+            text_Unit.dismissDropDown();
+            mainActivcity.hideKeyBoard();
+//            getListAutoCar(carDto.getSysGroupId());
+            getListAutoCar(400000);
+        });
+        text_Unit.setAdapter(typeCarTruckAdapter);
+        text_Unit.setThreshold(0);
+        text_Unit.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                text_auto_car.showDropDown();
+                text_Unit.showDropDown();
                 return false;
             }
         });
-        text_auto_car.addTextChangedListener(new TextWatcher() {
+        text_Unit.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -250,7 +264,7 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if (s.length() != 0) {
                     image_clear_search.setVisibility(View.VISIBLE);
-                    text_auto_car.showDropDown();
+                    text_Unit.showDropDown();
                 } else {
                     image_clear_search.setVisibility(View.GONE);
                 }
@@ -265,10 +279,18 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
         image_clear_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text_auto_car.setText("");
+                text_Unit.setText("");
                 image_clear_search.setVisibility(View.GONE);
             }
         });
+
+
+        txt_car_license = root.findViewById(R.id.txt_car_license);
+        txt_car_status = root.findViewById(R.id.txt_car_status);
+        img_clear_search_car_license = root.findViewById(R.id.img_clear_search_car_license);
+        img_clear_search_car_status = root.findViewById(R.id.img_clear_search_car_status);
+        initAutoCarAdapter(root);
+        initCarStatusAdapter(root);
 
         // =============
         marker_title = root.findViewById(R.id.marker_title);
@@ -334,10 +356,106 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
 
     }
 
-    private boolean isHasRoleCodeHanhTrinh() {
+    private void initAutoCarAdapter(View root){
+
+        catVehicleAdapter = new CatVehicleAdapter(root.getContext(), R.layout.item_car_search_home, listCar, carDto -> {
+            txt_car_license.setText(carDto.getLicenseCar());
+            txt_car_license.dismissDropDown();
+            mainActivcity.hideKeyBoard();
+             homeViewModel.catVehicleDTO  = carDto;
+        });
+        txt_car_license.setAdapter(catVehicleAdapter);
+        txt_car_license.setThreshold(0);
+        txt_car_license.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                txt_car_license.showDropDown();
+                return false;
+            }
+        });
+        txt_car_license.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.length() != 0) {
+                    img_clear_search_car_license.setVisibility(View.VISIBLE);
+                    txt_car_license.showDropDown();
+                } else {
+                    img_clear_search_car_license.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        img_clear_search_car_license.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txt_car_license.setText("");
+                img_clear_search_car_license.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    private void initCarStatusAdapter(View root){
+
+//        catVehicleAdapter = new CatVehicleAdapter(root.getContext(), R.layout.item_car_search_home, listCar, carDto -> {
+//            txt_car_license.setText(carDto.getLicenseCar());
+//            txt_car_license.dismissDropDown();
+//            mainActivcity.hideKeyBoard();
+//        });
+//        txt_car_license.setAdapter(adapterAutoCar);
+//        txt_car_license.setThreshold(0);
+        txt_car_status.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                txt_car_status.showDropDown();
+                return false;
+            }
+        });
+        txt_car_status.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.length() != 0) {
+                    img_clear_search_car_status.setVisibility(View.VISIBLE);
+                    txt_car_status.showDropDown();
+                } else {
+                    img_clear_search_car_status.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        img_clear_search_car_status.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txt_car_status.setText("");
+                img_clear_search_car_status.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    private boolean isHasRoleCode() {
         String[] listRoleCode = CommonVCC.getUserLogin().getRoleCode().split(";");
         for (String roleCode : listRoleCode) {
-            if (roleCode.equals(MainActivity.HANHTRINH)) return true;
+            if (roleCode.equals("THUTRUONGXE") || roleCode.equals("DOITRUONGXE") ||
+                    roleCode.equals("BANXETCT")) return true;
         }
         return false;
     }
@@ -424,8 +542,8 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
     }
 
     private void initData() {
-        if (mainActivcity.listCar.size() == 0) {
-            getchGetListCar();
+        if (listUnit == null || listUnit.size() == 0) {
+            getListTypeCarTruck();
         }
     }
 
@@ -437,65 +555,67 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
         }
     }
 
-    private void getchGetListCar() {
-        mainActivcity.showLoading();
+    private void getListTypeCarTruck(){
+        BranchRequestBody body = new BranchRequestBody();
+        body.setSysUserRequest(CommonVCC.getSysUserRequest());
+        body.setBookCarDto(new BookCarDto());
+        API.INSTANCE.getService().getBranch(body).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new SingleObserver<BranchReponseDTO>() {
+            @Override
+            public void onSubscribe(Disposable d) {
 
-        GetListCarBody body = new GetListCarBody();
-        GetListCarBodyDto getListCarBodyDto = new GetListCarBodyDto();
-        getListCarBodyDto.setSysGroupId(CommonVCC.getUserLogin().getSysGroupId());
-        body.setGetListCarBodyDto(getListCarBodyDto);
-        API.INSTANCE.getService().getListCar(body)
-                .subscribeOn(Schedulers.io()) //(*)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<GetListCarRespon>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
+            }
 
-                    }
-
-                    @Override
-                    public void onSuccess(GetListCarRespon respon) {
-                        mainActivcity.hideLoading();
-                        if (respon.getResultInfo().getStatus().equals(CommonVCC.RESULT_STATUS_OK)) {
-                            mainActivcity.listCar.clear();
-                            mainActivcity.listCar.addAll(respon.getLstBookCarDto());
-                            adapterAutoCar.notifyDataSetChanged();
-                        } else {
-                            Toasty.error(getActivity(), respon.getResultInfo().getMessage(), Toast.LENGTH_SHORT, true).show();
+            @Override
+            public void onSuccess(BranchReponseDTO response) {
+                if (response.getResultInfo().getStatus().equals(CommonVCC.RESULT_STATUS_OK)){
+                    if (response.getLstBookCarDto() != null) {
+                        if (listUnit != null && listUnit.size() > 0) {
+                            listUnit.clear();
                         }
+                        listUnit.addAll(response.getLstBookCarDto());
+                        typeCarTruckAdapter.setList(listUnit);
                     }
+                }
+            }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        mainActivcity.hideLoading();
-//                        Toasty.error(getActivity(), getString(R.string.loi_ket_noi), Toast.LENGTH_SHORT, true).show();
-                        showErrorDialog(getString(R.string.loi_ket_noi), getString(R.string.please_check_connect_again));
-                    }
-                });
+            @Override
+            public void onError(Throwable e) {
+
+            }
+        });
     }
 
-    public void showErrorDialog(String title, String content) {
-        MaterialDialog mDialog = new MaterialDialog.Builder(mainActivcity)
-                .setTitle(title)
-                .setMessage(content)
-                .setCancelable(false)
-                .setPositiveButton(getString(R.string.thu_lai), new MaterialDialog.OnClickListener() {
-                    @Override
-                    public void onClick(com.shreyaspatil.MaterialDialog.interfaces.DialogInterface dialogInterface, int which) {
-                        dialogInterface.dismiss();
-                        getchGetListCar();
-                    }
-                })
-                .setNegativeButton(getString(R.string.dong_app), new MaterialDialog.OnClickListener() {
-                    @Override
-                    public void onClick(com.shreyaspatil.MaterialDialog.interfaces.DialogInterface dialogInterface, int which) {
-                        dialogInterface.dismiss();
-                        mainActivcity.finish();
-                    }
-                })
-                .build();
+    private void getListAutoCar(Integer sysGroupId) {
+        GetListManagerBody body = new GetListManagerBody();
+        body.setSysGroupId(sysGroupId);
+        API.INSTANCE.getService().searchCatVehicle(body).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new SingleObserver<CatVehicleReponseDTO>() {
+            @Override
+            public void onSubscribe(Disposable d) {
 
-        mDialog.show();
+            }
+
+            @Override
+            public void onSuccess(CatVehicleReponseDTO respon) {
+                if (respon.getResultInfo().getStatus().equals(CommonVCC.RESULT_STATUS_OK)) {
+                    if (respon.getCatVehicleDTO() != null) {
+                        if (listCar != null && listCar.size() > 0) {
+                            listCar.clear();
+                        }
+                        listCar.addAll(respon.getCatVehicleDTO());
+                        catVehicleAdapter.setList(listCar);
+                    }
+                } else {
+                    Toasty.error(getActivity(), respon.getResultInfo().getMessage(), Toast.LENGTH_SHORT, true).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Toasty.error(getActivity(), getString(R.string.loi_ket_noi), Toast.LENGTH_LONG, true).show();
+            }
+        });
     }
 
     private void setInfoPos(MakerCar makerFirst, MakerCar makerEnd) {
@@ -528,33 +648,20 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
     public void onPolylineClick(Polyline polyline) {
     }
 
-
-
-    @Override
-    public void onClickItemCarSearch(LstBookCarDto carDto) {
-        text_auto_car.setText(carDto.getLicenseCar());
-        text_auto_car.dismissDropDown();
-        mainActivcity.hideKeyBoard();
-
-        homeViewModel.carDtoSelected = carDto;
-    }
-
-    private void updateInfoCar(LstBookCarDto carDto) {
+    private void updateInfoCar(Integer carId, String licenseCar, long sysGroupId,String carStatus) {
         mainActivcity.showLoading();
-        GetHistoryCarBody body = new GetHistoryCarBody();
+        VehicleMonitoringRequestBody body = new VehicleMonitoringRequestBody();
 
-        CarInfoHistory bookCarDto = new CarInfoHistory();
-        bookCarDto.setCarId(carDto.getCarId());
-        bookCarDto.setLicenseCar(carDto.getLicenseCar());
-        body.setBookCarDto(bookCarDto);
+        VehicleMonitoringRequest vehicleMonitoringRequest = new VehicleMonitoringRequest();
 
-        UserLogin userLogin = CommonVCC.getUserLogin();
-        SysUserRequest sysUserRequest = new SysUserRequest();
-        sysUserRequest.setAuthenticationInfo(new AuthenticationInfo(userLogin.getLoginName(), userLogin.getPassword()));
-        sysUserRequest.setSysUserId(CommonVCC.getUserLogin().getSysUserId());
-        body.setSysUserRequest(sysUserRequest);
+        vehicleMonitoringRequest.setCarId(carId);
+        vehicleMonitoringRequest.setLicenseCar(licenseCar);
+        vehicleMonitoringRequest.setSysGroupId(sysGroupId);
+        vehicleMonitoringRequest.setListStatus(carStatus);
 
-        API.INSTANCE.getService().getHistoryCar(body)
+        body.setBookCarDto(vehicleMonitoringRequest);
+        body.setSysUserRequest(CommonVCC.getSysUserRequest());
+        API.INSTANCE.getService().getVehicleMonitoring(body)
                 .subscribeOn(Schedulers.io()) //(*)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<GetHistoryCarRespon>() {
@@ -574,9 +681,9 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
                                 homeViewModel.listBookCarHistory.addAll(respon.getLstBookCarDto());
                                 bookCarHistoryAdapter.swapData(homeViewModel.listBookCarHistory);
                                 customDialog.show();
-                                customDialog.setTitleDialog(carDto.getLicenseCar());
+                                customDialog.setTitleDialog(licenseCar);
                                 imv_list_book_car_history.setVisibility(View.VISIBLE);
-                                marker_title.setText(getString(R.string.thong_tin_xe, carDto.getLicenseCar()));
+                                marker_title.setText(getString(R.string.thong_tin_xe, licenseCar));
                             }
                         } else {
                             Toasty.error(getActivity(), respon.getResultInfo().getMessage(), Toast.LENGTH_SHORT, true).show();

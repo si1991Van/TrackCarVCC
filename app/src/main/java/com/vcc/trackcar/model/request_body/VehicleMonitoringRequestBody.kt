@@ -7,10 +7,10 @@ import com.vcc.trackcar.model.addBookCar.SysUserRequest
 import com.vcc.trackcar.model.getHistoryCar.VehicleMonitoringRequest
 import com.vcc.trackcar.model.getListBookCar.LstBookCarDto
 
-class BranchRequestBody {
+class VehicleMonitoringRequestBody {
     @SerializedName("bookCarDto")
     @Expose
-    var bookCarDto: BookCarDto? = null
+    var bookCarDto: VehicleMonitoringRequest? = null
     @SerializedName("sysUserRequest")
     @Expose
     var sysUserRequest: SysUserRequest? = null

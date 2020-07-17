@@ -122,7 +122,7 @@
                         android:textSize="14sp" />
 
                     <LinearLayout
-                        android:id="@+id/layout_auto_complace_car"
+                        android:id="@+id/layout_Unit"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_below="@+id/text_label_loai_xe"
@@ -145,7 +145,7 @@
                             android:src="@drawable/ic_search_find_detail" />
 
                         <AutoCompleteTextView
-                            android:id="@+id/text_auto_car"
+                            android:id="@+id/text_Unit"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_marginEnd="10dp"
@@ -196,7 +196,7 @@
                         android:textSize="14sp" />
 
                     <LinearLayout
-                        android:id="@+id/layout_location_from"
+                        android:id="@+id/layout_auto_car"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_below="@+id/text_label_location_from"
@@ -253,7 +253,7 @@
                         android:id="@+id/imv_location_to"
                         android:layout_width="16dp"
                         android:layout_height="@dimen/dp_20"
-                        android:layout_below="@+id/layout_location_from"
+                        android:layout_below="@+id/layout_auto_car"
                         android:layout_marginTop="@dimen/dp_5"
                         android:src="@drawable/ic_add_car"
                         app:srcCompat="@drawable/ic_add_car" />
@@ -262,7 +262,7 @@
                         android:id="@+id/text_label_location_to"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/layout_location_from"
+                        android:layout_below="@id/layout_auto_car"
                         android:layout_marginStart="@dimen/dp_10"
                         android:layout_marginTop="@dimen/dp_5"
                         android:layout_toEndOf="@+id/imv_location_from"

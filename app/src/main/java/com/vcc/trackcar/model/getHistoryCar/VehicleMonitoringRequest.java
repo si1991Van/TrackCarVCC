@@ -3,22 +3,22 @@ package com.vcc.trackcar.model.getHistoryCar;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CarInfoHistory {
+public class VehicleMonitoringRequest {
     @SerializedName("carId")
     @Expose
     private Integer carId;
+
     @SerializedName("licenseCar")
     @Expose
     private String licenseCar;
-    @SerializedName("fromTimeSearch")
-    @Expose
-    private String fromTimeSearch;
-    @SerializedName("toTimeSearch")
-    @Expose
-    private String toTimeSearch;
+
     @SerializedName("sysGroupId")
     @Expose
     private long sysGroupId;
+
+    @SerializedName("listStatus")
+    @Expose
+    private String listStatus;
 
     public Integer getCarId() {
         return carId;
@@ -36,27 +36,19 @@ public class CarInfoHistory {
         this.licenseCar = licenseCar;
     }
 
-    public String getFromTimeSearch() {
-        return fromTimeSearch;
-    }
-
-    public void setFromTimeSearch(String fromTimeSearch) {
-        this.fromTimeSearch = fromTimeSearch;
-    }
-
-    public String getToTimeSearch() {
-        return toTimeSearch;
-    }
-
-    public void setToTimeSearch(String toTimeSearch) {
-        this.toTimeSearch = toTimeSearch;
-    }
-
     public long getSysGroupId() {
         return sysGroupId;
     }
 
     public void setSysGroupId(long sysGroupId) {
         this.sysGroupId = sysGroupId;
+    }
+
+    public String getListStatus() {
+        return listStatus;
+    }
+
+    public void setListStatus(String listStatus) {
+        this.listStatus = listStatus;
     }
 }

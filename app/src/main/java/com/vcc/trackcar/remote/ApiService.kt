@@ -50,6 +50,7 @@ import com.vcc.trackcar.model.manageApproveRejectBookCar.ManageApproveRejectBook
 import com.vcc.trackcar.model.managerCarApproveRejectBookCar.ManagerCarApproveRejectBookCarBody
 import com.vcc.trackcar.model.managerCarApproveRejectBookCar.ManagerCarApproveRejectBookCarRespon
 import com.vcc.trackcar.model.request_body.BranchRequestBody
+import com.vcc.trackcar.model.request_body.VehicleMonitoringRequestBody
 import com.vcc.trackcar.model.response.BranchReponseDTO
 import com.vcc.trackcar.model.response.TypeCarTruckReponseDTO
 import com.vcc.trackcar.model.updateBookCar.UpdateBookCarBody
@@ -240,6 +241,9 @@ object API {
         // api lay danh sach loai xe theo kieu 5 xe ban tai.
         @POST("BookCarRestService/service/getBranch")
         fun getBranch(@Body requestBody: BranchRequestBody): Single<BranchReponseDTO>
+        //api tim kiem man hinh giam sat xe.
+        @POST("BookCarRestService/service/getVehicleMonitoring")
+        fun getVehicleMonitoring(@Body requestBody: VehicleMonitoringRequestBody): Single<GetHistoryCarRespon>
 
 
 

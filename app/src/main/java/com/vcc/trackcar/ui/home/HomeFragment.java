@@ -259,9 +259,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
                     Toasty.warning(getContext(), getString(R.string.please_chon_thoi_gian_den), Toasty.LENGTH_SHORT).show();
                 } else {
                     if (isHasRoleCodeBANXETCT()){
-                        updateInfoCar(homeViewModel.catVehicleDTO.getCarId(), homeViewModel.catVehicleDTO.getLicenseCar());
+                        updateInfoCar(homeViewModel.catVehicleDTO.getCarId(), homeViewModel.catVehicleDTO.getLicenseCar(), homeViewModel.catVehicleDTO.getSysGroupId());
                     }else {
-                        updateInfoCar(homeViewModel.carDtoSelected.getCarId(), homeViewModel.carDtoSelected.getLicenseCar());
+                        updateInfoCar(homeViewModel.carDtoSelected.getCarId(), homeViewModel.carDtoSelected.getLicenseCar(), 0);
                     }
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
@@ -877,13 +877,14 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         homeViewModel.carDtoSelected = carDto;
     }
 
-    private void updateInfoCar(Integer carId, String licenseCar) {
+    private void updateInfoCar(Integer carId, String licenseCar, long sysGroupId) {
         mainActivcity.showLoading();
         GetHistoryCarBody body = new GetHistoryCarBody();
 
         CarInfoHistory bookCarDto = new CarInfoHistory();
         bookCarDto.setCarId(carId);
         bookCarDto.setLicenseCar(licenseCar);
+        bookCarDto.setSysGroupId(sysGroupId);
         bookCarDto.setFromTimeSearch(text_pos_from.getText().toString());
         bookCarDto.setToTimeSearch(text_pos_to.getText().toString());
         body.setBookCarDto(bookCarDto);
