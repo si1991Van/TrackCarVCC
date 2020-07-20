@@ -91,6 +91,7 @@ import com.vcc.trackcar.ui.base.CommonVCC;
 import com.vcc.trackcar.ui.direction.DirectionFinder;
 import com.vcc.trackcar.ui.direction.DirectionFinderListener;
 import com.vcc.trackcar.ui.direction.Route;
+import com.vcc.trackcar.ui.giam_sat_xe.adapter.CarStatusAdapter;
 import com.vcc.trackcar.ui.home.HomeViewModel;
 import com.vcc.trackcar.ui.home.adapter.AutoCarAdapter;
 import com.vcc.trackcar.ui.home.adapter.BookCarHistoryAdapter;
@@ -163,8 +164,10 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
 //    private SuperviseViewModel viewModel = new SuperviseViewModel();
     private List<BookCarDto> listUnit  = new ArrayList<>();
     private List<CatVehicleDTO> listCar = new ArrayList();
+
     private TypeCarTruckAdapter typeCarTruckAdapter;
     private CatVehicleAdapter catVehicleAdapter;
+    private CarStatusAdapter carStatusAdapter;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -242,8 +245,8 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
             text_Unit.setText(carDto.getSysGroupName());
             text_Unit.dismissDropDown();
             mainActivcity.hideKeyBoard();
-//            getListAutoCar(carDto.getSysGroupId());
-            getListAutoCar(400000);
+            getListAutoCar(carDto.getSysGroupId());
+//            getListAutoCar(400000);
         });
         text_Unit.setAdapter(typeCarTruckAdapter);
         text_Unit.setThreshold(0);
@@ -405,14 +408,13 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
     }
 
     private void initCarStatusAdapter(View root){
-
-//        catVehicleAdapter = new CatVehicleAdapter(root.getContext(), R.layout.item_car_search_home, listCar, carDto -> {
-//            txt_car_license.setText(carDto.getLicenseCar());
-//            txt_car_license.dismissDropDown();
-//            mainActivcity.hideKeyBoard();
-//        });
-//        txt_car_license.setAdapter(adapterAutoCar);
-//        txt_car_license.setThreshold(0);
+        carStatusAdapter = new CarStatusAdapter(root.getContext(), R.layout.item_car_search_home, listCarStatus(), carDto -> {
+            txt_car_status.setText(carDto.getName());
+            txt_car_status.dismissDropDown();
+            mainActivcity.hideKeyBoard();
+        });
+        txt_car_status.setAdapter(carStatusAdapter);
+        txt_car_status.setThreshold(0);
         txt_car_status.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -449,6 +451,15 @@ public class SuperviseFragment extends Fragment implements OnMapReadyCallback, G
                 img_clear_search_car_status.setVisibility(View.GONE);
             }
         });
+    }
+
+    private List<CarStatusDTO> listCarStatus(){
+        List<CarStatusDTO> listCarStatus = new ArrayList();
+        listCarStatus.add(new CarStatusDTO(0, "Đang chạy"));
+        listCarStatus.add(new CarStatusDTO(1, "Dừng"));
+        listCarStatus.add(new CarStatusDTO(2, "Đỗ"));
+        listCarStatus.add(new CarStatusDTO(4, "Mất GPRS"));
+        return listCarStatus;
     }
 
     private boolean isHasRoleCode() {

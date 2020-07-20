@@ -579,7 +579,6 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH) + 1;
         int endDay = cal.getActualMaximum(Calendar.DATE);
-
         String fixMonth = "";
         if (month / 10 == 0) fixMonth = "0" + month;
         else fixMonth = month + "";
