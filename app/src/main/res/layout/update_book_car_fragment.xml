@@ -457,40 +457,6 @@
                 android:layout_marginTop="21dp">
 
                 <ImageView
-                    android:id="@+id/imv_loai_xe"
-                    android:layout_width="16dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/transport" />
-
-                <TextView
-                    android:id="@+id/text_label_loai_xe"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:layout_toEndOf="@+id/imv_loai_xe"
-                    android:text="@string/loai_xe"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-
-                <com.dev.materialspinner.MaterialSpinner
-                    android:id="@+id/spinner_chon_xe"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/text_label_loai_xe"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:layout_toEndOf="@+id/imv_loai_xe"
-                    android:outlineAmbientShadowColor="@color/colorPrimary"
-                    android:outlineSpotShadowColor="@color/colorPrimary">
-
-                </com.dev.materialspinner.MaterialSpinner>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp">
-
-                <ImageView
                     android:id="@+id/imv_chon_kieu_di"
                     android:layout_width="16dp"
                     android:layout_height="20dp"
@@ -565,6 +531,40 @@
 
                     </RelativeLayout>
                 </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp">
+
+                <ImageView
+                    android:id="@+id/imv_loai_xe"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/transport" />
+
+                <TextView
+                    android:id="@+id/text_label_loai_xe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toEndOf="@+id/imv_loai_xe"
+                    android:text="@string/loai_xe"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.dev.materialspinner.MaterialSpinner
+                    android:id="@+id/spinner_chon_xe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_label_loai_xe"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toEndOf="@+id/imv_loai_xe"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:outlineSpotShadowColor="@color/colorPrimary">
+
+                </com.dev.materialspinner.MaterialSpinner>
             </RelativeLayout>
 
             <!--Chon xe & lai xe-->

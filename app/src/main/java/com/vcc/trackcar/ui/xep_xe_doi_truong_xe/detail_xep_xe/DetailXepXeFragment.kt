@@ -251,6 +251,9 @@ class DetailXepXeFragment : Fragment() {
             "4" -> tv_kieu_di.setContentText(
                 getString(R.string.dac_biet), MaterialTextView.ANIMATE_TYPE.NONE
             )
+            "5" -> tv_kieu_di.setContentText(
+                getString(R.string.xe_tai), MaterialTextView.ANIMATE_TYPE.NONE
+            )
         }
 
         fetchGetListUserTogether()
