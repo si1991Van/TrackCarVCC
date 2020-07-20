@@ -51,6 +51,7 @@ import com.vcc.trackcar.model.getListTypeCar.LstBookCarDto;
 import com.vcc.trackcar.model.getListUser.GetListUserBody;
 import com.vcc.trackcar.model.getListUser.GetListUserRespon;
 import com.vcc.trackcar.model.getListUser.LstUserDto;
+import com.vcc.trackcar.model.response.TypeCarTruckReponseDTO;
 import com.vcc.trackcar.remote.API;
 import com.vcc.trackcar.ui.base.CommonVCC;
 import com.vcc.trackcar.ui.add_book_car.adapter.OnItemPeopleListener;
@@ -156,8 +157,6 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
             layout_chon_xe_va_lai_xe.setVisibility(View.VISIBLE);
             tv_nguoi_lai.setText(addBookCarViewModel.carDieuChuyen.getDriverName());
         }
-
-        fetchGetListTypeCar();
 
         if (addBookCarViewModel.listTogether.isEmpty()) {
             fetchGetListUser();
@@ -297,6 +296,40 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
                     @Override
                     public void onError(Throwable e) {
                         mainActivcity.hideLoading();
+                        Toasty.error(getActivity(), getString(R.string.loi_ket_noi), Toast.LENGTH_SHORT, true).show();
+                    }
+                });
+    }
+
+    private void getListTypeCarTruck(){
+        API.INSTANCE.getService().getListTypeCarTruck()
+                .subscribeOn(Schedulers.io()) //(*)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<GetListTypeCarRespon>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(GetListTypeCarRespon response) {
+//                        mainActivcity.hideLoading();
+                        if (response.getResultInfo().getStatus().equals(CommonVCC.RESULT_STATUS_OK)) {
+                            addBookCarViewModel.listCarType = response.getLstBookCarDto();
+                            list_of_items.clear();
+                            list_of_items.addAll(Observable.fromIterable(response.getLstBookCarDto()).map(lstBookCarDto -> lstBookCarDto.getCarTypeName() + "").toList().blockingGet());
+                            adapterCarType.notifyDataSetChanged();
+
+                            if (addBookCarViewModel.posItemSpCarType != -1)
+                                spinner_chon_xe.getSpinner().setSelection(addBookCarViewModel.posItemSpCarType);
+                        } else {
+                            Toasty.error(getActivity(), response.getResultInfo().getMessage(), Toast.LENGTH_SHORT, true).show();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+//                        mainActivcity.hideLoading();
                         Toasty.error(getActivity(), getString(R.string.loi_ket_noi), Toast.LENGTH_SHORT, true).show();
                     }
                 });
@@ -548,13 +581,21 @@ public class AddBookCarFragment extends Fragment implements View.OnClickListener
         list_book_car_items.add(getString(R.string.hai_chieu));
         list_book_car_items.add(getString(R.string.phat_sinh));
         list_book_car_items.add(getString(R.string.dac_biet));
+        list_book_car_items.add(getString(R.string.xe_tai));
         spinner_chon_kieu_di = root.findViewById(R.id.spinner_chon_kieu_di);
 //        spinner_chon_kieu_di.setLabel(getActivity().getString(R.string.chon_kieu_di));
         spinner_chon_kieu_di.getSpinner().setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 addBookCarViewModel.typeBookCar = Integer.toString(position + 1);
-                if (addBookCarViewModel.typeBookCar.equals("4")) {
+
+                if ("5".equals(addBookCarViewModel.typeBookCar)){
+                    getListTypeCarTruck();
+                }else {
+                    fetchGetListTypeCar();
+                }
+
+                if ("4".equals(addBookCarViewModel.typeBookCar)) {
                     hienThiChonXe(true);
                 } else {
                     hienThiChonXe(false);
