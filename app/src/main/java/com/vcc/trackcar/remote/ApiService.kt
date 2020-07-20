@@ -237,7 +237,7 @@ object API {
         fun searchCatVehicle(@Body requestBody: GetListManagerBody): Single<CatVehicleReponseDTO>
         // api lay danh sach don vi xe
         @POST("BookCarRestService/service/getListTypeCarTruck")
-        fun getListTypeCarTruck(): Single<TypeCarTruckReponseDTO>
+        fun getListTypeCarTruck(): Single<GetListTypeCarRespon>
         // api lay danh sach loai xe theo kieu 5 xe ban tai.
         @POST("BookCarRestService/service/getBranch")
         fun getBranch(@Body requestBody: BranchRequestBody): Single<BranchReponseDTO>

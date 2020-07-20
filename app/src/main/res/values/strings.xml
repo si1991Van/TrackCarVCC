@@ -108,6 +108,7 @@
     <string name="chon_lich_ket_thuc">Chọn thời gian kết thúc</string>
     <string name="phat_sinh">Phát sinh</string>
     <string name="dac_biet">Đặc biệt</string>
+    <string name="xe_tai">Xe tải</string>
     <string name="menu_xep_xe_ban_tct">Xếp xe (Ban xe TCT)</string>
     <string name="menu_view_and_approval_tphc_tct">Duyệt xe (TP Hành chính TCT)</string>
     <string name="su_co">Sự cố</string>
